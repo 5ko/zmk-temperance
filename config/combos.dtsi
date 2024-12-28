@@ -88,8 +88,8 @@ ZMK_COMBO(lay_mouse, &tog L_MSE              , _TBT, L_BASE L_MSE)
 ZMK_COMBO(combo_mb3,   &mkp MB3              , _T_T, L_MSE)
 ZMK_COMBO(combo_mb4,   &mkp MB4              , _TT_, L_MSE)
 ZMK_COMBO(combo_mb5,   &mkp MB5              , __TT, L_MSE)
-ZMK_COMBO(combo_scroll_left,  &msc SCRL_LEFT , ___X, L_MSE)
-ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, X___, L_MSE)
+ZMK_COMBO(combo_scroll_left,  &msc SCRL_LEFT , X___, L_MSE)
+ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, ___X, L_MSE)
 
 
 // Combos L_FUN layer

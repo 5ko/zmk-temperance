@@ -92,7 +92,7 @@
     display-name = "L_NAV";
     bindings = <                      
       &kp PRINTSCREEN  &mt K_PREV K_VOL_DN  &mt K_NEXT K_VOL_UP   &kp UP   
-      &mo L_NAV         &left_home           &right_end           &kp DOWN 
+      &mo L_NAV        &left_home           &right_end            &kp DOWN 
     >;
   };
   accented { 
