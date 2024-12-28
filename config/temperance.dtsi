@@ -59,9 +59,6 @@
 //    HOLD: J, K, Y, Z, YEN
 //    MEH key
 
-// Change layout from LEFT to RIGHT hand
-// T4 T3 B4 B3, T2 T1 B2 B1
-
 
 #define TODO       &none
 #define MAYBE      &none
