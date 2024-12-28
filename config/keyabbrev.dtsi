@@ -1,0 +1,260 @@
+/*
+ * Copyright (c) 2024 Petko Yotov pmwiki.org/petko
+ *
+ * SPDX-License-Identifier: MIT
+ * 
+ * These definitions make combos more readable.
+ * Not all are used, or even can be reasonably used.
+ * 
+ * The combo is described by the character and position, 
+ * in columns from left to right:
+    * _ = not pressed
+    * T = key on the Top row pressed
+    * B = key on the Bottom row pressed
+    * X = both keys on the Top and Bottom rows pressed
+ */
+
+
+#define __TT    T2 T1
+#define __TB    T2 B1
+#define __TX    T2 T1 B1
+#define __BT    B2 T1
+#define __BB    B2 B1
+#define __BX    B2 T1 B1
+#define __XT    T2 B2 T1
+#define __XB    T2 B2 B1
+#define __XX    T2 B2 T1 B1
+#define _T_T    T3 T1
+#define _T_B    T3 B1
+#define _T_X    T3 T1 B1
+#define _TT_    T3 T2
+#define _TTT    T3 T2 T1
+#define _TTB    T3 T2 B1
+#define _TTX    T3 T2 T1 B1
+#define _TB_    T3 B2
+#define _TBT    T3 B2 T1
+#define _TBB    T3 B2 B1
+#define _TBX    T3 B2 T1 B1
+#define _TX_    T3 T2 B2
+#define _TXT    T3 T2 B2 T1
+#define _TXB    T3 T2 B2 B1
+#define _TXX    T3 T2 B2 T1 B1
+#define _B_T    B3 T1
+#define _B_B    B3 B1
+#define _B_X    B3 T1 B1
+#define _BT_    B3 T2
+#define _BTT    B3 T2 T1
+#define _BTB    B3 T2 B1
+#define _BTX    B3 T2 T1 B1
+#define _BB_    B3 B2
+#define _BBT    B3 B2 T1
+#define _BBB    B3 B2 B1
+#define _BBX    B3 B2 T1 B1
+#define _BX_    B3 T2 B2
+#define _BXT    B3 T2 B2 T1
+#define _BXB    B3 T2 B2 B1
+#define _BXX    B3 T2 B2 T1 B1
+#define _X_T    T3 B3 T1
+#define _X_B    T3 B3 B1
+#define _X_X    T3 B3 T1 B1
+#define _XT_    T3 B3 T2
+#define _XTT    T3 B3 T2 T1
+#define _XTB    T3 B3 T2 B1
+#define _XTX    T3 B3 T2 T1 B1
+#define _XB_    T3 B3 B2
+#define _XBT    T3 B3 B2 T1
+#define _XBB    T3 B3 B2 B1
+#define _XBX    T3 B3 B2 T1 B1
+#define _XX_    T3 B3 T2 B2
+#define _XXT    T3 B3 T2 B2 T1
+#define _XXB    T3 B3 T2 B2 B1
+#define _XXX    T3 B3 T2 B2 T1 B1
+#define T__T    T4 T1
+#define T__B    T4 B1
+#define T__X    T4 T1 B1
+#define T_T_    T4 T2
+#define T_TT    T4 T2 T1
+#define T_TB    T4 T2 B1
+#define T_TX    T4 T2 T1 B1
+#define T_B_    T4 B2
+#define T_BT    T4 B2 T1
+#define T_BB    T4 B2 B1
+#define T_BX    T4 B2 T1 B1
+#define T_X_    T4 T2 B2
+#define T_XT    T4 T2 B2 T1
+#define T_XB    T4 T2 B2 B1
+#define T_XX    T4 T2 B2 T1 B1
+#define TT__    T4 T3
+#define TT_T    T4 T3 T1
+#define TT_B    T4 T3 B1
+#define TT_X    T4 T3 T1 B1
+#define TTT_    T4 T3 T2
+#define TTTT    T4 T3 T2 T1
+#define TTTB    T4 T3 T2 B1
+#define TTTX    T4 T3 T2 T1 B1
+#define TTB_    T4 T3 B2
+#define TTBT    T4 T3 B2 T1
+#define TTBB    T4 T3 B2 B1
+#define TTBX    T4 T3 B2 T1 B1
+#define TTX_    T4 T3 T2 B2
+#define TTXT    T4 T3 T2 B2 T1
+#define TTXB    T4 T3 T2 B2 B1
+#define TTXX    T4 T3 T2 B2 T1 B1
+#define TB__    T4 B3
+#define TB_T    T4 B3 T1
+#define TB_B    T4 B3 B1
+#define TB_X    T4 B3 T1 B1
+#define TBT_    T4 B3 T2
+#define TBTT    T4 B3 T2 T1
+#define TBTB    T4 B3 T2 B1
+#define TBTX    T4 B3 T2 T1 B1
+#define TBB_    T4 B3 B2
+#define TBBT    T4 B3 B2 T1
+#define TBBB    T4 B3 B2 B1
+#define TBBX    T4 B3 B2 T1 B1
+#define TBX_    T4 B3 T2 B2
+#define TBXT    T4 B3 T2 B2 T1
+#define TBXB    T4 B3 T2 B2 B1
+#define TBXX    T4 B3 T2 B2 T1 B1
+#define TX__    T4 T3 B3
+#define TX_T    T4 T3 B3 T1
+#define TX_B    T4 T3 B3 B1
+#define TX_X    T4 T3 B3 T1 B1
+#define TXT_    T4 T3 B3 T2
+#define TXTT    T4 T3 B3 T2 T1
+#define TXTB    T4 T3 B3 T2 B1
+#define TXTX    T4 T3 B3 T2 T1 B1
+#define TXB_    T4 T3 B3 B2
+#define TXBT    T4 T3 B3 B2 T1
+#define TXBB    T4 T3 B3 B2 B1
+#define TXBX    T4 T3 B3 B2 T1 B1
+#define TXX_    T4 T3 B3 T2 B2
+#define TXXT    T4 T3 B3 T2 B2 T1
+#define TXXB    T4 T3 B3 T2 B2 B1
+#define TXXX    T4 T3 B3 T2 B2 T1 B1
+#define B__T    B4 T1
+#define B__B    B4 B1
+#define B__X    B4 T1 B1
+#define B_T_    B4 T2
+#define B_TT    B4 T2 T1
+#define B_TB    B4 T2 B1
+#define B_TX    B4 T2 T1 B1
+#define B_B_    B4 B2
+#define B_BT    B4 B2 T1
+#define B_BB    B4 B2 B1
+#define B_BX    B4 B2 T1 B1
+#define B_X_    B4 T2 B2
+#define B_XT    B4 T2 B2 T1
+#define B_XB    B4 T2 B2 B1
+#define B_XX    B4 T2 B2 T1 B1
+#define BT__    B4 T3
+#define BT_T    B4 T3 T1
+#define BT_B    B4 T3 B1
+#define BT_X    B4 T3 T1 B1
+#define BTT_    B4 T3 T2
+#define BTTT    B4 T3 T2 T1
+#define BTTB    B4 T3 T2 B1
+#define BTTX    B4 T3 T2 T1 B1
+#define BTB_    B4 T3 B2
+#define BTBT    B4 T3 B2 T1
+#define BTBB    B4 T3 B2 B1
+#define BTBX    B4 T3 B2 T1 B1
+#define BTX_    B4 T3 T2 B2
+#define BTXT    B4 T3 T2 B2 T1
+#define BTXB    B4 T3 T2 B2 B1
+#define BTXX    B4 T3 T2 B2 T1 B1
+#define BB__    B4 B3
+#define BB_T    B4 B3 T1
+#define BB_B    B4 B3 B1
+#define BB_X    B4 B3 T1 B1
+#define BBT_    B4 B3 T2
+#define BBTT    B4 B3 T2 T1
+#define BBTB    B4 B3 T2 B1
+#define BBTX    B4 B3 T2 T1 B1
+#define BBB_    B4 B3 B2
+#define BBBT    B4 B3 B2 T1
+#define BBBB    B4 B3 B2 B1
+#define BBBX    B4 B3 B2 T1 B1
+#define BBX_    B4 B3 T2 B2
+#define BBXT    B4 B3 T2 B2 T1
+#define BBXB    B4 B3 T2 B2 B1
+#define BBXX    B4 B3 T2 B2 T1 B1
+#define BX__    B4 T3 B3
+#define BX_T    B4 T3 B3 T1
+#define BX_B    B4 T3 B3 B1
+#define BX_X    B4 T3 B3 T1 B1
+#define BXT_    B4 T3 B3 T2
+#define BXTT    B4 T3 B3 T2 T1
+#define BXTB    B4 T3 B3 T2 B1
+#define BXTX    B4 T3 B3 T2 T1 B1
+#define BXB_    B4 T3 B3 B2
+#define BXBT    B4 T3 B3 B2 T1
+#define BXBB    B4 T3 B3 B2 B1
+#define BXBX    B4 T3 B3 B2 T1 B1
+#define BXX_    B4 T3 B3 T2 B2
+#define BXXT    B4 T3 B3 T2 B2 T1
+#define BXXB    B4 T3 B3 T2 B2 B1
+#define BXXX    B4 T3 B3 T2 B2 T1 B1
+#define X__T    T4 B4 T1
+#define X__B    T4 B4 B1
+#define X__X    T4 B4 T1 B1
+#define X_T_    T4 B4 T2
+#define X_TT    T4 B4 T2 T1
+#define X_TB    T4 B4 T2 B1
+#define X_TX    T4 B4 T2 T1 B1
+#define X_B_    T4 B4 B2
+#define X_BT    T4 B4 B2 T1
+#define X_BB    T4 B4 B2 B1
+#define X_BX    T4 B4 B2 T1 B1
+#define X_X_    T4 B4 T2 B2
+#define X_XT    T4 B4 T2 B2 T1
+#define X_XB    T4 B4 T2 B2 B1
+#define X_XX    T4 B4 T2 B2 T1 B1
+#define XT__    T4 B4 T3
+#define XT_T    T4 B4 T3 T1
+#define XT_B    T4 B4 T3 B1
+#define XT_X    T4 B4 T3 T1 B1
+#define XTT_    T4 B4 T3 T2
+#define XTTT    T4 B4 T3 T2 T1
+#define XTTB    T4 B4 T3 T2 B1
+#define XTTX    T4 B4 T3 T2 T1 B1
+#define XTB_    T4 B4 T3 B2
+#define XTBT    T4 B4 T3 B2 T1
+#define XTBB    T4 B4 T3 B2 B1
+#define XTBX    T4 B4 T3 B2 T1 B1
+#define XTX_    T4 B4 T3 T2 B2
+#define XTXT    T4 B4 T3 T2 B2 T1
+#define XTXB    T4 B4 T3 T2 B2 B1
+#define XTXX    T4 B4 T3 T2 B2 T1 B1
+#define XB__    T4 B4 B3
+#define XB_T    T4 B4 B3 T1
+#define XB_B    T4 B4 B3 B1
+#define XB_X    T4 B4 B3 T1 B1
+#define XBT_    T4 B4 B3 T2
+#define XBTT    T4 B4 B3 T2 T1
+#define XBTB    T4 B4 B3 T2 B1
+#define XBTX    T4 B4 B3 T2 T1 B1
+#define XBB_    T4 B4 B3 B2
+#define XBBT    T4 B4 B3 B2 T1
+#define XBBB    T4 B4 B3 B2 B1
+#define XBBX    T4 B4 B3 B2 T1 B1
+#define XBX_    T4 B4 B3 T2 B2
+#define XBXT    T4 B4 B3 T2 B2 T1
+#define XBXB    T4 B4 B3 T2 B2 B1
+#define XBXX    T4 B4 B3 T2 B2 T1 B1
+#define XX__    T4 B4 T3 B3
+#define XX_T    T4 B4 T3 B3 T1
+#define XX_B    T4 B4 T3 B3 B1
+#define XX_X    T4 B4 T3 B3 T1 B1
+#define XXT_    T4 B4 T3 B3 T2
+#define XXTT    T4 B4 T3 B3 T2 T1
+#define XXTB    T4 B4 T3 B3 T2 B1
+#define XXTX    T4 B4 T3 B3 T2 T1 B1
+#define XXB_    T4 B4 T3 B3 B2
+#define XXBT    T4 B4 T3 B3 B2 T1
+#define XXBB    T4 B4 T3 B3 B2 B1
+#define XXBX    T4 B4 T3 B3 B2 T1 B1
+#define XXX_    T4 B4 T3 B3 T2 B2
+#define XXXT    T4 B4 T3 B3 T2 B2 T1
+#define XXXB    T4 B4 T3 B3 T2 B2 B1
+#define XXXX    T4 B4 T3 B3 T2 B2 T1 B1

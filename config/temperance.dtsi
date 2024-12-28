@@ -1,0 +1,683 @@
+/*
+ * Copyright (c) 2024 Petko Yotov pmwiki.org/petko
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 6    // default: 10
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+
+// HOST_OS: Linux=1, MacOS=2
+#define HOST_OS 1
+#include "zmk-helpers/helper.h"
+
+#include "keyabbrev.dtsi"
+
+
+// International characters and dead accents from the XKB layout
+// "English (US, intl., with AltGr dead keys)":
+#define SUP2 RA(N2)
+// dead grave
+#define D_GRV RA(GRAVE)
+// dead acute
+#define D_ACU RA(SQT)
+// dead diaeresis
+#define D_DRS RA(DQT)
+// dead circumflex
+#define D_CRC RA(N6)
+// dead tilde
+#define D_TLD RA(TILDE)
+
+#define NTILDE RA(N)
+#define DEGREE RA(COLON)
+#define C_CDL  RA(COMMA)
+#define S_SRP  RA(S)
+#define OELIG  RA(X)
+#define AELIG  RA(Z)
+#define EURO   RA(N5)
+#define GBP    RA(DOLLAR)
+#define YEN    RA(MINUS)
+
+// edit shortcuts
+// C_AC_UNDO/K_UNDO and K_REDO work in LibreOffice 
+// but not in Kate/Gedit/Firefox
+#define CLIPCOPY   LC(INS)
+#define CLIPCUT    LS(DEL)
+#define CLIPPASTE  LS(INS)
+#define CLIPPASTE2 LC(LS(V))
+#define SAVE       LC(S)
+#define SAVEAS     LC(LS(S)) 
+#define U_UNDO     LC(Z)
+#define U_REDO     LC(LS(Z))
+#define TODO       &none
+#define MAYBE      &none
+
+
+// Top row RI TA
+#define T4 0
+#define T3 1
+#define T2 2
+#define T1 3
+// Bottom row NO SE 
+#define B4 4
+#define B3 5
+#define B2 6
+#define B1 7
+
+// The layers need to be numbered in the order they are below,
+// starting from zero.
+#define L_BASE 0
+#define L_NUM  1
+#define L_PAR  2
+#define L_NAV  3
+#define L_ACC  4
+#define L_EDT  5
+#define L_FUN  6
+#define L_MSE  7
+#define L_BLE  8
+
+#define ALL_LEFT L_BASE L_MSE L_BLE L_NUM L_FUN
+
+// Delay for combo
+#undef COMBO_TERM
+#define COMBO_TERM 175
+
+#define NAV_TAP_TERM 300
+#define TAPDANCE_2_TERM 250
+#define TAPDANCE_3_TERM 350
+#define HOLDTAP_TERM 150
+#define HOLDTAP_LAYER_TERM 250
+#define TIMEOUT_STICKY_LEADER_KEY  5000
+
+&sk {
+  release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
+  quick-release;
+};
+&sl { 
+  release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
+};
+&mt {
+  tapping-term-ms = <HOLDTAP_TERM>;
+};
+&lt {
+  tapping-term-ms = <HOLDTAP_LAYER_TERM>;
+};
+
+
+
+
+/ { behaviors {
+  
+//   Under the hood, the mod-tap is simply a hold-tap of the "hold-preferred" flavor with a tapping-term-ms of 200 that takes in two keypresses as its "hold" and "tap" parameters. This means that the mod-tap can be used to invoke any keycode, and is not limited to only activating modifier keys when it is held.
+
+
+  mtz: behavior_mod_tap_zero {
+    // 
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <10>;
+//     quick-tap-ms = <200>;
+//     require-prior-idle-ms = <125>;
+    bindings = <&kp>, <&kp>;
+  };
+  
+  sk_tk: behavior_sk_tk { 
+    // sk LGUI, kt LCTRL
+    // sk RALT, kt LALT
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&sk>, <&kt>;
+  };
+  
+  // kp_kt CAPS LSHFT
+  kp_kt: behavior_sk_tog2 { 
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&kp>, <&kt>;
+  };
+  
+  // nxkbly, sk LSHFT
+  nx_sk: behavior_sk_tog3 {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&nxkbly>, <&sk>;
+  };
+  
+  
+  
+  
+  tap2: macro_tap_2 {
+    compatible = "zmk,behavior-macro-two-param";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <2>;
+    bindings
+      = <&macro_param_1to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      , <&macro_param_2to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      ;
+  };
+  
+  
+  caps_tog: behavior_caps_tog {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&caps_word>, <&kp>;
+  };
+  
+  lk: behavior_layon_key {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_LAYER_TERM>;
+    bindings = <&lay_on>, <&kp>;
+  };
+  
+  kd: behavior_keydown {
+    compatible = "zmk,behavior-key-toggle";
+    #binding-cells = <1>;
+    display-name = "Key Toggle On";
+    toggle-mode = "on";
+  };
+
+  ku: behavior_keyup {
+    compatible = "zmk,behavior-key-toggle";
+    #binding-cells = <1>;
+    display-name = "Key Toggle Off";
+    toggle-mode = "off";
+  };
+  
+  lay_off: behavior_layer_off {
+    compatible = "zmk,behavior-toggle-layer";
+    #binding-cells = <1>;
+    display-name = "Toggle Layer Off";
+    toggle-mode = "off";
+
+  };
+  lay_on: behavior_layer_om {
+    compatible = "zmk,behavior-toggle-layer";
+    #binding-cells = <1>;
+    display-name = "Toggle Layer On";
+    toggle-mode = "on";
+
+  };
+    
+  unmod: macro_release_mods {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+      = <&lay_off L_MSE &lay_off L_BLE &lay_off L_NUM &lay_off L_FUN>
+      , <&ku LSHFT &ku LCTRL &ku LALT &ku RALT &ku LGUI>
+      ;
+  };
+  
+  // should work both on Ubuntu and MacOSX
+  nxkbly: macro_next_keyboard_layout {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp GLOBE &kp LA(LSHFT)> ;
+  };
+  
+  
+  
+  tap_th: macro_tap_th {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings = <&kp T &kp H> ;
+  };
+  https: macro_https {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp H &kp T &kp T &kp P &kp S &kp COLON &kp SLASH &kp SLASH &kp W &kp W &kp W &kp DOT >;
+  };
+  tap_the: macro_tap_the {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings = <&kp T &kp H &kp E> ;
+  };
+  the_th: behavior_the_th {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&tap_the>, <&tap_th>;
+  };
+  
+  ing: macro_ing {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp I &kp N &kp G>;
+  };
+  ion: macro_ion {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp I &kp O &kp N>;
+  };
+  ion_ing: behavior_ion_ing {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&ion>, <&ing>;
+  };
+  tion: macro_tion {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp T &kp I &kp O &kp N>;
+  };
+  
+  a_grave: macro_a_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp A>;
+  };
+  a_circ: macro_a_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp A>;
+  };
+  a_grave_circ: behavior_a_grave_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&a_circ>, <&a_grave>;
+  };
+  
+  e_acute: macro_e_acute {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_ACU &kp E>;
+  };
+  e_circ: macro_e_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp E>;
+  };
+  e_acute_circ: behavior_e_acute_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&e_circ>, <&e_acute>;
+  };
+  
+  e_grave: macro_e_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp E>;
+  };
+  e_dier: macro_e_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp E>;
+  };
+  e_grave_dier: behavior_e_grave_dier{
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&e_dier>, <&e_grave>;
+  };
+  
+  
+  u_grave: macro_u_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp U>;
+  };
+  u_circ: macro_u_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp U>;
+  };
+  u_grave_circ: behavior_u_grave_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&u_circ>, <&u_grave>;
+  };
+  
+  
+
+  i_circ: macro_i_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp I>;
+  };
+  i_dier: macro_i_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp I>;
+  };  
+  i_circ_dier: behavior_i_circ_dier {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&i_dier>, <&i_circ>;
+  };
+  
+  o_circ: macro_o_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp O>;
+  };
+  u_dier: macro_u_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp U>;
+  };
+  o_circ_u_dier: behavior_o_circ_u_dier {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&u_dier>, <&o_circ>;
+  };
+  
+  hold_esc: behavior_hold_escape {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&unmod>, <&kp>;
+  };
+  
+//   reib: macro_reib {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     wait-ms = <2500>;
+//     bindings = 
+//       // ALT REIB REIB &kp SYSREQ
+//         <&macro_press &kp LSHFT>
+//       , <&macro_tap &kp R &kp E &kp I &kp B>
+//       , <&macro_release &kp LSHFT>
+//     ;
+//     
+//   };
+
+}; };
+// #define SK_TK(key) &togkey_stikey key key   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
+
+
+
+// Tap dance is difficult with fingers 3 & 4, better use mod-taps
+
+
+
+// Combos NUM layer
+// ZMK_COMBO(num_7, &mt DOLLAR N7,    T2 T1, L_NUM)
+// ZMK_COMBO(num_8, &kp N8       , T3 T2   , L_NUM)
+// ZMK_COMBO(num_9, &mt HASH   N9,    B2 B1, L_NUM)
+// ZMK_COMBO(num_0, &mt DEGREE N0, B3 B2   , L_NUM)
+// ZMK_COMBO(num_E, &mt GBP  EURO, T3    T1, L_NUM)
+// ZMK_COMBO(num_Y, &kp YEN      , B3    B1, L_NUM)
+ZMK_COMBO(num_7, &mt DOLLAR N7, __TT, L_NUM)
+ZMK_COMBO(num_8, &kp N8       , _TT_, L_NUM)
+ZMK_COMBO(num_9, &mt HASH   N9, __BB, L_NUM)
+ZMK_COMBO(num_0, &mt DEGREE N0, _BB_  , L_NUM)
+ZMK_COMBO(num_E, &mt GBP  EURO, _T_T, L_NUM)
+ZMK_COMBO(num_Y, &kp YEN      , _B_B, L_NUM)
+// can do combos x4-x3-x2 
+
+
+// Combos NAV+Media layer
+ZMK_COMBO(nav_pgup,  &mt LC(HOME) PG_UP,    T2 T1, L_NAV)
+ZMK_COMBO(nav_pgdn,  &mt LC(END)  PG_DN,    B2 B1, L_NAV)
+ZMK_COMBO(mute_play, &mt K_PP K_MUTE   , T3 T2   , L_NAV)
+
+
+ZMK_TAP_DANCE(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>;  tapping-term-ms = <NAV_TAP_TERM>; )
+ZMK_TAP_DANCE(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>; tapping-term-ms = <NAV_TAP_TERM>; )
+
+
+
+// Combos BLUETOOTH layer
+ZMK_COMBO(layer_bt_select,          &sl L_BLE, T1 B1             T4 B4) // ALL layers
+ZMK_COMBO(bt_clear_current_profile, &bt BT_CLR,       T3 B3 T2 B2      , L_BLE)
+
+
+// Combos L_MSE  Mouse layer
+ZMK_COMBO(lay_mouse, &tog L_MSE,    T3 B2 T1, L_BASE L_MSE)
+ZMK_COMBO(combo_mb3,   &mkp MB3,    T3    T1, L_MSE)
+ZMK_COMBO(combo_mb4,   &mkp MB4,    T3 T2   , L_MSE)
+ZMK_COMBO(combo_mb5,   &mkp MB5,       T2 T1, L_MSE)
+
+
+// Combos L_FUN layer
+// ZMK_COMBO(combo_reib,  &reib, B4 B3 B2   , L_FUN)
+
+// Combos L_PAR layer
+ZMK_COMBO(combo_eq, &mt TILDE EQUAL, T2 T1, L_PAR)
+
+
+// Combos accented layer
+ZMK_COMBO(combo_e_dier, &tap2 D_DRS E, B2 B1, L_ACC)
+// ZMK_COMBO(combo_oe, &mt LS(OELIG) OELIG, B2 B1, L_ACC)
+
+
+
+// Base letter combos ê ç ô â î û ù ï ü ë
+ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
+  bindings = <&lt L_ACC S>, <&kp STAR>, <&kp S_SRP>;)
+
+ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lk L_NUM E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
+
+ZMK_TAP_DANCE(td_A,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
+
+ZMK_TAP_DANCE(td_N,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+
+ZMK_TAP_DANCE(td_I,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_EDT I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
+
+ZMK_TAP_DANCE(td_O,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+
+ZMK_TAP_DANCE(td_T,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
+
+ZMK_TAP_DANCE(td_SP, tapping-term-ms = <TAPDANCE_3_TERM>;  
+  bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+
+ZMK_COMBO(combo_b,  &mt AMPS  B, T4 T3      , L_BASE)
+
+// C_CDL also used for Cyrillic Cha
+ZMK_COMBO(combo_c,  &mt C_CDL C,    T3 T2   , L_BASE)
+ZMK_COMBO(combo_d,  &mt DLLR  D,       T2 T1, L_BASE)
+ZMK_COMBO(combo_h,  &mt HASH  H,       B2 B1, L_BASE)
+ZMK_COMBO(combo_u,  &mt UNDER U,    B3 B2   , L_BASE)
+ZMK_COMBO(combo_g,  &mt GBP   G, B4 B3 B2   , L_BASE)
+
+ZMK_COMBO(combo_r,  &kp       R, B4 B3      , L_BASE)
+// AELIG, OELIG also used for Cyrillic Sha, Shcha
+ZMK_COMBO(combo_k,  &mt AELIG K,    T3    T1, L_BASE)
+ZMK_COMBO(combo_y,  &mt OELIG Y,    B3    B1, L_BASE)
+ZMK_COMBO(combo_j,  &kp       J, T4    T2   , L_BASE)
+ZMK_COMBO(combo_z,  &kp       Z, B4    B2   , L_BASE)
+
+ZMK_COMBO(combo_v,  &mt D_DRS V, T4       T1, L_BASE)
+ZMK_COMBO(combo_x,  &mt D_CRC X, B4       B1, L_BASE)
+
+ZMK_COMBO(combo_p,  &mt PIPE  P, T4 T3    T1, L_BASE)
+ZMK_COMBO(combo_q,  &mt PRCNT Q, B4 B3    B1, L_BASE)
+
+ZMK_COMBO(combo_l,  &mt PLUS  L,    T3 T2 T1, L_BASE L_NUM)
+ZMK_COMBO(combo_m,  &mt MINUS M,    B3 B2 B1, L_BASE L_NUM)
+
+ZMK_COMBO(combo_f,  &lk L_FUN F, T4 T3 T2   , L_BASE)
+ZMK_COMBO(combo_w,  &mt AT    W, T4 T3 T2 T1, L_BASE)
+
+ZMK_COMBO(combo_sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
+
+// Common bigrams, with letters on the same finger, or require combos
+// ZMK_COMBO(combo_st,  &tap2 S T,       B3 T2   , L_BASE)
+// ZMK_COMBO(combo_ed,  &tap2 E D,       T2 T1 B1, L_BASE)
+// ZMK_COMBO(combo_nd,  &tap2 N D, B4    T2 T1   , L_BASE)
+// ZMK_COMBO(combo_he,  &tap2 H E,    B2 T1 B1   , L_BASE)
+// ZMK_COMBO(combo_tion, &tion   , B4 B3 T2      , L_BASE)
+// ZMK_COMBO(combo_th,  &the_th  0 0,    T2 B2 B1, L_BASE)
+// ZMK_COMBO(combo_ing, &ion_ing 0 0, B4 T3 B3   , L_BASE)
+
+
+
+// Base punctuation
+ZMK_COMBO(combo_slash, &mt D_ACU SLASH, B4       T1, L_BASE L_NUM)
+ZMK_COMBO(combo_backs, &mt D_GRV BSLH , T4       B1, L_BASE L_NUM)
+ZMK_COMBO(combo_comma, &mt COLON SEMI ,    T2 B2   , L_BASE L_NUM)
+ZMK_COMBO(combo_colon, &mt DOT COMMA  ,       T1 B1, L_BASE L_NUM)
+ZMK_COMBO(combo_quote, &mt DQT SQT    ,    B3 T3   , L_BASE L_NUM)
+ZMK_COMBO(combo_exclq, &mt QMARK EXCL , B4 T4      , L_BASE L_NUM)
+
+
+// GLOBAL Combos 
+
+ZMK_COMBO(combo_backspace, &mt LC(BSPC) BSPC,       T2 B1, L_BASE L_MSE L_NUM)
+ZMK_COMBO(combo_delete,    &mt LC(DEL)  DEL ,       B2 T1, L_BASE L_MSE L_NUM)
+ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , B4 T3      , ALL_LEFT)
+ZMK_COMBO(combo_tab,       &mt LS(TAB)  TAB , B4 T3 T2   , L_BASE L_MSE L_NUM)
+
+// Hold for sticky RALT (one shot), tap to toggle LALT
+ZMK_COMBO(combo_alt,    &sk_tk RALT LALT   ,   T3 B2 B1, L_BASE L_MSE L_NUM L_FUN)
+// Hold for sticky LGUI (one shot), tap to toggle LCTRL
+ZMK_COMBO(combo_ctrl,   &sk_tk LGUI LCTRL  ,   T3 T2 B1, L_BASE L_MSE L_NUM L_FUN)
+// Hold for CAPS, tap to toggle LSHFT
+ZMK_COMBO(combo_shift,  &kp_kt CAPS LSHFT  ,   T3    B1, L_BASE L_MSE L_NUM L_FUN)
+// Hold for NEXTLAYOUT (Alt+Shift), tap for sticky LSHFT (one-shot)
+ZMK_COMBO(combo_shift1, &nx_sk 0    LSHFT  ,   B3    T1, L_BASE L_MSE L_NUM L_FUN)
+
+
+// FIXME: should this be enabled? Could be on Hold+ESC
+// ZMK_COMBO(combo_unmod,    &unmod,     T4 T3 T2 T1)
+
+
+// ZMK_COMBO(name, bindings, keypos, layers, timeout, prior_idle, extra)
+ZMK_COMBO(combo_reset,   &sys_reset,  0 1 2 3 4 5 6 7)
+ZMK_COMBO(combo_reflash, &bootloader, B4 B3 B2 B1 T1, ALL_LEFT)
+
+
+// TODO: keymap for see keys marked TODO and MAYBE 
+//    HOLD: escape, unmod, T, J, K, Y, Z, YEN
+//    MEH key
+//    SPACE is most used, but often pinky errors
+// Most used keyboard shortcuts Alt+Tab
+// the most common letter pairs as " AN RE ER IN ON AT ES EN +OF TE OR TI +HI AS TO"
+// 
+// Unused combos that are relatively easy
+// 
+// T3 B2, B3 B2 T1, B3 T2 B1, 
+// 
+// Pinky+Ring: T4 T3 B2, T4 T3 B2 B1, T4 T3 T2 B1,
+//             B4 B3 T2, B4 B3 T1, B4 B3 B2 T1
+// 
+// Pinky T4, maybe: T4 B3, T4 B2, T4 B2 B1, T4 B3 B2 B1
+// Pinky B4, maybe: B4 T3 T2 T1, B4 T3 T2 B1
+// 
+// T4 B3 B2 T1, B4 T3 T2 T1
+// 
+// Change layout from LEFT to RIGHT hand
+// T4 T3 B4 B3, T2 T1 B2 B1
+
+
+
+/ { keymap { compatible = "zmk,keymap";
+  left {
+    display-name = "LEFT";  
+    // tap-dance doesn't work with layer-hold
+    // unless we use non-momentary layers?
+    bindings = <
+      &td_S   &td_I   &td_T    &td_A
+      &td_N   &td_O   &td_SP   &td_E
+    >;
+  };
+  numbers {
+    display-name = "L_NUM";
+    bindings = <
+      &lay_off L_NUM  &lt L_EDT N3   &mt SUP2 N2    &mt DOT   N1
+      &lt L_NAV   N0  &lt L_PAR N6   &mt STAR N5    &mt COMMA N4
+    >;
+  };
+  parentheses {
+    display-name = "L_PAR";
+    bindings = <
+      TODO               MAYBE       &mt RBRC LBRC   &mt RPAR LPAR
+      &mt TILDE EQUAL    &mo L_PAR   &mt GT   LT     &mt RBKT LBKT
+    >;
+  };
+  
+  navmedia {
+    display-name = "L_NAV";
+    bindings = <                      
+      &kp PRINTSCREEN  &mt K_PREV K_VOL_DN  &mt K_NEXT K_VOL_UP   &kp UP   
+      &mo L_NAV         &left_home           &right_end           &kp DOWN 
+    >;
+  };
+  accented { 
+    // French freq: é è à; rarer than Z: ê ç ô â î û ù ï ü ë
+    // Also dead `´¨^ available on hold-/\VX if needed for other letters
+    display-name = "L_ACC";
+    bindings = <
+      &mo L_ACC  &i_circ_dier   0 0  &u_grave_circ 0 0   &a_grave_circ 0 0
+      &none      &o_circ_u_dier 0 0  &e_grave_dier 0 0   &e_acute_circ 0 0
+    >;
+  };
+  editing {
+    display-name = "L_EDT";
+    bindings = <
+      &kp INS  &mo L_EDT  &mt CLIPPASTE2 CLIPPASTE  &mt CLIPCUT CLIPCOPY
+      TODO     &none      &mt SAVEAS     SAVE       &mt U_REDO  U_UNDO
+    >;
+  };
+  
+  functionkeys {
+    display-name = "L_FUN";
+    bindings = <
+      &lay_off L_FUN  &mt F2 F1    &mt F4  F3    &mt F6  F5
+      TODO            &mt F8 F7    &mt F10 F9    &mt F12 F11
+    >;
+  };
+  mouse {
+    display-name = "L_MOUSE";
+    bindings = <
+     &msc SCRL_UP    &mkp MB2       &mmv MOVE_UP   &mkp MB1
+     &msc SCRL_DOWN  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT
+    >;
+  };
+  
+  bluetooth {
+    display-name = "L_BLE";
+    bindings = <
+      &out OUT_BLE   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+      &out OUT_USB   &bt BT_SEL 5  &bt BT_SEL 4  &bt BT_SEL 3
+    >;
+  };
+  
+
+}; };
+
+
