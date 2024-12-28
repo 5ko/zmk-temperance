@@ -134,7 +134,9 @@
   https: macro_https {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&kp H &kp T &kp T &kp P &kp S &kp COLON &kp SLASH &kp SLASH &kp W &kp W &kp W &kp DOT >;
+    bindings = <&kp H &kp T &kp T &kp P &kp S 
+      &kp COLON &kp SLASH &kp SLASH &kp W &kp W &kp W &kp DOT 
+      >;
   };
   tap_the: macro_tap_the {
     compatible = "zmk,behavior-macro";

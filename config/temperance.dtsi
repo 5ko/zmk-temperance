@@ -100,6 +100,7 @@
   };
   accented { 
     // French freq: é è à; rarer than Z: ê ç ô â î û ù ï ü ë
+    // Also available on tap-dances for A, E, I, O, U (on T)
     // Also dead `´¨^ available on hold-/\VX if needed for other letters
     display-name = "L_ACC";
     bindings = <
