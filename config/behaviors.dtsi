@@ -1,0 +1,313 @@
+/*
+ * Copyright (c) 2024 Petko Yotov pmwiki.org/petko
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ { behaviors {
+  mtz: behavior_mod_tap_zero {
+    // 
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <10>;
+//     quick-tap-ms = <200>;
+//     require-prior-idle-ms = <125>;
+    bindings = <&kp>, <&kp>;
+  };
+  
+  sk_tk: behavior_sk_tk { 
+    // sk LGUI, kt LCTRL
+    // sk RALT, kt LALT
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&sk>, <&kt>;
+  };
+  
+  // kp_kt CAPS LSHFT
+  kp_kt: behavior_sk_tog2 { 
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&kp>, <&kt>;
+  };
+  
+  // nxkbly, sk LSHFT
+  nx_sk: behavior_sk_tog3 {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&nxkbly>, <&sk>;
+  };
+  
+  
+  
+  
+  tap2: macro_tap_2 {
+    compatible = "zmk,behavior-macro-two-param";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <2>;
+    bindings
+      = <&macro_param_1to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      , <&macro_param_2to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      ;
+  };
+  
+  
+  caps_tog: behavior_caps_tog {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&caps_word>, <&kp>;
+  };
+  
+  lk: behavior_layon_key {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_LAYER_TERM>;
+    bindings = <&lay_on>, <&kp>;
+  };
+  
+  kd: behavior_keydown {
+    compatible = "zmk,behavior-key-toggle";
+    #binding-cells = <1>;
+    display-name = "Key Toggle On";
+    toggle-mode = "on";
+  };
+
+  ku: behavior_keyup {
+    compatible = "zmk,behavior-key-toggle";
+    #binding-cells = <1>;
+    display-name = "Key Toggle Off";
+    toggle-mode = "off";
+  };
+  
+  lay_off: behavior_layer_off {
+    compatible = "zmk,behavior-toggle-layer";
+    #binding-cells = <1>;
+    display-name = "Toggle Layer Off";
+    toggle-mode = "off";
+
+  };
+  lay_on: behavior_layer_om {
+    compatible = "zmk,behavior-toggle-layer";
+    #binding-cells = <1>;
+    display-name = "Toggle Layer On";
+    toggle-mode = "on";
+
+  };
+    
+  unmod: macro_release_mods {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+      = <&lay_off L_MSE &lay_off L_BLE &lay_off L_NUM &lay_off L_FUN>
+      , <&ku LSHFT &ku LCTRL &ku LALT &ku RALT &ku LGUI>
+      ;
+  };
+  
+  // should work both on Ubuntu and MacOSX
+  nxkbly: macro_next_keyboard_layout {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp GLOBE &kp LA(LSHFT)> ;
+  };
+  
+  
+  
+  tap_th: macro_tap_th {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings = <&kp T &kp H> ;
+  };
+  https: macro_https {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp H &kp T &kp T &kp P &kp S &kp COLON &kp SLASH &kp SLASH &kp W &kp W &kp W &kp DOT >;
+  };
+  tap_the: macro_tap_the {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings = <&kp T &kp H &kp E> ;
+  };
+  the_th: behavior_the_th {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&tap_the>, <&tap_th>;
+  };
+  
+  ing: macro_ing {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp I &kp N &kp G>;
+  };
+  ion: macro_ion {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp I &kp O &kp N>;
+  };
+  ion_ing: behavior_ion_ing {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&ion>, <&ing>;
+  };
+  tion: macro_tion {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp T &kp I &kp O &kp N>;
+  };
+  
+  a_grave: macro_a_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp A>;
+  };
+  a_circ: macro_a_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp A>;
+  };
+  a_grave_circ: behavior_a_grave_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&a_circ>, <&a_grave>;
+  };
+  
+  e_acute: macro_e_acute {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_ACU &kp E>;
+  };
+  e_circ: macro_e_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp E>;
+  };
+  e_acute_circ: behavior_e_acute_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&e_circ>, <&e_acute>;
+  };
+  
+  e_grave: macro_e_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp E>;
+  };
+  e_dier: macro_e_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp E>;
+  };
+  e_grave_dier: behavior_e_grave_dier{
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&e_dier>, <&e_grave>;
+  };
+  
+  
+  u_grave: macro_u_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV &kp U>;
+  };
+  u_circ: macro_u_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp U>;
+  };
+  u_grave_circ: behavior_u_grave_circ {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&u_circ>, <&u_grave>;
+  };
+  
+  
+
+  i_circ: macro_i_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp I>;
+  };
+  i_dier: macro_i_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp I>;
+  };  
+  i_circ_dier: behavior_i_circ_dier {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&i_dier>, <&i_circ>;
+  };
+  
+  o_circ: macro_o_circ {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_CRC &kp O>;
+  };
+  u_dier: macro_u_dier {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp D_DRS &kp U>;
+  };
+  o_circ_u_dier: behavior_o_circ_u_dier {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&u_dier>, <&o_circ>;
+  };
+  
+  hold_esc: behavior_hold_escape {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&unmod>, <&kp>;
+  };
+  
+//   reib: macro_reib {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     wait-ms = <2500>;
+//     bindings = 
+//       // ALT REIB REIB &kp SYSREQ
+//         <&macro_press &kp LSHFT>
+//       , <&macro_tap &kp R &kp E &kp I &kp B>
+//       , <&macro_release &kp LSHFT>
+//     ;
+//     
+//   };
+
+}; };
+
+
+// #define SK_TK(key) &togkey_stikey key key   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+

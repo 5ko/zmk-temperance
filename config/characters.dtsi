@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2024 Petko Yotov pmwiki.org/petko
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+ 
+ 
+// International characters and dead accents from the XKB layout
+// "English (US, intl., with AltGr dead keys)":
+#define SUP2 RA(N2)
+// dead grave
+#define D_GRV RA(GRAVE)
+// dead acute
+#define D_ACU RA(SQT)
+// dead diaeresis
+#define D_DRS RA(DQT)
+// dead circumflex
+#define D_CRC RA(N6)
+// dead tilde
+#define D_TLD RA(TILDE)
+
+#define NTILDE RA(N)
+#define DEGREE RA(COLON)
+#define C_CDL  RA(COMMA)
+#define S_SRP  RA(S)
+#define OELIG  RA(X)
+#define AELIG  RA(Z)
+#define EURO   RA(N5)
+#define GBP    RA(DOLLAR)
+#define YEN    RA(MINUS)
+
+// edit shortcuts
+// C_AC_UNDO/K_UNDO and K_REDO work in LibreOffice 
+// but not in Kate/Gedit/Firefox
+#define CLIPCOPY   LC(INS)
+#define CLIPCUT    LS(DEL)
+#define CLIPPASTE  LS(INS)
+#define CLIPPASTE2 LC(LS(V))
+#define SAVE       LC(S)
+#define SAVEAS     LC(LS(S)) 
+#define U_UNDO     LC(Z)
+#define U_REDO     LC(LS(Z))
+

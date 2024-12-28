@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2024 Petko Yotov pmwiki.org/petko
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+ 
+
+// Delay for combo
+#undef COMBO_TERM
+#define COMBO_TERM 175
+
+#define NAV_TAP_TERM 300
+#define TAPDANCE_2_TERM 250
+#define TAPDANCE_3_TERM 350
+#define HOLDTAP_TERM 150
+#define HOLDTAP_LAYER_TERM 250
+#define TIMEOUT_STICKY_LEADER_KEY  5000
+
+&sk {
+  release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
+  quick-release;
+};
+&sl { 
+  release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
+};
+&mt {
+  tapping-term-ms = <HOLDTAP_TERM>;
+};
+&lt {
+  tapping-term-ms = <HOLDTAP_LAYER_TERM>;
+};
