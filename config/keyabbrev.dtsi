@@ -242,6 +242,10 @@
 #define XBXT    T4 B4 B3 T2 B2 T1
 #define XBXB    T4 B4 B3 T2 B2 B1
 #define XBXX    T4 B4 B3 T2 B2 T1 B1
+#define X___    T4 B4
+#define _X__    T3 B3
+#define __X_    T2 B2
+#define ___X    T1 B1
 #define XX__    T4 B4 T3 B3
 #define XX_T    T4 B4 T3 B3 T1
 #define XX_B    T4 B4 T3 B3 B1
