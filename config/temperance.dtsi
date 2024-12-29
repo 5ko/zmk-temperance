@@ -28,7 +28,7 @@
 #define T3 1
 #define T2 2
 #define T1 3
-// Bottom row NO E 
+// Bottom row NO E
 #define B4 4
 #define B3 5
 #define B2 6
@@ -60,29 +60,35 @@
 #include "combos.dtsi"
 
 
-// TODO: keymap for see keys marked TODO and MAYBE 
+// TODO: keymap for see keys marked TODO and MAYBE
 //    HOLD: J, K, Y, Z, YEN
 //    MEH key
+//    Layers: Hold-S, Hold-A
 
 
-#define TODO       &none
-#define MAYBE      &none
+#define TODO      &none
+#define MAYBE     &none
+#define MT_SAVE   &mt SAVEAS SAVE
+#define MT_COPY   &mt CCUT CCOPY
+#define MT_PASTE  &mt CCUT CCOPY
+#define MT_UNDO   &mt U_REDO  U_UNDO
+
 
 / { keymap { compatible = "zmk,keymap";
   left {
-    display-name = "LEFT";  
+    display-name = "LEFT";
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_S   &td_T    &td_O   &td_A
-      &td_N   &td_SP   &td_I   &td_E
+      &td_N  &td_I  &td_T   &td_E
+      &td_S  &td_O  &td_SP  &td_A
     >;
   };
   numbers {
     display-name = "L_NUM";
     bindings = <
-      &mo L_PAR       &kp N3  &mt SUP2 N2  &mt DOT   N1
-      &lt L_NAV   N0  &kp N6  &mt STAR N5  &lt L_EDT N4
+      &mo L_NAV    &kp N3        &mt SUP2  N2  &mt DOT   N1
+      &mt STAR N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
     >;
   };
   parentheses {
@@ -92,37 +98,36 @@
       &mt TILDE EQUAL    &mo L_PAR   &mt GT   LT     &mt RBKT LBKT
     >;
   };
-  
+
   navmedia {
     display-name = "L_NAV";
-    bindings = <                      
-      &kp PRINTSCREEN  &mt K_PREV K_VOL_DN  &mt K_NEXT K_VOL_UP   &kp UP   
-      &mo L_NAV        &left_home           &right_end            &kp DOWN 
+    bindings = <
+      &mo L_NAV        &left_home           &right_end           &kp UP
+      &kp PRINTSCREEN  &mt K_PREV K_VOL_DN  &mt K_NEXT K_VOL_UP  &kp DOWN
     >;
   };
-  accented { 
+  accented {
     // French freq: é è à; rarer than Z: ê ç ô â î û ù ï ü ë
     // Also available on tap-dances for A, E, I, O, U (on T)
     // Also dead `´¨^ available on hold-/\VX if needed for other letters
     display-name = "L_ACC";
     bindings = <
-      &mo L_ACC  &i_circ_dier   0 0  &u_grave_circ 0 0   &a_grave_circ 0 0
-      &none      &o_circ_u_dier 0 0  &e_grave_dier 0 0   &e_acute_circ 0 0
+      &i_circ_dier   0 0  &u_grave_circ 0 0   &a_grave_circ 0 0  &mo L_ACC
+      &o_circ_u_dier 0 0  &e_grave_dier 0 0   &e_acute_circ 0 0  &none
     >;
   };
   editing {
     display-name = "L_EDT";
     bindings = <
-      &mt SAVEAS SAVE  &mt CPASTE2 CPASTE  &mt CCUT CCOPY     &kp INS
-      TODO             TODO                &mt U_REDO  U_UNDO &mo L_EDT
+      MT_SAVE   MT_PASTE   MT_COPY   &mo L_EDT
+      TODO      TODO       MT_UNDO   &kp INS
     >;
   };
-  
   functionkeys {
     display-name = "L_FUN";
     bindings = <
-      &lay_off L_FUN  &mt F2 F1    &mt F4  F3    &mt F6  F5
-      TODO            &mt F8 F7    &mt F10 F9    &mt F12 F11
+      TODO   &mt F2 F1   &mt F4  F3   &mt F6  F5
+      TODO   &mt F8 F7   &mt F10 F9   &mt F12 F11
     >;
   };
   mouse {
@@ -132,7 +137,7 @@
      &msc SCRL_DOWN  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT
     >;
   };
-  
+
   bluetooth {
     display-name = "L_BLE";
     bindings = <
@@ -140,7 +145,7 @@
       &out OUT_USB   &bt BT_SEL 5  &bt BT_SEL 4  &bt BT_SEL 3
     >;
   };
-  
+
 
 }; };
 
