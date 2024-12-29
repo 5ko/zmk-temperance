@@ -69,15 +69,15 @@
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_S   &td_I   &td_T    &td_A
-      &td_N   &td_O   &td_SP   &td_E
+      &td_S   &td_T    &td_O   &td_A
+      &td_N   &td_SP   &td_I   &td_E
     >;
   };
   numbers {
     display-name = "L_NUM";
     bindings = <
-      &lay_off L_NUM  &lt L_EDT N3   &mt SUP2 N2    &mt DOT   N1
-      &lt L_NAV   N0  &lt L_PAR N6   &mt STAR N5    &mt COMMA N4
+      &lay_off L_NUM  &lt L_EDT N3  &mt SUP2 N2  &mt DOT   N1
+      &lt L_NAV   N0  &lt L_PAR N6  &mt STAR N5  &mt COMMA N4
     >;
   };
   parentheses {
