@@ -169,8 +169,7 @@ ZMK_COMBO(combo_colon, &mt DOT COMMA  , ___X, L_BASE L_NUM)
 // GLOBAL Combos 
 ZMK_COMBO(combo_backspace, &mt LC(BSPC) BSPC, __TB, L_BASE L_MSE L_NUM)
 ZMK_COMBO(combo_delete,    &mt LC(DEL)  DEL , __BT, L_BASE L_MSE L_NUM)
-// ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , BT__ , ALL_LEFT)
-ZMK_COMBO(combo_escape,    &mt &unmod 0  ESC, BT__ , ALL_LEFT)
+ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , BT__ , ALL_LEFT)
 ZMK_COMBO(combo_tab,       &mt LS(TAB)  TAB , BTT_ , L_BASE L_MSE L_NUM)
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
@@ -178,10 +177,11 @@ ZMK_COMBO(combo_alt,    &sk_tk RALT LALT   , _TBB, L_BASE L_MSE L_NUM L_FUN)
 // Hold for sticky LGUI (one shot), tap to toggle LCTRL
 ZMK_COMBO(combo_ctrl,   &sk_tk LGUI LCTRL  , _TTB, L_BASE L_MSE L_NUM L_FUN)
 // Hold for CAPS, tap to toggle LSHFT
-ZMK_COMBO(combo_shift,  &kp_kt CAPS LSHFT  , _T_B, L_BASE L_MSE L_NUM L_FUN)
-// Hold for NEXTLAYOUT (Alt+Shift), tap for sticky LSHFT (one-shot)
-ZMK_COMBO(combo_shift1, &nx_sk 0    LSHFT  , _B_T, L_BASE L_MSE L_NUM L_FUN)
-
+// ZMK_COMBO(combo_shift,  &kp_kt CAPS LSHFT  , _T_B, L_BASE L_MSE L_NUM L_FUN)
+// Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
+ZMK_COMBO(combo_shift,  &nx_kp 0 CAPS      , _T_B, L_BASE L_MSE L_NUM L_FUN)
+// Hold for Shift hold, tap for one-shot Shift
+ZMK_COMBO(combo_shift1, &sk_tk LSHFT LSHFT, _B_T, L_BASE L_MSE L_NUM L_FUN)
 
 
 // ZMK_COMBO(name, bindings, keypos, layers, timeout, prior_idle, extra)
