@@ -5,8 +5,9 @@
  */
 
 // NS() = NO Shift is needed for punctuation and dead accents
-#define NS(keycode) STRIP_MODS(MOD_LSFT, keycode)
- 
+#define NS(keycode) (keycode & ~((MOD_LSFT) << 24))
+
+
 // International characters and dead accents from the XKB layout
 // "English (US, intl., with AltGr dead keys)":
 #define SUP2 RA(N2)
