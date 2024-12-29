@@ -29,46 +29,39 @@
   tapping-term-ms = <NAV_TAP_TERM>; __VA_ARGS__)
 
 #define TD_3(name, ...) ZMK_TAP_DANCE(name, \
-  tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__)
+  tapping-term-ms = <TAPDANCE_3_TERM>; bindings = __VA_ARGS__)
 
+
+#define TD_3a(name, ...) ZMK_TAP_DANCE(name, \
+  tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__;)
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
-ZMK_TAP_DANCE(left_home,  tapping-term-ms = <NAV_TAP_TERM>;
-              bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>;  )
-ZMK_TAP_DANCE(right_end, tapping-term-ms = <NAV_TAP_TERM>;
-              bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;  )
+TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
+TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 
 // Home keys config
-TD_3(td_S1, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
+TD_3a(td_S1, <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>)
 
-ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
-  bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
+TD_3(td_S, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
 
-ZMK_TAP_DANCE(td_T,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
+TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
 
-ZMK_TAP_DANCE(td_O,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
 
-ZMK_TAP_DANCE(td_A,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
+TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 //   bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 
 
-ZMK_TAP_DANCE(td_I,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
+TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
 
-ZMK_TAP_DANCE(td_N,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
 
-ZMK_TAP_DANCE(td_SP, tapping-term-ms = <TAPDANCE_3_TERM>;  
-  bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
 
-ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
+TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
 
 
 
