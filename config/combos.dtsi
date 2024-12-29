@@ -93,13 +93,13 @@ ZMK_COMBO(layoff_bt, &lay_off L_BLE, TT__ , L_BLE)
 
 
 // Combos L_MSE  Mouse layer
-ZMK_COMBO(layoff_mse, &lay_off L_MSE, TT__ , L_MSE)
-ZMK_COMBO(lay_mouse, &tog L_MSE              , _TBT, L_BASE L_MSE)
-ZMK_COMBO(combo_mb3,   &mkp MB3              , _T_T, L_MSE)
-ZMK_COMBO(combo_mb4,   &mkp MB4              , _TT_, L_MSE)
-ZMK_COMBO(combo_mb5,   &mkp MB5              , __TT, L_MSE)
-ZMK_COMBO(combo_scroll_left,  &msc SCRL_LEFT , X___, L_MSE)
-ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, ___X, L_MSE)
+ZMK_COMBO(layoff_mse, &lay_off L_MSE, TT__, L_MSE)
+ZMK_COMBO(lay_mouse, &tog L_MSE     , _TBT, L_BASE L_MSE)
+ZMK_COMBO(combo_mb3, M_B3           , _T_T, L_MSE)
+ZMK_COMBO(combo_mb4, M_B4           , _TT_, L_MSE)
+ZMK_COMBO(combo_mb5, M_B5           , __TT, L_MSE)
+ZMK_COMBO(combo_scl, M_SL           , X___, L_MSE)
+ZMK_COMBO(combo_scr, M_SR           , ___X, L_MSE)
 
 
 // Combos L_FUN layer

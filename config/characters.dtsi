@@ -38,3 +38,30 @@
 #define U_UNDO  LC(Z)
 #define U_REDO  LC(LS(Z))
 
+
+// These are used in keymaps, defined here for better lisibility
+#define TODO      &none
+#define MAYBE     &none
+// editing
+#define E_SAVE   &mt SAVEAS SAVE
+#define E_COPY   &mt CCUT CCOPY
+#define E_PASTE  &mt CCUT CCOPY
+#define E_UNDO   &mt U_REDO  U_UNDO
+// multimedia
+#define MM_VU    &mt K_NEXT K_VOL_UP
+#define MM_VD    &mt K_NEXT K_VOL_UP
+#define MM_PS    &kp PRINTSCREEN
+// mouse
+#define M_MU     &mmv MOVE_UP
+#define M_MD     &mmv MOVE_DOWN
+#define M_ML     &mmv MOVE_LEFT
+#define M_MR     &mmv MOVE_RIGHT
+#define M_SU     &msc SCRL_UP
+#define M_SD     &msc SCRL_DOWN
+#define M_SL     &msc SCRL_LEFT
+#define M_SR     &msc SCRL_RIGHT
+#define M_B1     &mkp MB1
+#define M_B2     &mkp MB2
+#define M_B3     &mkp MB3
+#define M_B4     &mkp MB4
+#define M_B5     &mkp MB5

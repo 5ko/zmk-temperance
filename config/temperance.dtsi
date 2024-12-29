@@ -17,11 +17,6 @@
 #define HOST_OS 1
 #include "zmk-helpers/helper.h"
 
-#include "keyabbrev.dtsi"
-#include "characters.dtsi"
-
-
-
 
 // Top row SITA
 #define T4 0
@@ -48,13 +43,9 @@
 
 #define ALL_LEFT L_BASE L_MSE L_BLE L_NUM L_FUN
 
-#define NS(name, keycode) ZMK_MOD_MORPH(name, \
-  bindings = <&kp keycode>, <&kp keycode>;\
-  keep-mods = <(MOD_RALT)>;\
-  mods = <(MOD_RALT|MOD_LSFT|MOD_RSFT)>;)
 
-
-
+#include "keyabbrev.dtsi"
+#include "characters.dtsi"
 #include "timeouts.dtsi"
 #include "behaviors.dtsi"
 #include "combos.dtsi"
@@ -63,16 +54,9 @@
 // TODO: keymap for see keys marked TODO and MAYBE
 //    HOLD: J, K, Y, Z, YEN
 //    MEH key
-//    Layers: Hold-S, Hold-A
+//    Layers: Hold-S, Hold-A (accents can be removed)
 
-
-#define TODO      &none
-#define MAYBE     &none
-#define MT_SAVE   &mt SAVEAS SAVE
-#define MT_COPY   &mt CCUT CCOPY
-#define MT_PASTE  &mt CCUT CCOPY
-#define MT_UNDO   &mt U_REDO  U_UNDO
-
+         
 
 / { keymap { compatible = "zmk,keymap";
   left {
@@ -102,8 +86,8 @@
   navmedia {
     display-name = "L_NAV";
     bindings = <
-      &mo L_NAV        &left_home           &right_end           &kp UP
-      &kp PRINTSCREEN  &mt K_PREV K_VOL_DN  &mt K_NEXT K_VOL_UP  &kp DOWN
+      &mo L_NAV  &left_home  &right_end  &kp UP
+      MM_PS      MM_VD       MM_VU       &kp DOWN
     >;
   };
   accented {
@@ -119,8 +103,8 @@
   editing {
     display-name = "L_EDT";
     bindings = <
-      MT_SAVE   MT_PASTE   MT_COPY   &mo L_EDT
-      TODO      TODO       MT_UNDO   &kp INS
+      E_SAVE   E_PASTE   E_COPY   &mo L_EDT
+      TODO     TODO      E_UNDO   &kp INS
     >;
   };
   functionkeys {
@@ -133,8 +117,8 @@
   mouse {
     display-name = "L_MOUSE";
     bindings = <
-     &msc SCRL_UP    &mkp MB2       &mmv MOVE_UP   &mkp MB1
-     &msc SCRL_DOWN  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT
+     M_SU   M_B2   M_MU   M_B1
+     M_SD   M_ML   M_MD   M_MR
     >;
   };
 
