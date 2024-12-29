@@ -42,7 +42,3 @@
 #define U_UNDO     LC(Z)
 #define U_REDO     LC(LS(Z))
 
-
-#if !defined MYKEY1
-#define MYKEY1 B
-#endif
