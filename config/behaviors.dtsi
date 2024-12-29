@@ -35,6 +35,17 @@
     bindings = <&kp>, <&kt>;
   };
   
+  // nxkbly, kp CAPS
+  nx_kp: behavior_nx_kp {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <HOLDTAP_TERM>;
+    bindings = <&nxkbly>, <&kp>;
+  };
+  
+  
+  
   // nxkbly, sk LSHFT
   nx_sk: behavior_sk_tog3 {
     compatible = "zmk,behavior-hold-tap";
@@ -318,5 +329,6 @@
 }; };
 
 
-// #define SK_TK(key) &togkey_stikey key key   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+// Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+#define SK_TK(key) &sk_tk key key
 
