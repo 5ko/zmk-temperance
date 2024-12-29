@@ -295,10 +295,10 @@
     bindings = <&unmod>, <&kp>;
   };
   
-  no_shift: behavior_no_shift {
+  ns_grave: behavior_ns_grave {
     compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <2>;
-    bindings = <&kp>, <&kp>;
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV>, <&kp D_GRV>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
   };
   
@@ -322,5 +322,5 @@
 
 
 // NS() = NO Shift is needed for punctuation and dead accents
-#define NS(keycode) &no_shift keycode keycode
+// #define NS(keycode) &no_shift keycode keycode
 
