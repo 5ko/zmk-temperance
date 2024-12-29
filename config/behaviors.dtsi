@@ -320,7 +320,3 @@
 
 // #define SK_TK(key) &togkey_stikey key key   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
-
-// NS() = NO Shift is needed for punctuation and dead accents
-// #define NS(keycode) &no_shift keycode keycode
-

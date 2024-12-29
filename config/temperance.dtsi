@@ -48,11 +48,14 @@
 
 #define ALL_LEFT L_BASE L_MSE L_BLE L_NUM L_FUN
 
+#define NS(name, keycode) ZMK_MOD_MORPH(name, \
+  bindings = <&kp keycode>, <&kp keycode>;\
+  mods = <(MOD_LSFT|MOD_RSFT)>;)
+
 
 #include "timeouts.dtsi"
 #include "behaviors.dtsi"
 #include "combos.dtsi"
-
 
 
 // TODO: keymap for see keys marked TODO and MAYBE 
