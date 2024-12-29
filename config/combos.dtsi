@@ -28,10 +28,8 @@
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
-ZMK_TAP_DANCE(left_home, tapping-term-ms = <NAV_TAP_TERM>; 
-  bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>;  )
-ZMK_TAP_DANCE(right_end, tapping-term-ms = <NAV_TAP_TERM>; 
-  bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>; )
+ZMK_TAP_DANCE(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>;  tapping-term-ms = <NAV_TAP_TERM>; )
+ZMK_TAP_DANCE(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>; tapping-term-ms = <NAV_TAP_TERM>; )
 
 
 
