@@ -9,16 +9,13 @@
 // International characters and dead accents from the XKB layout
 // "English (US, intl., with AltGr dead keys)":
 #define SUP2 RA(N2)
-// dead grave
-#define D_GRV RA(GRAVE)
-// dead acute
-#define D_ACU RA(SQT)
-// dead diaeresis
-#define D_DRS RA(DQT)
-// dead circumflex
-#define D_CRC RA(N6)
-// dead tilde
-#define D_TLD RA(TILDE)
+
+// dead accents: grave, acute, diaeresis, circumflex, tilde
+#define D_GRV  RA(GRAVE)
+#define D_ACU  RA(SQT)
+#define D_DRS  RA(DQT)
+#define D_CRC  RA(N6)
+#define D_TLD  RA(TILDE)
 
 #define NTILDE RA(N)
 #define DEGREE RA(COLON)
@@ -33,12 +30,12 @@
 // edit shortcuts
 // C_AC_UNDO/K_UNDO and K_REDO work in LibreOffice 
 // but not in Kate/Gedit/Firefox
-#define CLIPCOPY   LC(INS)
-#define CLIPCUT    LS(DEL)
-#define CLIPPASTE  LS(INS)
-#define CLIPPASTE2 LC(LS(V))
-#define SAVE       LC(S)
-#define SAVEAS     LC(LS(S)) 
-#define U_UNDO     LC(Z)
-#define U_REDO     LC(LS(Z))
+#define CCOPY   LC(INS)
+#define CCUT    LS(DEL)
+#define CPASTE  LS(INS)
+#define CPASTE2 LC(LS(V))
+#define SAVE    LC(S)
+#define SAVEAS  LC(LS(S)) 
+#define U_UNDO  LC(Z)
+#define U_REDO  LC(LS(Z))
 

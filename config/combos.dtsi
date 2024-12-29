@@ -66,6 +66,7 @@ ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
 
 
 // Combos NUM layer
+ZMK_COMBO(layoff_num, &lay_off L_NUM, TT__ , L_NUM)
 ZMK_COMBO(num_7, &mt DOLLAR N7,  __TT,  L_NUM)
 ZMK_COMBO(num_8, &kp N8       ,  _TT_,  L_NUM)
 ZMK_COMBO(num_9, &mt HASH   N9,  __BB,  L_NUM)
@@ -86,9 +87,11 @@ ZMK_COMBO(mute_play, &mt K_PP K_MUTE   ,  _TT_, L_NAV)
 // Combos BLUETOOTH layer
 ZMK_COMBO(layer_bt_select,          &sl L_BLE,  X__X) // ALL layers
 ZMK_COMBO(bt_clear_current_profile, &bt BT_CLR, _XX_, L_BLE)
+ZMK_COMBO(layoff_bt, &lay_off L_BLE, TT__ , L_BLE)
 
 
 // Combos L_MSE  Mouse layer
+ZMK_COMBO(layoff_mse, &lay_off L_MSE, TT__ , L_MSE)
 ZMK_COMBO(lay_mouse, &tog L_MSE              , _TBT, L_BASE L_MSE)
 ZMK_COMBO(combo_mb3,   &mkp MB3              , _T_T, L_MSE)
 ZMK_COMBO(combo_mb4,   &mkp MB4              , _TT_, L_MSE)
@@ -98,7 +101,7 @@ ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, ___X, L_MSE)
 
 
 // Combos L_FUN layer
-// n/a
+ZMK_COMBO(layoff_fun, &lay_off L_FUN, TT__ , L_FUN)
 
 // Combos L_PAR layer
 ZMK_COMBO(combo_eq, &mt TILDE EQUAL, __TT, L_PAR)
@@ -119,21 +122,21 @@ ZMK_COMBO(combo_g,  &mt GBP   G, BBB_ , L_BASE)
 
 ZMK_COMBO(combo_r,  &kp       R, BB__ , L_BASE)
 ZMK_COMBO(combo_j,  &kp       J, T_T_ , L_BASE)
-ZMK_COMBO(combo_k,  &mt AELIG K, _T_T, L_BASE) // AELIG = Cyrillic Sha
-ZMK_COMBO(combo_y,  &mt OELIG Y, _B_B, L_BASE) // OELIG = Cyrillic Shcha
+ZMK_COMBO(combo_k,  &mt AELIG K, _T_T , L_BASE) // AELIG = Cyrillic Sha
+ZMK_COMBO(combo_y,  &mt OELIG Y, _B_B , L_BASE) // OELIG = Cyrillic Shcha
 ZMK_COMBO(combo_z,  &kp       Z, B_B_ , L_BASE)
 
-ZMK_COMBO(combo_v,  &mt D_DRS V, T__T, L_BASE)
-ZMK_COMBO(combo_x,  &mt D_CRC X, B__B, L_BASE)
+ZMK_COMBO(combo_v,  &mt D_DRS V, T__T , L_BASE)
+ZMK_COMBO(combo_x,  &mt D_CRC X, B__B , L_BASE)
 
-ZMK_COMBO(combo_p,  &mt PIPE  P, TT_T, L_BASE)
-ZMK_COMBO(combo_q,  &mt PRCNT Q, BB_B, L_BASE)
+ZMK_COMBO(combo_p,  &mt PIPE  P, TT_T , L_BASE)
+ZMK_COMBO(combo_q,  &mt PRCNT Q, BB_B , L_BASE)
 
-ZMK_COMBO(combo_l,  &mt PLUS  L, _TTT, L_BASE L_NUM)
-ZMK_COMBO(combo_m,  &mt MINUS M, _BBB, L_BASE L_NUM)
+ZMK_COMBO(combo_l,  &mt PLUS  L, _TTT , L_BASE L_NUM)
+ZMK_COMBO(combo_m,  &mt MINUS M, _BBB , L_BASE L_NUM)
 
 ZMK_COMBO(combo_f,  &lk L_FUN F, TTT_ , L_BASE)
-ZMK_COMBO(combo_w,  &mt AT    W, TTTT, L_BASE)
+ZMK_COMBO(combo_w,  &mt AT    W, TTTT , L_BASE)
 
 // ZMK_COMBO(combo_sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
 
@@ -151,10 +154,10 @@ ZMK_COMBO(combo_w,  &mt AT    W, TTTT, L_BASE)
 // Base punctuation
 ZMK_COMBO(combo_slash, &mt D_ACU SLASH, B__T, L_BASE L_NUM)
 ZMK_COMBO(combo_backs, &mt D_GRV BSLH , T__B, L_BASE L_NUM)
-ZMK_COMBO(combo_colon, &mt DOT COMMA  , ___X, L_BASE L_NUM)
-ZMK_COMBO(combo_comma, &mt COLON SEMI , __X_, L_BASE L_NUM)
-ZMK_COMBO(combo_quote, &mt DQT SQT    , _X__, L_BASE L_NUM)
 ZMK_COMBO(combo_exclq, &mt QMARK EXCL , X___, L_BASE L_NUM)
+ZMK_COMBO(combo_quote, &mt DQT SQT    , _X__, L_BASE L_NUM)
+ZMK_COMBO(combo_comma, &mt COLON SEMI , __X_, L_BASE L_NUM)
+ZMK_COMBO(combo_colon, &mt DOT COMMA  , ___X, L_BASE L_NUM)
 
 
 // GLOBAL Combos 
