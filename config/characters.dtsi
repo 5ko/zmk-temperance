@@ -33,12 +33,14 @@
 // edit shortcuts
 // C_AC_UNDO/K_UNDO and K_REDO work in LibreOffice 
 // but not in Kate/Gedit/Firefox
-#define CLIPCOPY   LC(INS)
-#define CLIPCUT    LS(DEL)
-#define CLIPPASTE  LS(INS)
-#define CLIPPASTE2 LC(LS(V))
-#define SAVE       LC(S)
-#define SAVEAS     LC(LS(S)) 
-#define U_UNDO     LC(Z)
-#define U_REDO     LC(LS(Z))
+#define CCOPY   LC(INS)
+#define CCUT    LS(DEL)
+#define CPASTE  LS(INS)
+#define CPASTE2 LC(LS(V))
+#define SAVE    LC(S)
+#define SAVEAS  LC(LS(S)) 
+#define U_UNDO  LC(Z)
+#define U_REDO  LC(LS(Z))
 
+
+#define KEY1     P

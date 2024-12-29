@@ -35,38 +35,42 @@ ZMK_TAP_DANCE(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>; tapping-te
 
 // Base letter combos
 ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
-  bindings = <&lt L_ACC S>, <&kp STAR>, <&kp S_SRP>;)
-
-ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lk L_NUM E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
-
-ZMK_TAP_DANCE(td_A,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
-
-ZMK_TAP_DANCE(td_N,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_NAV N>, <&kp NTILDE>;)
-
-ZMK_TAP_DANCE(td_I,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_EDT I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
-
-ZMK_TAP_DANCE(td_O,  tapping-term-ms = <TAPDANCE_3_TERM>;
-  bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+  bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
 
 ZMK_TAP_DANCE(td_T,  tapping-term-ms = <TAPDANCE_3_TERM>;
   bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
 
+ZMK_TAP_DANCE(td_O,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+
+ZMK_TAP_DANCE(td_A,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_ACC A>, <&kp AT>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
+
+
+
+ZMK_TAP_DANCE(td_N,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+
 ZMK_TAP_DANCE(td_SP, tapping-term-ms = <TAPDANCE_3_TERM>;  
   bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+
+ZMK_TAP_DANCE(td_I,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_EDT I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
+
+ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
+  bindings = <&lt L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
+
 
 
 
 // Combos NUM layer
-ZMK_COMBO(num_7, &mt DOLLAR N7,  __TT,  L_NUM)
-ZMK_COMBO(num_8, &kp N8       ,  _TT_,  L_NUM)
-ZMK_COMBO(num_9, &mt HASH   N9,  __BB,  L_NUM)
-ZMK_COMBO(num_0, &mt DEGREE N0,  _BB_,  L_NUM)
-ZMK_COMBO(num_E, &mt GBP  EURO,  _T_T,  L_NUM)
-ZMK_COMBO(num_Y, &kp YEN      ,  _B_B,  L_NUM)
+ZMK_COMBO(off_num, &lay_off L_NUM, TT__,  L_NUM)
+ZMK_COMBO(num_7,   &mt DOLLAR N7,  __TT,  L_NUM)
+ZMK_COMBO(num_8,   &kp N8       ,  _TT_,  L_NUM)
+ZMK_COMBO(num_9,   &mt HASH   N9,  __BB,  L_NUM)
+ZMK_COMBO(num_0,   &mt DEGREE N0,  _BB_,  L_NUM)
+ZMK_COMBO(num_E,   &mt GBP  EURO,  _T_T,  L_NUM)
+ZMK_COMBO(num_Y,   &kp YEN      ,  _B_B,  L_NUM)
 // can do combos x4-x3-x2 
 
 
@@ -84,7 +88,8 @@ ZMK_COMBO(bt_clear_current_profile, &bt BT_CLR, _XX_, L_BLE)
 
 
 // Combos L_MSE  Mouse layer
-ZMK_COMBO(lay_mouse, &tog L_MSE              , _TBT, L_BASE L_MSE)
+ZMK_COMBO(off_mouse,   &lay_off L_MSE        , TT__, L_MSE)
+ZMK_COMBO(lay_mouse,   &tog L_MSE            , _TBT, L_BASE L_MSE)
 ZMK_COMBO(combo_mb3,   &mkp MB3              , _T_T, L_MSE)
 ZMK_COMBO(combo_mb4,   &mkp MB4              , _TT_, L_MSE)
 ZMK_COMBO(combo_mb5,   &mkp MB5              , __TT, L_MSE)
@@ -93,14 +98,21 @@ ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, ___X, L_MSE)
 
 
 // Combos L_FUN layer
+ZMK_COMBO(off_fun,   &lay_off L_FUN, TT__, L_FUN)
 // n/a
 
 // Combos L_PAR layer
 ZMK_COMBO(combo_eq, &mt TILDE EQUAL, __TT, L_PAR)
 
 
+// Combos L_EDT layer
+ZMK_COMBO(combo_copycut, &mt LC(X)  LC(C) , _TT_, L_EDT)
+
+
 // Combos accented layer
-ZMK_COMBO(combo_e_dier, &tap2 D_DRS E, __BB, L_ACC)
+ZMK_COMBO(combo_e_dier, &tap2 D_DRS E, _BB_, L_ACC)
+
+
 
 
 // Combos base letters

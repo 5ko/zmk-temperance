@@ -8,7 +8,7 @@
 
 // Delay for combo
 #undef COMBO_TERM
-#define COMBO_TERM 175
+#define COMBO_TERM 250
 
 #define NAV_TAP_TERM 300
 #define TAPDANCE_2_TERM 250
