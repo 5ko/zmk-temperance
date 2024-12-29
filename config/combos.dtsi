@@ -25,6 +25,12 @@
 // Change layout from LEFT to RIGHT hand
 // XX__, __XX
 
+#define TD_NAV(name, ...) ZMK_TAP_DANCE(name, \
+  tapping-term-ms = <NAV_TAP_TERM>; __VA_ARGS__)
+
+#define TD_3(name, ...) ZMK_TAP_DANCE(name, \
+  tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__)
+
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
@@ -35,7 +41,9 @@ ZMK_TAP_DANCE(right_end, tapping-term-ms = <NAV_TAP_TERM>;
 
 
 
-// Base letter combos
+// Home keys config
+TD_3(td_S1, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
+
 ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
   bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
 
@@ -64,6 +72,7 @@ ZMK_TAP_DANCE(td_E,  tapping-term-ms = <TAPDANCE_3_TERM>;
 
 
 
+// Base letter combos
 
 // Combos NUM layer
 ZMK_COMBO(layoff_num, &lay_off L_NUM, TT__ , L_NUM)
