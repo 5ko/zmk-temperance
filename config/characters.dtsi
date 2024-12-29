@@ -4,17 +4,18 @@
  * SPDX-License-Identifier: MIT
  */
 
- 
+// NS() = NO Shift is needed for punctuation and dead accents
+#define NS(keycode) STRIP_MODS(MOD_LSFT, keycode)
  
 // International characters and dead accents from the XKB layout
 // "English (US, intl., with AltGr dead keys)":
 #define SUP2 RA(N2)
 
 // dead accents: grave, acute, diaeresis, circumflex, tilde
-#define D_GRV  RA(GRAVE)
-#define D_ACU  RA(SQT)
+#define D_GRV  RA(NS(GRAVE))
+#define D_ACU  RA(NS(SQT))
 #define D_DRS  RA(DQT)
-#define D_CRC  RA(N6)
+#define D_CRC  RA(NS(N6))
 #define D_TLD  RA(TILDE)
 
 #define NTILDE RA(N)
@@ -23,9 +24,9 @@
 #define S_SRP  RA(S)
 #define OELIG  RA(X)
 #define AELIG  RA(Z)
-#define EURO   RA(N5)
+#define EURO   RA(NS(N5))
 #define GBP    RA(DOLLAR)
-#define YEN    RA(MINUS)
+#define YEN    RA(NS(MINUS))
 
 // edit shortcuts
 // C_AC_UNDO/K_UNDO and K_REDO work in LibreOffice 
@@ -34,8 +35,8 @@
 #define CCUT    LS(DEL)
 #define CPASTE  LS(INS)
 #define CPASTE2 LC(LS(V))
-#define SAVE    LC(S)
+#define SAVE    LC(NS(S))
 #define SAVEAS  LC(LS(S)) 
-#define U_UNDO  LC(Z)
+#define U_UNDO  LC(NS(Z))
 #define U_REDO  LC(LS(Z))
 
