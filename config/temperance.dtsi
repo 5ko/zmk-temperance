@@ -79,7 +79,7 @@
       &mo L_PAR       &kp N3  &mt SUP2 N2  &mt DOT   N1
       &lt L_NAV   N0  &kp N6  &mt STAR N5  &lt L_EDT N4
     >;
-  };t
+  };
   parentheses {
     display-name = "L_PAR";
     bindings = <
