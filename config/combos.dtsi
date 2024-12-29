@@ -29,7 +29,7 @@
   tapping-term-ms = <NAV_TAP_TERM>; __VA_ARGS__)
 
 #define TD_3(name, ...) ZMK_TAP_DANCE(name, \
-  tapping-term-ms = <TAPDANCE_3_TERM>; bindings = __VA_ARGS__)
+  tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__)
 
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
