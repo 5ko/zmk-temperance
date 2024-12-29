@@ -10,5 +10,9 @@
 // HOST_OS: Linux=1, MacOS=2
 #define HOST_OS 1
 
+#include <dt-bindings/zmk/keys.h>
+
+#define MYKEY1 A
+
 #include "../../../temperance.dtsi"
 
