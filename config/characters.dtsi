@@ -49,7 +49,7 @@
 #define E_UNDO   &mt U_REDO  U_UNDO
 // multimedia
 #define MM_VU    &mt K_NEXT K_VOL_UP
-#define MM_VD    &mt K_NEXT K_VOL_UP
+#define MM_VD    &mt K_PREV K_VOL_DN
 #define MM_PS    &kp PRINTSCREEN
 // mouse
 #define M_MU     &mmv MOVE_UP
