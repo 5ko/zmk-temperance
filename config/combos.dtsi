@@ -103,6 +103,12 @@ ZMK_COMBO(combo_scroll_right, &msc SCRL_RIGHT, ___X, L_MSE)
 // Combos L_FUN layer
 ZMK_COMBO(layoff_fun, &lay_off L_FUN, TT__ , L_FUN)
 
+// Combos L_EDT layer
+// ^C, ^X, ^V for applications that don't recognise ^INS
+ZMK_COMBO(combo_copycut, &mt LC(X) LC(C)    , _TT_, L_EDT)
+ZMK_COMBO(combo_paste12, &mt LC(LS(V)) LC(V), TT__, L_EDT)
+
+
 // Combos L_PAR layer
 ZMK_COMBO(combo_eq, &mt TILDE EQUAL, __TT, L_PAR)
 
