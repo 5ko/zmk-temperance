@@ -8,10 +8,16 @@
  * 
  * The combo is described by the character and position, 
  * in columns from left to right:
-    * _ = not pressed
     * T = key on the Top row pressed
     * B = key on the Bottom row pressed
     * X = both keys on the Top and Bottom rows pressed
+    * _ = neither top nor bottom keys in the column pressed
+ * 
+ * You may notice that the 8 keys of the 4x2 keypad
+ * can be represented as the 8 bits of a byte.
+ * In fact the combo abbreviations below are basically 
+ * the numbers between 1-255 converted to base-4, 
+ * removing those with a single key pressed.
  */
 
 
