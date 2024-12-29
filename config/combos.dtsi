@@ -34,8 +34,6 @@ ZMK_TAP_DANCE(right_end, tapping-term-ms = <NAV_TAP_TERM>;
               bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;  )
 
 
-NS(d_grv, D_GRV)
-NS(ns_bslh, BSLH)
 
 // Base letter combos
 ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
@@ -161,8 +159,7 @@ ZMK_COMBO(combo_w,  &mt AT    W, TTTT , L_BASE)
 
 // Base punctuation
 ZMK_COMBO(combo_slash, &mt D_ACU SLASH, B__T, L_BASE L_NUM)
-// ZMK_COMBO(combo_backs, &mt D_GRV BSLH , T__B, L_BASE L_NUM)
-ZMK_COMBO(combo_backs, &mt &d_grv &ns_bslh, T__B, L_BASE L_NUM)
+ZMK_COMBO(combo_backs, &mt D_GRV BSLH , T__B, L_BASE L_NUM)
 ZMK_COMBO(combo_exclq, &mt QMARK EXCL , X___, L_BASE L_NUM)
 ZMK_COMBO(combo_quote, &mt DQT SQT    , _X__, L_BASE L_NUM)
 ZMK_COMBO(combo_comma, &mt COLON SEMI , __X_, L_BASE L_NUM)
@@ -172,7 +169,8 @@ ZMK_COMBO(combo_colon, &mt DOT COMMA  , ___X, L_BASE L_NUM)
 // GLOBAL Combos 
 ZMK_COMBO(combo_backspace, &mt LC(BSPC) BSPC, __TB, L_BASE L_MSE L_NUM)
 ZMK_COMBO(combo_delete,    &mt LC(DEL)  DEL , __BT, L_BASE L_MSE L_NUM)
-ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , BT__ , ALL_LEFT)
+// ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , BT__ , ALL_LEFT)
+ZMK_COMBO(combo_escape,    &mt &unmod   ESC , BT__ , ALL_LEFT)
 ZMK_COMBO(combo_tab,       &mt LS(TAB)  TAB , BTT_ , L_BASE L_MSE L_NUM)
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
