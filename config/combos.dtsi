@@ -170,7 +170,7 @@ ZMK_COMBO(combo_colon, &mt DOT COMMA  , ___X, L_BASE L_NUM)
 ZMK_COMBO(combo_backspace, &mt LC(BSPC) BSPC, __TB, L_BASE L_MSE L_NUM)
 ZMK_COMBO(combo_delete,    &mt LC(DEL)  DEL , __BT, L_BASE L_MSE L_NUM)
 // ZMK_COMBO(combo_escape,    &hold_esc  0 ESC , BT__ , ALL_LEFT)
-ZMK_COMBO(combo_escape,    &mt &unmod   ESC , BT__ , ALL_LEFT)
+ZMK_COMBO(combo_escape,    &mt &unmod 0  ESC, BT__ , ALL_LEFT)
 ZMK_COMBO(combo_tab,       &mt LS(TAB)  TAB , BTT_ , L_BASE L_MSE L_NUM)
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
