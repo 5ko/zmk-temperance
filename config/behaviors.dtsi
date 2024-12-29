@@ -108,7 +108,8 @@
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings
-      = <&lay_off L_MSE &lay_off L_BLE &lay_off L_NUM &lay_off L_FUN>
+      = <&lay_off L_MSE &lay_off L_BLE &lay_off L_NUM
+         &lay_off L_ACC &lay_off L_EDT &lay_off L_FUN>
       , <&ku LSHFT &ku LCTRL &ku LALT &ku RALT &ku LGUI>
       ;
   };
@@ -133,7 +134,8 @@
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings = <&kp H &kp T &kp T &kp P &kp S 
-      &kp COLON &kp SLASH &kp SLASH &kp W &kp W &kp W &kp DOT 
+      &kp COLON &kp SLASH &kp SLASH 
+      &kp W &kp W &kp W &kp DOT 
       >;
   };
   tap_the: macro_tap_the {
