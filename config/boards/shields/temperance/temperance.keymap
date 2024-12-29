@@ -10,7 +10,5 @@
 // HOST_OS: Linux=1, MacOS=2
 #define HOST_OS 1
 
-#define KEY1     A
-
 #include "../../../temperance.dtsi"
 
