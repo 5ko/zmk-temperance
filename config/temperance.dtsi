@@ -51,7 +51,7 @@
 #define NS(name, keycode) ZMK_MOD_MORPH(name, \
   bindings = <&kp keycode>, <&kp keycode>;\
   keep-mods = <(MOD_RALT)>;\
-  mods = <(MOD_LSFT|MOD_RSFT)>;)
+  mods = <(MOD_RALT|MOD_LSFT|MOD_RSFT)>;)
 
 
 #include "timeouts.dtsi"

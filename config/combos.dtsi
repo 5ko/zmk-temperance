@@ -35,6 +35,7 @@ ZMK_TAP_DANCE(right_end, tapping-term-ms = <NAV_TAP_TERM>;
 
 
 NS(d_grv, D_GRV)
+NS(ns_bslh, BSLH)
 
 // Base letter combos
 ZMK_TAP_DANCE(td_S, tapping-term-ms = <TAPDANCE_3_TERM>;  
@@ -161,7 +162,7 @@ ZMK_COMBO(combo_w,  &mt AT    W, TTTT , L_BASE)
 // Base punctuation
 ZMK_COMBO(combo_slash, &mt D_ACU SLASH, B__T, L_BASE L_NUM)
 // ZMK_COMBO(combo_backs, &mt D_GRV BSLH , T__B, L_BASE L_NUM)
-ZMK_COMBO(combo_backs, &mt &d_grv BSLH , T__B, L_BASE L_NUM)
+ZMK_COMBO(combo_backs, &mt &d_grv &ns_bslh, T__B, L_BASE L_NUM)
 ZMK_COMBO(combo_exclq, &mt QMARK EXCL , X___, L_BASE L_NUM)
 ZMK_COMBO(combo_quote, &mt DQT SQT    , _X__, L_BASE L_NUM)
 ZMK_COMBO(combo_comma, &mt COLON SEMI , __X_, L_BASE L_NUM)
