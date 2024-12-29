@@ -32,9 +32,6 @@
   tapping-term-ms = <TAPDANCE_3_TERM>; bindings = __VA_ARGS__)
 
 
-#define TD_3a(name, ...) ZMK_TAP_DANCE(name, \
-  tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__;)
-
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
 TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
@@ -43,8 +40,6 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 // Home keys config
-TD_3a(td_S1, <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>)
-
 TD_3(td_S, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
 
 TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
