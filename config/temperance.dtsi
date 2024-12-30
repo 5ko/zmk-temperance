@@ -80,6 +80,8 @@
     bindings = <
       TODO      MAYBE      P_BRACES  P_PARENS
       P_EQ_TLD  &mo L_PAR  P_LT_GT   P_BRACKETS
+    >;
+      
   };
 
 //              
