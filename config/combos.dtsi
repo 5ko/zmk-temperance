@@ -49,7 +49,7 @@ TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
 TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
 
 
-TD_3(td_S, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
+TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
 
 TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
 

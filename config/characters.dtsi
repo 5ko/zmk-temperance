@@ -65,3 +65,9 @@
 #define M_B3     &mkp MB3
 #define M_B4     &mkp MB4
 #define M_B5     &mkp MB5
+// parentheses
+#define P_BRACKETS &mt RBKT LBKT
+#define P_BRACES   &mt RBRC LBRC
+#define P_PARENS   &mt RPAR LPAR
+#define P_LT_GT    &mt GT LT 
+#define P_EQ_TLD   &mt TILDE EQUAL
