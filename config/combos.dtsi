@@ -81,7 +81,7 @@ ZMK_COMBO(num_Y, &kp YEN      ,  _B_B,  L_NUM)
 // Combos NAV+Media layer
 ZMK_COMBO(nav_pgup,  &mt LC(HOME) PG_UP,  __TT, L_NAV)
 ZMK_COMBO(nav_pgdn,  &mt LC(END)  PG_DN,  __BB, L_NAV)
-ZMK_COMBO(mute_play, &mt K_PP K_MUTE   ,  _BB_, L_NAV)
+ZMK_COMBO(mute_play, &mt K_PP K_MUTE   ,  _TT_, L_NAV)
 
 
 
