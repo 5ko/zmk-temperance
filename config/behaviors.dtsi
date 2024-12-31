@@ -56,7 +56,7 @@
   };
   
   
-  tap2: macro_tap_2 {
+  tap2 {
     compatible = "zmk,behavior-macro-two-param";
     wait-ms = <40>;
     tap-ms = <40>;
