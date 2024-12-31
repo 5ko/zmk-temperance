@@ -64,8 +64,8 @@
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_N  &td_I  &td_T   &td_E
-      &td_S  &td_O  &td_SP  &td_A
+      &td_S  &td_I  &td_T   &td_A
+      &td_N  &td_O  &td_SP  &td_E
     >;
   };
   numbers {
@@ -107,8 +107,8 @@
   editing {
     display-name = "L_EDT";
     bindings = <
-      E_SAVE   E_PASTE   E_COPY   &mo L_EDT
-      TODO     TODO      E_UNDO   &kp INS
+      E_SAVE   E_PASTE   E_COPY   &kp INS
+      TODO     TODO      E_UNDO   &mo L_EDT
     >;
   };
   functionkeys {

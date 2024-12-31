@@ -32,6 +32,9 @@
   tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__)
 
 
+#define CB4(keypos, name, bindings, layers) \
+  ZMK_COMBO(name, bindings, keypos, layers)
+
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
 TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
@@ -40,7 +43,7 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 // Home keys config
-TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
 
 TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
 
@@ -49,7 +52,7 @@ TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
 TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
 
 
-TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
+TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
 
 TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
 
@@ -68,8 +71,13 @@ TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 // Base letter combos
 
 // Combos NUM layer
-ZMK_COMBO(layoff_num, &lay_off L_NUM, TT__ , L_NUM)
-ZMK_COMBO(num_7, &mt DOLLAR N7,  __TT,  L_NUM)
+CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
+
+// ZMK_COMBO(layoff_num, &lay_off L_NUM, TT__ , L_NUM)
+
+CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
+
+// ZMK_COMBO(num_7, &mt DOLLAR N7,  __TT,  L_NUM)
 ZMK_COMBO(num_8, &kp N8       ,  _TT_,  L_NUM)
 ZMK_COMBO(num_9, &mt HASH   N9,  __BB,  L_NUM)
 ZMK_COMBO(num_0, &mt DEGREE N0,  _BB_,  L_NUM)
