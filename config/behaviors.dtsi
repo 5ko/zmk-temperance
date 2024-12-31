@@ -56,7 +56,7 @@
   };
   
   
-  tap2 {
+  tap2: macro_tap_2 {
     compatible = "zmk,behavior-macro-two-param";
     wait-ms = <40>;
     tap-ms = <40>;
@@ -262,11 +262,11 @@
   
   
 
-  i_circ: macro_i_circ {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_CRC &kp I>;
-  };
+//   i_circ: macro_i_circ {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_CRC &kp I>;
+//   };
   i_dier: macro_i_dier {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
@@ -339,4 +339,10 @@
 #define A_OC_UD &o_circ_u_dier 0 0
 #define A_EG_ED &e_grave_dier 0 0 
 #define A_EA_EC &e_acute_circ 0 0 
+
+
+#define TYPE(name, bindings) ZMK_MACRO(name, bindings=<bindings>;)
+
+TYPE(i_circ, &kp D_CRC &kp I)
+
 
