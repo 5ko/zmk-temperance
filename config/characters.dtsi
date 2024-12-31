@@ -45,7 +45,7 @@
 // editing
 #define E_SAVE   &mt SAVEAS SAVE
 #define E_COPY   &mt CCUT CCOPY
-#define E_PASTE  &mt CCUT CCOPY
+#define E_PASTE  &mt CPASTE2 CPASTE
 #define E_UNDO   &mt U_REDO  U_UNDO
 // multimedia
 #define MM_VU    &mt K_NEXT K_VOL_UP

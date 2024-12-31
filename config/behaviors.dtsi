@@ -62,9 +62,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // unused at the moment
 // HTHP(the_th, bindings = <&tap_the>, <&tap_th>;)
 // HTHP(ion_ing, bindings = <&ion>, <&ing>;)
-
 // HTHP(kp_kt, bindings = <&kp>, <&kt>;)// kp_kt CAPS LSHFT
-
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
 
@@ -80,33 +78,6 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     bindings = <&kp>, <&kp>;
   };
   
-//   sk_tk: behavior_sk_tk { 
-//     // sk LGUI, kt LCTRL // sk RALT, kt LALT
-//     compatible = "zmk,behavior-hold-tap";
-//     #binding-cells = <2>;
-//     flavor = "hold-preferred";
-//     tapping-term-ms = <HOLDTAP_TERM>;
-//     bindings = <&sk>, <&kt>;
-//   };
-  
-  // kp_kt CAPS LSHFT
-//   kp_kt: behavior_sk_tog2 { 
-//     compatible = "zmk,behavior-hold-tap";
-//     #binding-cells = <2>;
-//     flavor = "hold-preferred";
-//     tapping-term-ms = <HOLDTAP_TERM>;
-//     bindings = <&kp>, <&kt>;
-//   };
-  
-  // nxkbly, sk LSHFT
-//   nx_sk: behavior_sk_tog3 {
-//     compatible = "zmk,behavior-hold-tap";
-//     #binding-cells = <2>;
-//     flavor = "hold-preferred";
-//     tapping-term-ms = <HOLDTAP_TERM>;
-//     bindings = <&nxkbly>, <&sk>;
-//   };
-  
   
   tap2: macro_tap_2 {
     compatible = "zmk,behavior-macro-two-param";
@@ -120,17 +91,6 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
       , <&macro_tap &kp MACRO_PLACEHOLDER>
       ;
   };
-  
-  
-
-  
-//   lk: behavior_layon_key {
-//     compatible = "zmk,behavior-hold-tap";
-//     #binding-cells = <2>;
-//     flavor = "hold-preferred";
-//     tapping-term-ms = <HOLDTAP_LAYER_TERM>;
-//     bindings = <&lay_on>, <&kp>;
-//   };
   
   kd: behavior_keydown {
     compatible = "zmk,behavior-key-toggle";
