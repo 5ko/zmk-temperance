@@ -6,7 +6,7 @@
 
 
 // Simple macros
-// ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)
+ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)
 ZMK_MACRO(tap_th,  bindings = <&kp T &kp H> ;)
 ZMK_MACRO(https,   bindings = <&kp H &kp T &kp T &kp P &kp S 
                       &kp COLON &kp SLASH &kp SLASH 
@@ -45,21 +45,13 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
     }; \
   };
 
-// Simple macros
-#define MCR(name, binds)  \
-  / { \
-    behaviors { \
-      name: macro_ ## name { \
-        compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0> \
-        bindings = binds \
-      }; \
-    }; \
-  };
 
-  
-MCR(nxkbly, < &kp GLOBE &kp LA(LSHFT) > ;)
-HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
+HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;) // nxkbly, kp CAPS
+HTHP(a_grave_circ, bindings = <&a_circ>, <&a_grave>;)
+HTHP(e_acute_circ, bindings = <&e_circ>, <&e_acute>;)
+HTHP(e_grave_dier, bindings = <&e_dier>, <&e_grave>;)
+// HTHP(, bindings = ;)
+// HTHP(, bindings = ;)
 
 
 / { behaviors {
@@ -94,13 +86,13 @@ HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
   };
   
   // nxkbly, kp CAPS
-  nx_kp_prev: behavior_nx_kp_prev {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <HOLDTAP_TERM>;
-    bindings = <&nxkbly>, <&kp>;
-  };
+//   nx_kp_prev: behavior_nx_kp_prev {
+//     compatible = "zmk,behavior-hold-tap";
+//     #binding-cells = <2>;
+//     flavor = "hold-preferred";
+//     tapping-term-ms = <HOLDTAP_TERM>;
+//     bindings = <&nxkbly>, <&kp>;
+//   };
   
   
   
@@ -128,13 +120,7 @@ HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
   };
   
   
-  caps_tog: behavior_caps_tog {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <HOLDTAP_TERM>;
-    bindings = <&caps_word>, <&kp>;
-  };
+
   
   lk: behavior_layon_key {
     compatible = "zmk,behavior-hold-tap";
@@ -200,29 +186,29 @@ HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
     bindings = <&ion>, <&ing>;
   };
   
-  a_grave_circ: behavior_a_grave_circ {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <HOLDTAP_TERM>;
-    bindings = <&a_circ>, <&a_grave>;
-  };
+//   a_grave_circ: behavior_a_grave_circ {
+//     compatible = "zmk,behavior-hold-tap";
+//     #binding-cells = <2>;
+//     flavor = "hold-preferred";
+//     tapping-term-ms = <HOLDTAP_TERM>;
+//     bindings = <&a_circ>, <&a_grave>;
+//   };
   
-  e_acute_circ: behavior_e_acute_circ {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <HOLDTAP_TERM>;
-    bindings = <&e_circ>, <&e_acute>;
-  };
+//   e_acute_circ: behavior_e_acute_circ {
+//     compatible = "zmk,behavior-hold-tap";
+//     #binding-cells = <2>;
+//     flavor = "hold-preferred";
+//     tapping-term-ms = <HOLDTAP_TERM>;
+//     bindings = <&e_circ>, <&e_acute>;
+//   };
   
-  e_grave_dier: behavior_e_grave_dier{
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <HOLDTAP_TERM>;
-    bindings = <&e_dier>, <&e_grave>;
-  };
+//   e_grave_dier: behavior_e_grave_dier{
+//     compatible = "zmk,behavior-hold-tap";
+//     #binding-cells = <2>;
+//     flavor = "hold-preferred";
+//     tapping-term-ms = <HOLDTAP_TERM>;
+//     bindings = <&e_dier>, <&e_grave>;
+//   };
   
   u_grave_circ: behavior_u_grave_circ {
     compatible = "zmk,behavior-hold-tap";
