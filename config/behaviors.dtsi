@@ -29,8 +29,19 @@ ZMK_MACRO(o_circ,  bindings = <&kp D_CRC &kp O> ;)
 ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
 
 // Simple hold-tabs, hold-preferred
-#define HTHP(name, ...) ZMK_HOLD_TAB(name, flavor = "hold-preferred"; \
-    tapping-term-ms = <HOLDTAP_TERM>; __VA_ARGS__)
+// #define HTHP(name, ...) ZMK_HOLD_TAB(name, flavor = "hold-preferred"; \
+//     tapping-term-ms = <HOLDTAP_TERM>; __VA_ARGS__)
+
+#define HTHP(name, ...)  \
+  / { \
+    behaviors { \
+      name: name { \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <HOLDTAP_TERM>; \
+        __VA_ARGS__ \
+      }; \
+    }; \
+  };
 
 HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
 
