@@ -52,13 +52,13 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
       name: macro_ ## name { \
         compatible = "zmk,behavior-macro"; \
         #binding-cells = <0> \
-        bindings = binds ; \
+        bindings = < binds > ; \
       }; \
     }; \
   };
 
   
-MC(nxkbly,  <&kp GLOBE &kp LA(LSHFT)> )
+MCR(nxkbly,  &kp GLOBE &kp LA(LSHFT) )
 HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
 
 
