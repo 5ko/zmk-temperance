@@ -63,6 +63,7 @@
 //    Layers: Hold-S, Hold-A (accents can be removed)
 
 
+#define NONE4 &none &none &none &none 
          
 
 / { keymap { compatible = "zmk,keymap";
@@ -81,6 +82,7 @@ N1 N2 N3 N4
     bindings = <
       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
+      NONE4
     >;
   };
   parentheses {
@@ -88,6 +90,7 @@ N1 N2 N3 N4
     bindings = <
       TODO      MAYBE      P_BRACES  P_PARENS
       P_EQ_TLD  &mo L_PAR  P_LT_GT   P_BRACKETS
+      NONE4
     >;
       
   };
@@ -99,6 +102,7 @@ N1 N2 N3 N4
     bindings = <
       MM_PS      MM_VD       MM_VU       &kp UP
       &mo L_NAV  &left_home  &right_end  &kp DOWN
+      NONE4
     >;
   };
   accented {
@@ -109,6 +113,7 @@ N1 N2 N3 N4
     bindings = <
       A_IC_ID   A_UG_UC   A_AG_AC   &mo L_ACC
       A_OC_UD   A_EG_ED   A_EA_EC   &none
+      NONE4
     >;
 
   };
@@ -117,6 +122,7 @@ N1 N2 N3 N4
     bindings = <
       E_SAVE   E_PASTE   E_COPY   &kp INS
       TODO     TODO      E_UNDO   &mo L_EDT
+      NONE4
     >;
   };
   functionkeys {
@@ -124,6 +130,7 @@ N1 N2 N3 N4
     bindings = <
       TODO   &mt F2 F1   &mt F4  F3   &mt F6  F5
       TODO   &mt F8 F7   &mt F10 F9   &mt F12 F11
+      NONE4
     >;
   };
   mouse {
@@ -131,6 +138,8 @@ N1 N2 N3 N4
     bindings = <
      M_SU   M_B2   M_MU   M_B1
      M_SD   M_ML   M_MD   M_MR
+     NONE4
+     
     >;
   };
 
@@ -139,6 +148,7 @@ N1 N2 N3 N4
     bindings = <
       &out OUT_BLE   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
       &out OUT_USB   &bt BT_SEL 5  &bt BT_SEL 4  &bt BT_SEL 3
+      NONE4
     >;
   };
 
