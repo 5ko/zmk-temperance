@@ -341,8 +341,9 @@
 #define A_EA_EC &e_acute_circ 0 0 
 
 
-#define TYPE(name, bindings) ZMK_MACRO(name, bindings=<bindings>;)
+// #define TYPE(name, bindings) ZMK_MACRO(name, bindings=<bindings>;)
 
-TYPE(i_circ, &kp D_CRC &kp I)
+ZMK_MACRO(i_circ, bindings=< &kp D_CRC &kp I >;)
+// TYPE(i_circ, )
 
 
