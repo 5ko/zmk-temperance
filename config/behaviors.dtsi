@@ -5,8 +5,8 @@
  */
 
 
-// Simple macros/*
-ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)*/
+// Simple macros
+// ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)
 ZMK_MACRO(tap_th,  bindings = <&kp T &kp H> ;)
 ZMK_MACRO(https,   bindings = <&kp H &kp T &kp T &kp P &kp S 
                       &kp COLON &kp SLASH &kp SLASH 
