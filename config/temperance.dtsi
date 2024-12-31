@@ -29,6 +29,12 @@
 #define B2 6
 #define B1 7
 
+#define Z4 8
+#define Z3 9
+#define Z2 10
+#define Z1 11
+
+
 // The layers need to be numbered in the order they are below,
 // starting from zero.
 #define L_BASE 0
@@ -67,6 +73,7 @@
     bindings = <
       &td_S  &td_I  &td_T   &td_A
       &td_N  &td_O  &td_SP  &td_E
+N1 N2 N3 N4
     >;
   };
   numbers {
