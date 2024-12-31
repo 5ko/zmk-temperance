@@ -74,7 +74,7 @@
     bindings = <
       &td_S  &td_I  &td_T   &td_A
       &td_N  &td_O  &td_SP  &td_E
-      &kp N1   &kp N2   &kp N3   &kp N4
+      &kp N4 &kp N3 &kp N2  &kp N1
     >;
   };
   numbers {
