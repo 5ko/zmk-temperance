@@ -4,6 +4,34 @@
  * SPDX-License-Identifier: MIT
  */
 
+
+// Simple macros
+ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)
+ZMK_MACRO(tap_th,  bindings = <&kp T &kp H> ;)
+ZMK_MACRO(https,   bindings = <&kp H &kp T &kp T &kp P &kp S 
+                      &kp COLON &kp SLASH &kp SLASH 
+                      &kp W &kp W &kp W &kp DOT > ;)
+ZMK_MACRO(tap_the, bindings = <&kp T &kp H &kp E> ;)
+ZMK_MACRO(ing,     bindings = <&kp I &kp N &kp G> ;)
+ZMK_MACRO(ion,     bindings = <&kp I &kp O &kp N> ;)
+ZMK_MACRO(tion,    bindings = <&kp T &kp I &kp O &kp N> ;)
+ZMK_MACRO(a_grave, bindings = <&kp D_GRV &kp A> ;)
+ZMK_MACRO(a_circ,  bindings = <&kp D_CRC &kp A> ;)
+ZMK_MACRO(e_acute, bindings = <&kp D_ACU &kp E> ;)
+ZMK_MACRO(e_circ,  bindings = <&kp D_CRC &kp E> ;)
+ZMK_MACRO(e_grave, bindings = <&kp D_GRV &kp E> ;)
+ZMK_MACRO(e_dier,  bindings = <&kp D_DRS &kp E> ;)
+ZMK_MACRO(u_grave, bindings = <&kp D_GRV &kp U> ;)
+ZMK_MACRO(u_circ,  bindings = <&kp D_CRC &kp U> ;)
+ZMK_MACRO(i_circ,  bindings=< &kp D_CRC &kp I >;)
+ZMK_MACRO(i_dier,  bindings = <&kp D_DRS &kp I> ;)
+ZMK_MACRO(o_circ,  bindings = <&kp D_CRC &kp O> ;)
+ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
+
+// Simple hold-tabs
+// #define HT(name, ...)
+
+
 / { behaviors {
   mtz: behavior_mod_tap_zero {
     // 
@@ -126,36 +154,36 @@
   };
   
   // should work both on Ubuntu and MacOSX
-  nxkbly: macro_next_keyboard_layout {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp GLOBE &kp LA(LSHFT)> ;
-  };
+//   nxkbly: macro_next_keyboard_layout {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp GLOBE &kp LA(LSHFT)> ;
+//   };
   
   
   
-  tap_th: macro_tap_th {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <40>;
-    tap-ms = <40>;
-    #binding-cells = <0>;
-    bindings = <&kp T &kp H> ;
-  };
-  https: macro_https {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp H &kp T &kp T &kp P &kp S 
-      &kp COLON &kp SLASH &kp SLASH 
-      &kp W &kp W &kp W &kp DOT 
-      >;
-  };
-  tap_the: macro_tap_the {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <40>;
-    tap-ms = <40>;
-    #binding-cells = <0>;
-    bindings = <&kp T &kp H &kp E> ;
-  };
+//   tap_th: macro_tap_th {
+//     compatible = "zmk,behavior-macro";
+//     wait-ms = <40>;
+//     tap-ms = <40>;
+//     #binding-cells = <0>;
+//     bindings = <&kp T &kp H> ;
+//   };
+//   https: macro_https {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp H &kp T &kp T &kp P &kp S 
+//       &kp COLON &kp SLASH &kp SLASH 
+//       &kp W &kp W &kp W &kp DOT 
+//       >;
+//   };
+//   tap_the: macro_tap_the {
+//     compatible = "zmk,behavior-macro";
+//     wait-ms = <40>;
+//     tap-ms = <40>;
+//     #binding-cells = <0>;
+//     bindings = <&kp T &kp H &kp E> ;
+//   };
   the_th: behavior_the_th {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -164,16 +192,16 @@
     bindings = <&tap_the>, <&tap_th>;
   };
   
-  ing: macro_ing {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp I &kp N &kp G>;
-  };
-  ion: macro_ion {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp I &kp O &kp N>;
-  };
+//   ing: macro_ing {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp I &kp N &kp G>;
+//   };
+//   ion: macro_ion {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp I &kp O &kp N>;
+//   };
   ion_ing: behavior_ion_ing {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -181,22 +209,22 @@
     tapping-term-ms = <HOLDTAP_TERM>;
     bindings = <&ion>, <&ing>;
   };
-  tion: macro_tion {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp T &kp I &kp O &kp N>;
-  };
+//   tion: macro_tion {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp T &kp I &kp O &kp N>;
+//   };
   
-  a_grave: macro_a_grave {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_GRV &kp A>;
-  };
-  a_circ: macro_a_circ {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_CRC &kp A>;
-  };
+//   a_grave: macro_a_grave {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_GRV &kp A>;
+//   };
+//   a_circ: macro_a_circ {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_CRC &kp A>;
+//   };
   a_grave_circ: behavior_a_grave_circ {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -205,16 +233,16 @@
     bindings = <&a_circ>, <&a_grave>;
   };
   
-  e_acute: macro_e_acute {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_ACU &kp E>;
-  };
-  e_circ: macro_e_circ {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_CRC &kp E>;
-  };
+//   e_acute: macro_e_acute {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_ACU &kp E>;
+//   };
+//   e_circ: macro_e_circ {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_CRC &kp E>;
+//   };
   e_acute_circ: behavior_e_acute_circ {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -223,16 +251,16 @@
     bindings = <&e_circ>, <&e_acute>;
   };
   
-  e_grave: macro_e_grave {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_GRV &kp E>;
-  };
-  e_dier: macro_e_dier {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_DRS &kp E>;
-  };
+//   e_grave: macro_e_grave {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_GRV &kp E>;
+//   };
+//   e_dier: macro_e_dier {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_DRS &kp E>;
+//   };
   e_grave_dier: behavior_e_grave_dier{
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -242,16 +270,16 @@
   };
   
   
-  u_grave: macro_u_grave {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_GRV &kp U>;
-  };
-  u_circ: macro_u_circ {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_CRC &kp U>;
-  };
+//   u_grave: macro_u_grave {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_GRV &kp U>;
+//   };
+//   u_circ: macro_u_circ {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_CRC &kp U>;
+//   };
   u_grave_circ: behavior_u_grave_circ {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -267,11 +295,11 @@
 //     #binding-cells = <0>;
 //     bindings = <&kp D_CRC &kp I>;
 //   };
-  i_dier: macro_i_dier {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_DRS &kp I>;
-  };  
+//   i_dier: macro_i_dier {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_DRS &kp I>;
+//   };  
   i_circ_dier: behavior_i_circ_dier {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -280,16 +308,16 @@
     bindings = <&i_dier>, <&i_circ>;
   };
   
-  o_circ: macro_o_circ {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_CRC &kp O>;
-  };
-  u_dier: macro_u_dier {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp D_DRS &kp U>;
-  };
+//   o_circ: macro_o_circ {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_CRC &kp O>;
+//   };
+//   u_dier: macro_u_dier {
+//     compatible = "zmk,behavior-macro";
+//     #binding-cells = <0>;
+//     bindings = <&kp D_DRS &kp U>;
+//   };
   o_circ_u_dier: behavior_o_circ_u_dier {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -343,7 +371,6 @@
 
 // #define TYPE(name, bindings) ZMK_MACRO(name, bindings=<bindings>;)
 
-ZMK_MACRO(i_circ, bindings=< &kp D_CRC &kp I >;)
 // TYPE(i_circ, )
 
 

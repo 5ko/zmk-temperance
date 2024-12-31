@@ -25,9 +25,10 @@
 // Change layout from LEFT to RIGHT hand
 // XX__, __XX
 
+
+
 #define TD_NAV(name, ...) ZMK_TAP_DANCE(name, \
   tapping-term-ms = <NAV_TAP_TERM>; __VA_ARGS__)
-
 #define TD_3(name, ...) ZMK_TAP_DANCE(name, \
   tapping-term-ms = <TAPDANCE_3_TERM>; __VA_ARGS__)
 
@@ -38,6 +39,8 @@
 
 #define CB3(keypos, name, bindings) \
   ZMK_COMBO(name, bindings, keypos)
+
+  
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
