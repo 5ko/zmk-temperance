@@ -17,28 +17,17 @@
 #define HOST_OS 1
 #include "zmk-helpers/helper.h"
 
+
 // Top row SITA
-#define T1 0
-#define T2 1
-#define T3 2
-#define T4 3
+#define T4 0
+#define T3 1
+#define T2 2
+#define T1 3
 // Bottom row NO E
-#define B1 4
-#define B2 5
-#define B3 6
-#define B4 7
-
-
-// // Top row SITA
-// #define T4 0
-// #define T3 1
-// #define T2 2
-// #define T1 3
-// // Bottom row NO E
-// #define B4 4
-// #define B3 5
-// #define B2 6
-// #define B1 7
+#define B4 4
+#define B3 5
+#define B2 6
+#define B1 7
 
 // The layers need to be numbered in the order they are below,
 // starting from zero.
