@@ -32,6 +32,8 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
 #define HTHP(name, ...) ZMK_HOLD_TAB(name, flavor = "hold-preferred"; \
     tapping-term-ms = <HOLDTAP_TERM>; __VA_ARGS__)
 
+HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
+
 
 / { behaviors {
   mtz: behavior_mod_tap_zero {
@@ -65,7 +67,7 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
   };
   
   // nxkbly, kp CAPS
-  nx_kp: behavior_nx_kp {
+  nx_kp_prev: behavior_nx_kp_prev {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     flavor = "hold-preferred";
