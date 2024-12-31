@@ -23,7 +23,7 @@ ZMK_MACRO(e_grave, bindings = <&kp D_GRV &kp E> ;)
 ZMK_MACRO(e_dier,  bindings = <&kp D_DRS &kp E> ;)
 ZMK_MACRO(u_grave, bindings = <&kp D_GRV &kp U> ;)
 ZMK_MACRO(u_circ,  bindings = <&kp D_CRC &kp U> ;)
-ZMK_MACRO(i_circ,  bindings=< &kp D_CRC &kp I >;)
+ZMK_MACRO(i_circ,  bindings = <&kp D_CRC &kp I >;)
 ZMK_MACRO(i_dier,  bindings = <&kp D_DRS &kp I> ;)
 ZMK_MACRO(o_circ,  bindings = <&kp D_CRC &kp O> ;)
 ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
@@ -45,6 +45,19 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
     }; \
   };
 
+// Simple macros
+#define MCR(name, binds)  \
+  / { \
+    behaviors { \
+      name: macro_ ## name { \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0> \
+        bindings = <binds> ; \
+      }; \
+    }; \
+  };
+
+  
 HTHP(nx_kp, bindings = <&nxkbly>, <&kp>;)
 
 
