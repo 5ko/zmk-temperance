@@ -72,7 +72,8 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     #binding-cells = <2>;
     bindings = <&kp>, <&kp>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-  }
+    keep-mods = <(MOD_RALT)>;
+  };
   
   mtz: behavior_mod_tap_zero {
     // 
