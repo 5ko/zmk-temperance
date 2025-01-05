@@ -65,15 +65,31 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // HTHP(kp_kt, bindings = <&kp>, <&kt>;)// kp_kt CAPS LSHFT
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
+#define NS(name, keycode)  \
+  / { \
+    behaviors { \
+      name: name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+    bindings = <&kp keycode>, <&kp keycode>;\
+    mods = <(MOD_LSFT|MOD_RSFT)>;\
+    keep-mods = <(MOD_RALT)>; \
+      }; \
+    }; \
+  };
+  
+NS(noshift_grave, D_GRV);
+NS(noshift_acute, D_ACU);
+NS(noshift_circ, D_CRC);
 
 / { behaviors {
-  noshift_grave: behavior_noshift_grave {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp A>, <&kp B>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <(MOD_RALT)>;
-  };
+//   noshift_grave: behavior_noshift_grave {
+//     compatible = "zmk,behavior-mod-morph";
+//     #binding-cells = <0>;
+//     bindings = <&kp A>, <&kp B>;
+//     mods = <(MOD_LSFT|MOD_RSFT)>;
+//     keep-mods = <(MOD_RALT)>;
+//   };
   
   mtz: behavior_mod_tap_zero {
     // 
