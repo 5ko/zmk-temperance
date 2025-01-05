@@ -67,10 +67,10 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
 
 / { behaviors {
-  noshift: behavior_noshift {
+  noshift_grave: behavior_noshift_grave {
     compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <2>;
-    bindings = <&kp>, <&kp>;
+    #binding-cells = <0>;
+    bindings = <&kp D_GRV>, <&kp D_GRV>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <(MOD_RALT)>;
   };
