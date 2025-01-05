@@ -67,7 +67,12 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
 
 / { behaviors {
-//   noshift: behavior_noshift
+  noshift: behavior_noshift {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  }
   
   mtz: behavior_mod_tap_zero {
     // 
