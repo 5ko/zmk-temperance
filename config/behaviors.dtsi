@@ -67,6 +67,8 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
 
 / { behaviors {
+//   noshift: behavior_noshift
+  
   mtz: behavior_mod_tap_zero {
     // 
     compatible = "zmk,behavior-hold-tap";

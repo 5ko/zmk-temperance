@@ -40,7 +40,9 @@
 #define CB3(keypos, name, bindings) \
   ZMK_COMBO(name, bindings, keypos)
 
-  
+#define CBLR(left_combo, right_combo, combo_name, key_action, left_layers, right_layers) \
+  CB4(left_combo, combo_name##_l, key_action, left_layers)       \
+  CB4(right_combo, combo_name##_r, key_action, right_layers)
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 

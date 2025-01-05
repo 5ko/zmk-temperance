@@ -29,10 +29,10 @@
 #define B2 6
 #define B1 7
 
-#define Z4 8
-#define Z3 9
-#define Z2 10
-#define Z1 11
+// #define Z4 8
+// #define Z3 9
+// #define Z2 10
+// #define Z1 11
 
 
 // The layers need to be numbered in the order they are below,
@@ -63,7 +63,7 @@
 //    Layers: Hold-S, Hold-A (accents can be removed)
 
 
-#define NONE4 &none &none &none &none 
+// #define NONE4 &none &none &none &none 
          
 
 / { keymap { compatible = "zmk,keymap";
