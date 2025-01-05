@@ -78,9 +78,9 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     }; \
   };
   
-NS(noshift_grave, D_GRV);
-NS(noshift_acute, D_ACU);
-NS(noshift_circ, D_CRC);
+NS(noshift_grave, D_GRV)
+NS(noshift_acute, D_ACU)
+NS(noshift_circ, D_CRC)
 
 / { behaviors {
 //   noshift_grave: behavior_noshift_grave {
