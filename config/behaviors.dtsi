@@ -65,24 +65,42 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // HTHP(kp_kt, bindings = <&kp>, <&kt>;)// kp_kt CAPS LSHFT
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
-#define NS(name, keycode)  \
+// Unshift removes the Shift modifier from a key press,
+// useful for punctuation and international characters.
+#define Unshift(name, keycode)  \
   / { \
     behaviors { \
-      name: name { \
+      ns_##name: behavior_unshift_##name { \
         compatible = "zmk,behavior-mod-morph"; \
         #binding-cells = <0>;\
         bindings = <&kp keycode>, <&kp keycode>;\
         mods = <(MOD_LSFT|MOD_RSFT)>;\
         keep-mods = <(MOD_RALT)>; \
       }; \
+      mt_##name##_kp: behavior_mt_##name##_kp {\
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <HOLDTAP_TERM>; \
+        #binding-cells = <2>;\
+        bindings = <&ns_##name>, <&kp>;\
+      }; \
+      mt_kp_##name##: behavior_mt_kp_##name {\
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <HOLDTAP_TERM>; \
+        #binding-cells = <2>;\
+        bindings = <&kp>, <&ns_##name>;\
+      }; \
     }; \
   };
-  
-NS(noshift_grave, D_GRV)
-NS(noshift_acute, D_ACU)
-NS(noshift_circ, D_CRC)
 
-HTHP(gr_bs,      bindings = <&noshift_grave>, <&kp>;)
+
+// creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
+Unshift(dgrave, D_GRV) 
+// NS(noshift_acute, D_ACU)
+// NS(noshift_circ, D_CRC)
+
+// HTHP(gr_bs,      bindings = <&noshift_grave>, <&kp>;)
 
 
 / { behaviors {
