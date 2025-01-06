@@ -46,28 +46,28 @@
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
-TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
-TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
+// TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
+// TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 
 // Home keys config
-TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
-
-TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
-
-TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
-
-TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
-
-
-TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
-
-TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
-
-TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
-
-TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
+// TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
+// 
+// TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
+// 
+// TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
+// 
+// TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
+// 
+// 
+// TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+// 
+// TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+// 
+// TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+// 
+// TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 //   bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 
 
@@ -198,5 +198,4 @@ TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 // System functions
 CB3(kX__X, reset,   &sys_reset)
 CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
-
 
