@@ -82,7 +82,7 @@
     bindings = <
 //       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
 //       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
-      TODO        TODO          &noshift_grave        TODO
+      TODO        TODO          TODO        TODO
       TODO        TODO          TODO          &lt L_EDT N4
 //       NONE4
     >;
