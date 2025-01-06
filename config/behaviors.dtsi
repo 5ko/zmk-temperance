@@ -113,7 +113,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
         bindings = <&ns_##name>, <&kp>;\
       }; \
     }; \
-  };
+  }; 
   
 
 HTNSKP(dgrave_bslh, D_GRV)
