@@ -46,8 +46,8 @@
 
 // Tap dance is difficult with fingers 3 & 4, better use mod-taps
 
-// TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
-// TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
+TD_NAV(left_home, bindings = <&mt HOME LEFT>, <&kp LC(LEFT)>; )
+TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 
@@ -77,7 +77,7 @@
 // Base letter combos
 
 // Combos NUM layer
-// CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
+CB4(kTT__, layoff_num, &lay_off L_NUM, L_NUM)
 // 
 // CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
 // 
@@ -89,22 +89,22 @@
 
 
 // Combos NAV+Media layer
-// CB4(__TT, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
-// CB4(__BB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
-// CB4(_TT_, mute_play, &mt K_PP K_MUTE   , L_NAV)
+CB4(k_MM_, mute_play, &mt K_PP K_MUTE   , L_NAV)
+CB4(k__MM, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
+CB4(k__BB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
 
 
 
 
 // Combos BLUETOOTH layer
-// CB3(X__X, l_L_BLE  , &sl L_BLE) // ALL layers
-// CB4(_XX_, bt_clr   , &bt BT_CLR    , L_BLE)
-// CB4(TT__, LO_ble   , &lay_off L_BLE, L_BLE)
+CB4(kTT__, LO_ble   , &lay_off L_BLE, L_BLE)
+CB3(kL__L, l_L_BLE  , &sl L_BLE) // ALL layers
+CB4(k_LL_, bt_clr   , &bt BT_CLR    , L_BLE)
 
 
 // Combos L_MSE  Mouse layer
-// CB4(TT__, LO_MSE , &lay_off L_MSE , L_MSE)
-// CB4(_TBT, tog_mse, &tog L_MSE     , L_BASE L_MSE)
+CB4(kTT__, LO_MSE , &lay_off L_MSE , L_MSE)
+CB4(k_TMT, tog_mse, &tog L_MSE     , L_BASE L_MSE)
 // CB4(_T_T, mb3    , M_B3           , L_MSE)
 // CB4(_TT_, mb4    , M_B4           , L_MSE)
 // CB4(__TT, mb5    , M_B5           , L_MSE)
@@ -112,7 +112,7 @@
 // CB4(___X, msr    , M_SR           , L_MSE)
 
 // Combos L_FUN layer
-// CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
+CB4(kTT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 // Combos L_EDT layer
 // ^C, ^X, ^V for applications that don't recognise ^INS

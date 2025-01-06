@@ -104,11 +104,9 @@
   navmedia {
     display-name = "L_NAV";
     bindings = <
-      NONE4
-      NONE4
-      NONE4
-//       MM_PS      MM_VD       MM_VU       &kp UP
-//       &mo L_NAV  &left_home  &right_end  &kp DOWN
+      TODO   &mt DSK_SHOW WIN_LAST  &mt DSK_PREV WIN_PREV  &mt DSK_NEXT WIN_NEXT 
+      MM_PS  MM_VD                  MM_VU                  &kp UP
+      &mo L_NAV  &left_home  &right_end  &kp DOWN
     >;
   };
   accented {
