@@ -117,7 +117,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
   
 
 HTNSKP(dgrave_bslh, D_GRV)
-// #define dgrave_bslh &mt_dgrave_bslh 0 BSLH
+#define dgrave_bslh &mt_dgrave_bslh 0 BSLH
 
 
 // creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
