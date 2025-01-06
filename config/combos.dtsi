@@ -177,26 +177,26 @@ TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 // CB4(___X, comma, dot_comma     , L_BASE L_NUM)
 
 
-// GLOBAL Combos 
-CB4(__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
-CB4(__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
-CB4(BT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
-CB4(BTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
-
-// Hold for sticky RALT (one shot), tap to toggle LALT
-CB4(_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
-// Hold for sticky LGUI (one shot), tap to toggle LCTRL
-CB4(_TTB, ctrl     , &sk_tk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
-// Hold for CAPS, tap to toggle LSHFT
-// CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
-// Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
-CB4(_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
-// Hold for Shift hold, tap for one-shot Shift
-CB4(_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
+// // GLOBAL Combos 
+// CB4(k__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
+// CB4(k__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
+// CB4(kBT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
+// CB4(kBTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
+// 
+// // Hold for sticky RALT (one shot), tap to toggle LALT
+// CB4(k_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
+// // Hold for sticky LGUI (one shot), tap to toggle LCTRL
+// CB4(k_TTB, ctrl     , &sk_tk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
+// // Hold for CAPS, tap to toggle LSHFT
+// // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
+// // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
+// CB4(k_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
+// // Hold for Shift hold, tap for one-shot Shift
+// CB4(k_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
 
 // System functions
-CB3(X__X, reset,   &sys_reset)
-CB4(BBBL, reflash, &bootloader, ALL_LEFT)
+CB3(kX__X, reset,   &sys_reset)
+CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
 
 
