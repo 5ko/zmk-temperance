@@ -218,8 +218,8 @@ CB4(k__BB, b, &kp B, L_BASE)
 
 // System functions
 // CB3(kX__X, reset,   &sys_reset)
-// CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
-ZMK_COMBO(reflash, &bootloader, B4 B3 B2 B1 M1, L_BASE)
+CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
+// ZMK_COMBO(reflash, &bootloader, B4 B3 B2 B1 M1, L_BASE)
 
 
 

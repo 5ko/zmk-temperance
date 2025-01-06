@@ -18,21 +18,23 @@
 #include "zmk-helpers/helper.h"
 
 
-// Top row SITA
+// Top row HTSR
 #define T4 0
 #define T3 1
 #define T2 2
 #define T1 3
-// Bottom row NO E
-#define B4 4
-#define B3 5
-#define B2 6
-#define B1 7
 
-// #define Z4 8
-// #define Z3 9
-// #define Z2 10
-// #define Z1 11
+// Middle row OIEA
+#define M4 4
+#define M3 5
+#define M2 6
+#define M1 7
+
+// Bottom row NLD_
+#define B4 8
+#define B3 9
+#define B2 10
+#define B1 11
 
 
 // The layers need to be numbered in the order they are below,
