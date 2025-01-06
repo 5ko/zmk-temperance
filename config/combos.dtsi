@@ -173,8 +173,8 @@ CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
 CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
 CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
 CB4(_X__, quote, dqt_sqt       , L_BASE L_NUM)
-CB4(__X_, comma, colon_semi    , L_BASE L_NUM)
-CB4(___X, colon, dot_comma     , L_BASE L_NUM)
+CB4(__X_, colon, colon_semi    , L_BASE L_NUM)
+CB4(___X, comma, dot_comma     , L_BASE L_NUM)
 
 
 // GLOBAL Combos 
