@@ -218,5 +218,5 @@ CB4(k__BB, b, &kp B, L_BASE)
 
 // System functions
 // CB3(kX__X, reset,   &sys_reset)
-// CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
+CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
 
