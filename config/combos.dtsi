@@ -129,6 +129,7 @@
 
 
 // Combos base letters
+CB4(k__BB, b, &kp B, L_BASE)
 // // CB4(k__BB, b, &kp B, L_BASE)
 // // CB4(k__MM, c, &kp C, L_BASE)
 // // CB4(kBB__, f, &kp F, L_BASE)
@@ -149,7 +150,6 @@
 // // CB4(k_M_M, y, &kp Y, L_BASE)
 // // CB4(k_B_B, z, &kp Z, L_BASE)
 
-CB4(k__BB, b, &mt AMPS  B, L_BASE)
 
 // CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
 // CB4(__TT, d, &mt DLLR  D, L_BASE)
