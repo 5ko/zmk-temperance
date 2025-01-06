@@ -115,10 +115,40 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     }; \
   };
   
+// Hold-Tap NoShift KeyPress
+#define HTNSNS(name, keycode1, keycode2)  \
+  / { \
+    behaviors { \
+      ns1_##name: behavior_unshift1_##name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode1>, <&kp keycode1>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
+      }; \
+      ns2_##name: behavior_unshift2_##name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode2>, <&kp keycode2>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
+      }; \
+      mt_##name: behavior_mt_##name {\
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <HOLDTAP_TERM>; \
+        #binding-cells = <2>;\
+        bindings = <&ns1_##name>, <&ns1_##name>;\
+      }; \
+    }; \
+  };
+  
 
 HTNSKP( dgrave_bslh, D_GRV)
 #define dgrave_bslh &mt_dgrave_bslh 0 BSLH
 
+HTNSNS( dot_comma, D_GRV)
+#define dot_comma &mt_dot_comma 0 0
 
 // creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
 // Unshift(dgrave, D_GRV) 
