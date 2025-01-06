@@ -167,11 +167,11 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
   
 
 
-HTNSNS( dgrave_bslh, D_GRV)
-#define dgrave_bslh &mt_dgrave_bslh 0 BSLH
+HTNSNS( dgrave_bslh, D_GRV, BSLH)
+#define dgrave_bslh &mt_dgrave_bslh 0 0
 
-HTNSNS( dacute_fslh, D_ACU)
-#define dacute_fslh &dacute_fslh 0 FSLH
+HTNSNS( dacute_fslh, D_ACU, FSLH)
+#define dacute_fslh &dacute_fslh 0 0
 
 HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
