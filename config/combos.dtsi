@@ -130,25 +130,24 @@
 
 // Combos base letters
 CB4(k__BB, b, &kp B, L_BASE)
-// // CB4(k__BB, b, &kp B, L_BASE)
-// // CB4(k__MM, c, &kp C, L_BASE)
-// // CB4(kBB__, f, &kp F, L_BASE)
-// // CB4(k_BB_, g, &kp G, L_BASE)
-// // 
-// // CB4(k_MMM, j, &kp J, L_BASE)
-// // CB4(k_BBB, k, &kp K, L_BASE)
-// // CB4(k_MM_, m, &kp M, L_BASE)
-// // CB4(kMM__, p, &kp P, L_BASE)
-// // CB4(kTT__, q, &kp Q, L_BASE)
-// // 
-// // 
-// // CB4(k__TT, u, &kp U, L_BASE)
-// // CB4(k_TT_, v, &kp V, L_BASE)
-// // CB4(k_TTT, w, &kp W, L_BASE)
-// // 
-// // CB4(k_T_T, x, &kp X, L_BASE)
-// // CB4(k_M_M, y, &kp Y, L_BASE)
-// // CB4(k_B_B, z, &kp Z, L_BASE)
+CB4(k__MM, c, &kp C, L_BASE)
+CB4(kBB__, f, &kp F, L_BASE)
+CB4(k_BB_, g, &kp G, L_BASE)
+
+CB4(k_MMM, j, &kp J, L_BASE)
+CB4(k_BBB, k, &kp K, L_BASE)
+CB4(k_MM_, m, &kp M, L_BASE)
+CB4(kMM__, p, &kp P, L_BASE)
+CB4(kTT__, q, &kp Q, L_BASE)
+
+
+CB4(k__TT, u, &kp U, L_BASE)
+CB4(k_TT_, v, &kp V, L_BASE)
+CB4(k_TTT, w, &kp W, L_BASE)
+
+CB4(k_T_T, x, &kp X, L_BASE)
+CB4(k_M_M, y, &kp Y, L_BASE)
+CB4(k_B_B, z, &kp Z, L_BASE)
 
 
 // CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
@@ -215,6 +214,8 @@ CB4(k__BB, b, &kp B, L_BASE)
 // // Hold for Shift hold, tap for one-shot Shift
 // CB4(k_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
+
+CB4(k___L, enter, &kp ENTER, L_BASE L_NUM)
 
 // System functions
 // CB3(kX__X, reset,   &sys_reset)
