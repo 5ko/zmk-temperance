@@ -218,7 +218,7 @@ CB4(k_MTT, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 CB4(k___L, enter, &kp ENTER, L_BASE L_NUM)
 
 // System functions
-// CB3(kX__X, reset,   &sys_reset)
+CB3(kX__X, reset,   &sys_reset)
 CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
 // ZMK_COMBO(reflash, &bootloader, B4 B3 B2 B1 M1, L_BASE)
 
