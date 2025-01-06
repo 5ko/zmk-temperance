@@ -138,7 +138,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
         flavor = "hold-preferred"; \
         tapping-term-ms = <HOLDTAP_TERM>; \
         #binding-cells = <2>;\
-        bindings = <&ns1_##name>, <&ns1_##name>;\
+        bindings = <&ns1_##name>, <&ns2_##name>;\
       }; \
     }; \
   };
@@ -147,7 +147,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 HTNSKP( dgrave_bslh, D_GRV)
 #define dgrave_bslh &mt_dgrave_bslh 0 BSLH
 
-HTNSNS( dot_comma, D_GRV)
+HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
 
 // creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
