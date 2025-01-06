@@ -105,7 +105,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
         mods = <(MOD_LSFT|MOD_RSFT)>;\
         keep-mods = <(MOD_RALT)>; \
       }; \
-      mt_##name: behavior_mt_##name {\
+      name: behavior_mt_##name {\
         compatible = "zmk,behavior-hold-tap"; \
         flavor = "hold-preferred"; \
         tapping-term-ms = <HOLDTAP_TERM>; \
@@ -113,8 +113,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
         bindings = <&ns_##name>, <&kp keycode2>;\
       }; \
     }; \
-  }; \
-  #define name &mt_##name 0 0
+  };
   
 
 HTNSKP(dgrave_bslh, D_GRV, BSLH)
