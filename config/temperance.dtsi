@@ -73,8 +73,8 @@
     // unless we use non-momentary layers?
     bindings = <
       &kp H         &lt L_NUM T   &kp S    &kp R
-      &kp O         &kp I   &kp E    &kp A
-      &lt L_NAV N   &kp L   &kp D    &kp SPACE
+      &kp O         &kp I         &kp E    &kp A
+      &lt L_NAV N   &kp L         &kp D    &kp SPACE
     >;
   };
   numbers {
@@ -103,8 +103,10 @@
     display-name = "L_NAV";
     bindings = <
       NONE4
-      MM_PS      MM_VD       MM_VU       &kp UP
-      &mo L_NAV  &left_home  &right_end  &kp DOWN
+      NONE4
+      NONE4
+//       MM_PS      MM_VD       MM_VU       &kp UP
+//       &mo L_NAV  &left_home  &right_end  &kp DOWN
     >;
   };
   accented {
