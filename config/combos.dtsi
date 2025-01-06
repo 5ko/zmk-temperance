@@ -174,7 +174,7 @@ CB4(T__B, backs, dgrave_bslh    , L_BASE L_NUM)
 CB4(X___, exclq, &mt QMARK EXCL , L_BASE L_NUM)
 CB4(_X__, quote, &mt DQT SQT    , L_BASE L_NUM)
 CB4(__X_, comma, &mt COLON SEMI , L_BASE L_NUM)
-CB4(___X, colon, &mt DOT COMMA  , L_BASE L_NUM)
+CB4(___X, colon, dot_comma  , L_BASE L_NUM)
 
 
 // GLOBAL Combos 

@@ -147,6 +147,14 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 HTNSKP( dgrave_bslh, D_GRV)
 #define dgrave_bslh &mt_dgrave_bslh 0 BSLH
 
+HTNSKP( colon_semi, COLON)
+#define colon_semi &mt_dgrave_bslh 0 SEMI
+
+HTNSKP( dqt_sqt, DQT)
+#define dqt_sqt &mt_dqt_sqt 0 SQT
+
+
+
 HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
 
