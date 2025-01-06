@@ -63,7 +63,7 @@
 //    Layers: Hold-S, Hold-A (accents can be removed)
 
 
-// #define NONE4 &none &none &none &none 
+#define NONE4 &none &none &none &none 
          
 
 / { keymap { compatible = "zmk,keymap";
@@ -72,27 +72,27 @@
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_S  &td_I  &td_T   &td_A
-      &td_N  &td_O  &td_SP  &td_E
-//       &kp N4 &kp N3 &kp N2  &kp N1
+      &kp H         &lt L_NUM T   &kp S    &kp R
+      &kp O         &kp I   &kp E    &kp A
+      &lt L_NAV N   &kp L   &kp D    &kp SPACE
     >;
   };
   numbers {
     display-name = "L_NUM";
     bindings = <
-//       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
-//       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
-      TODO        TODO          TODO        TODO
-      TODO        TODO          TODO          &lt L_EDT N4
-//       NONE4
+      &kp N9  &kp N0  &kp DOT &kp COMMA
+      &kp N5  &kp N6  &kp N7  &kp N8
+      &kp N1  &kp N2  &kp N3  &kp N4
     >;
   };
   parentheses {
     display-name = "L_PAR";
     bindings = <
-      TODO      MAYBE      P_BRACES  P_PARENS
-      P_EQ_TLD  &mo L_PAR  P_LT_GT   P_BRACKETS
-//       NONE4
+//       TODO      MAYBE      P_BRACES  P_PARENS
+//       P_EQ_TLD  &mo L_PAR  P_LT_GT   P_BRACKETS
+      NONE4
+      NONE4
+      NONE4
     >;
       
   };
@@ -102,9 +102,9 @@
   navmedia {
     display-name = "L_NAV";
     bindings = <
+      NONE4
       MM_PS      MM_VD       MM_VU       &kp UP
       &mo L_NAV  &left_home  &right_end  &kp DOWN
-//       NONE4
     >;
   };
   accented {
@@ -113,18 +113,22 @@
     // Also dead `´¨^ available on hold-/\VX if needed for other letters
     display-name = "L_ACC";
     bindings = <
-      A_IC_ID   A_UG_UC   A_AG_AC   &mo L_ACC
-      A_OC_UD   A_EG_ED   A_EA_EC   &none
-//       NONE4
+//       A_IC_ID   A_UG_UC   A_AG_AC   &mo L_ACC
+//       A_OC_UD   A_EG_ED   A_EA_EC   &none
+      NONE4
+      NONE4
+      NONE4
     >;
 
   };
   editing {
     display-name = "L_EDT";
     bindings = <
-      E_SAVE   E_PASTE   E_COPY   &kp INS
-      TODO     TODO      E_UNDO   &mo L_EDT
-//       NONE4
+//       E_SAVE   E_PASTE   E_COPY   &kp INS
+//       TODO     TODO      E_UNDO   &mo L_EDT
+      NONE4
+      NONE4
+      NONE4
     >;
   };
   functionkeys {
@@ -132,7 +136,9 @@
     bindings = <
       TODO   &mt F2 F1   &mt F4  F3   &mt F6  F5
       TODO   &mt F8 F7   &mt F10 F9   &mt F12 F11
-//       NONE4
+      &kp F9  &kp F10  &kp F11 &kp F12
+      &kp F5  &kp F6   &kp F7  &kp F8
+      &kp F1  &kp F2   &kp F3  &kp F4
     >;
   };
   mouse {
@@ -140,7 +146,7 @@
     bindings = <
      M_SU   M_B2   M_MU   M_B1
      M_SD   M_ML   M_MD   M_MR
-//      NONE4
+     NONE4
      
     >;
   };
@@ -150,7 +156,7 @@
     bindings = <
       &out OUT_BLE   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
       &out OUT_USB   &bt BT_SEL 5  &bt BT_SEL 4  &bt BT_SEL 3
-//       NONE4
+      NONE4
     >;
   };
 

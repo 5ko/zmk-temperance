@@ -167,14 +167,6 @@ HTKPNS( dqt_sqt, SQT)
 
 
 / { behaviors {
-//   noshift_grave: behavior_noshift_grave {
-//     compatible = "zmk,behavior-mod-morph";
-//     #binding-cells = <0>;
-//     bindings = <&kp A>, <&kp B>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-//     keep-mods = <(MOD_RALT)>;
-//   };
-  
   mtz: behavior_mod_tap_zero {
     // 
     compatible = "zmk,behavior-hold-tap";
@@ -249,11 +241,11 @@ HTKPNS( dqt_sqt, SQT)
 #define SK_TK(key) &sk_tk key key
 
 // Accented letters on L_ACC
-#define A_IC_ID &i_circ_dier   0 0  
-#define A_UG_UC &u_grave_circ  0 0 
-#define A_AG_AC &a_grave_circ  0 0 
-#define A_OC_UD &o_circ_u_dier 0 0
-#define A_EG_ED &e_grave_dier  0 0 
-#define A_EA_EC &e_acute_circ  0 0 
+// #define A_IC_ID &i_circ_dier   0 0  
+// #define A_UG_UC &u_grave_circ  0 0 
+// #define A_AG_AC &a_grave_circ  0 0 
+// #define A_OC_UD &o_circ_u_dier 0 0
+// #define A_EG_ED &e_grave_dier  0 0 
+// #define A_EA_EC &e_acute_circ  0 0 
 
 
