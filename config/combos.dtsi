@@ -142,8 +142,8 @@ CB4(kTT__, q, &kp       Q, L_BASE)
 
 
 CB4(k__TT, u, &mt UNDER U, L_BASE)
-CB4(k_TT_, v, &kp V, L_BASE)
-CB4(k_TTT, w, &kp W, L_BASE)
+CB4(k_TT_, v, &kp       V, L_BASE)
+CB4(k_TTT, w, &kp       W, L_BASE)
 
 CB4(k_T_T, x, &kp X, L_BASE)
 CB4(k_M_M, y, &mt LC(LS(Z)) Y, L_BASE)
