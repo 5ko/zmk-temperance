@@ -65,35 +65,37 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // HTHP(kp_kt, bindings = <&kp>, <&kt>;)// kp_kt CAPS LSHFT
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
-// Unshift removes the Shift modifier from a key press,
-// useful for punctuation and international characters.
-#define Unshift(name, keycode)  \
+
+// Hold-Tap NoShift NoShift
+#define HTNSNS(name, keycode1, keycode2)  \
   / { \
     behaviors { \
-      ns_##name: behavior_unshift_##name { \
+      ns1_##name: behavior_unshift1_##name { \
         compatible = "zmk,behavior-mod-morph"; \
         #binding-cells = <0>;\
-        bindings = <&kp keycode>, <&kp keycode>;\
+        bindings = <&kp keycode1>, <&kp keycode1>;\
         mods = <(MOD_LSFT|MOD_RSFT)>;\
         keep-mods = <(MOD_RALT)>; \
       }; \
-      mt_##name##_kp: behavior_mt_##name##_kp {\
-        compatible = "zmk,behavior-hold-tap"; \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <HOLDTAP_TERM>; \
-        #binding-cells = <2>;\
-        bindings = <&ns_##name>, <&kp>;\
+      ns2_##name: behavior_unshift2_##name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode2>, <&kp keycode2>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
       }; \
-      mt_kp_##name##: behavior_mt_kp_##name {\
+      mt_##name: behavior_mt_##name {\
         compatible = "zmk,behavior-hold-tap"; \
         flavor = "hold-preferred"; \
         tapping-term-ms = <HOLDTAP_TERM>; \
         #binding-cells = <2>;\
-        bindings = <&kp>, <&ns_##name>;\
+        bindings = <&ns1_##name>, <&ns2_##name>;\
       }; \
     }; \
   };
+  
 
+  
 // Hold-Tap NoShift KeyPress
 #define HTNSKP(name, keycode)  \
   / { \
@@ -136,36 +138,8 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     }; \
   };
   
-// Hold-Tap NoShift NoShift
-#define HTNSNS(name, keycode1, keycode2)  \
-  / { \
-    behaviors { \
-      ns1_##name: behavior_unshift1_##name { \
-        compatible = "zmk,behavior-mod-morph"; \
-        #binding-cells = <0>;\
-        bindings = <&kp keycode1>, <&kp keycode1>;\
-        mods = <(MOD_LSFT|MOD_RSFT)>;\
-        keep-mods = <(MOD_RALT)>; \
-      }; \
-      ns2_##name: behavior_unshift2_##name { \
-        compatible = "zmk,behavior-mod-morph"; \
-        #binding-cells = <0>;\
-        bindings = <&kp keycode2>, <&kp keycode2>;\
-        mods = <(MOD_LSFT|MOD_RSFT)>;\
-        keep-mods = <(MOD_RALT)>; \
-      }; \
-      mt_##name: behavior_mt_##name {\
-        compatible = "zmk,behavior-hold-tap"; \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <HOLDTAP_TERM>; \
-        #binding-cells = <2>;\
-        bindings = <&ns1_##name>, <&ns2_##name>;\
-      }; \
-    }; \
-  };
-  
-  
-
+HTNSNS( dot_comma, DOT, COMMA)
+#define dot_comma &mt_dot_comma 0 0
 
 HTNSNS( dgrave_bslh, D_GRV, BSLH)
 #define dgrave_bslh &mt_dgrave_bslh 0 0
@@ -173,14 +147,14 @@ HTNSNS( dgrave_bslh, D_GRV, BSLH)
 HTNSNS( dacute_fslh, D_ACU, FSLH)
 #define dacute_fslh &mt_dacute_fslh 0 0
 
-HTNSNS( dot_comma, DOT, COMMA)
-#define dot_comma &mt_dot_comma 0 0
 
-HTKPNS( colon_semi, COLON)
-#define colon_semi &mt_dgrave_bslh SEMI 0
 
-HTKPNS( dqt_sqt, DQT)
-#define dqt_sqt &mt_dqt_sqt SQT 0
+
+HTKPNS( colon_semi, SEMI)
+#define colon_semi &mt_dgrave_bslh COLON 0
+
+HTKPNS( dqt_sqt, SQT)
+#define dqt_sqt &mt_dqt_sqt DQT 0
 
 
 
