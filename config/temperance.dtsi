@@ -31,10 +31,10 @@
 #define M1 7
 
 // Bottom row NLD_
-#define B4 8
-#define B3 9
-#define B2 10
-#define B1 11
+#define B4 11
+#define B3 10
+#define B2 9
+#define B1 8
 
 
 // The layers need to be numbered in the order they are below,
