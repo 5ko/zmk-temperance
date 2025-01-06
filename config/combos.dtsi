@@ -196,6 +196,6 @@
 
 
 // System functions
-CB3(kX__X, reset,   &sys_reset)
-CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
+// CB3(kX__X, reset,   &sys_reset)
+// CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
 
