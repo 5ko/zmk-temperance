@@ -115,7 +115,28 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     }; \
   };
   
-// Hold-Tap NoShift KeyPress
+// Hold-Tap KeyPress NoShift
+#define HTKPNS(name, keycode)  \
+  / { \
+    behaviors { \
+      ns_##name: behavior_unshift_##name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode>, <&kp keycode>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
+      }; \
+      mt_##name: behavior_mt_##name {\
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <HOLDTAP_TERM>; \
+        #binding-cells = <2>;\
+        bindings = <&kp>, <&ns_##name>;\
+      }; \
+    }; \
+  };
+  
+// Hold-Tap NoShift NoShift
 #define HTNSNS(name, keycode1, keycode2)  \
   / { \
     behaviors { \
@@ -143,20 +164,25 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
     }; \
   };
   
+  
 
-HTNSKP( dgrave_bslh, D_GRV)
+
+HTNSNS( dgrave_bslh, D_GRV)
 #define dgrave_bslh &mt_dgrave_bslh 0 BSLH
 
-HTNSKP( colon_semi, COLON)
-#define colon_semi &mt_dgrave_bslh 0 SEMI
-
-HTNSKP( dqt_sqt, DQT)
-#define dqt_sqt &mt_dqt_sqt 0 SQT
-
-
+HTNSNS( dacute_fslh, D_ACU)
+#define dacute_fslh &dacute_fslh 0 FSLH
 
 HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
+
+HTKPNS( colon_semi, COLON)
+#define colon_semi &mt_dgrave_bslh 0 SEMI
+
+HTKPNS( dqt_sqt, DQT)
+#define dqt_sqt &mt_dqt_sqt 0 SQT
+
+
 
 // creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
 // Unshift(dgrave, D_GRV) 
