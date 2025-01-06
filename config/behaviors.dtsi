@@ -171,7 +171,7 @@ HTNSNS( dgrave_bslh, D_GRV, BSLH)
 #define dgrave_bslh &mt_dgrave_bslh 0 0
 
 HTNSNS( dacute_fslh, D_ACU, FSLH)
-#define dacute_fslh &dacute_fslh 0 0
+#define dacute_fslh &mt_dacute_fslh 0 0
 
 HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
