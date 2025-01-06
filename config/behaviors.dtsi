@@ -151,7 +151,7 @@ HTNSNS( dacute_fslh, D_ACU, FSLH)
 
 
 HTKPNS( colon_semi, SEMI)
-#define colon_semi &mt_dgrave_bslh COLON 0
+#define colon_semi &mt_colon_semi COLON 0
 
 HTKPNS( dqt_sqt, SQT)
 #define dqt_sqt &mt_dqt_sqt DQT 0
