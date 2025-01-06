@@ -177,10 +177,10 @@ HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
 
 HTKPNS( colon_semi, COLON)
-#define colon_semi &mt_dgrave_bslh 0 SEMI
+#define colon_semi &mt_dgrave_bslh SEMI 0
 
 HTKPNS( dqt_sqt, DQT)
-#define dqt_sqt &mt_dqt_sqt 0 SQT
+#define dqt_sqt &mt_dqt_sqt SQT 0
 
 
 
