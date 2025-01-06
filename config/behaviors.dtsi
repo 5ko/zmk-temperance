@@ -95,7 +95,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
   };
 
 // Hold-Tap NoShift KeyPress
-#define HTNSKP(name, keycode1)  \
+#define HTNSKP(name, keycode)  \
   / { \
     behaviors { \
       ns_##name: behavior_unshift_##name { \
