@@ -149,7 +149,8 @@
 // // CB4(k_M_M, y, &kp Y, L_BASE)
 // // CB4(k_B_B, z, &kp Z, L_BASE)
 
-CB4(kTT__, b, &mt AMPS  B, L_BASE)
+CB4(k__BB, b, &mt AMPS  B, L_BASE)
+
 // CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
 // CB4(__TT, d, &mt DLLR  D, L_BASE)
 // 
