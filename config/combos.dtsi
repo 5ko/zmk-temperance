@@ -198,10 +198,10 @@ CB4(k_B_B, z, &kp Z, L_BASE)
 
 
 // // GLOBAL Combos 
-// CB4(k__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
-// CB4(k__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
-// CB4(kBT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
-// CB4(kBTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
+CB4(k__TM, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
+CB4(k__MT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
+CB4(k_MT_, escape   , &kp          ESC , ALL_LEFT)
+CB4(k_MTT, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 // 
 // // Hold for sticky RALT (one shot), tap to toggle LALT
 // CB4(k_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
