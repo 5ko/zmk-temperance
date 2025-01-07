@@ -52,22 +52,22 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 // Home keys config
-// TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
-// 
-// TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
-// 
-// TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
-// 
-// TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
-// 
-// 
-// TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
-// 
-// TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
-// 
-// TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
-// 
-// TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
+TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
+
+TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
+
+TD_3(td_T, bindings = <&lk L_NUM T>, <&tap2 D_GRV U>, <&tap2 D_CRC U>;)
+
+TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_CRC E>, <&tap2 D_DRS E>;)
+
+
+TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
+
+TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+
+TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+
+TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 //   bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 
 
@@ -77,103 +77,83 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 // Base letter combos
 
 // Combos NUM layer
-CB4(kTT__, layoff_num, &lay_off L_NUM, L_NUM)
-// 
-// CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
-// 
-// CB4(__BB, num_9, &mt HASH   N9, L_NUM)
-// CB4(_BB_, num_0, &mt DEGREE N0, L_NUM)
-// CB4(_T_T, num_E, &mt GBP  EURO, L_NUM)
-// CB4(_B_B, num_Y, &kp YEN      , L_NUM)
+CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
+
+CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
+
+CB4(__BB, num_9, &mt HASH   N9, L_NUM)
+CB4(_BB_, num_0, &mt DEGREE N0, L_NUM)
+CB4(_T_T, num_E, &mt GBP  EURO, L_NUM)
+CB4(_B_B, num_Y, &kp YEN      , L_NUM)
 // could do combos TTT_, BBB_, _TTT, _BBB
 
 
 // Combos NAV+Media layer
-CB4(k_MM_, mute_play, &mt K_PP K_MUTE   , L_NAV)
-CB4(k__MM, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
-CB4(k__BB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
+CB4(__TT, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
+CB4(__BB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
+CB4(_TT_, mute_play, &mt K_PP K_MUTE   , L_NAV)
 
 
 
 
 // Combos BLUETOOTH layer
-CB4(kTT__, LO_ble   , &lay_off L_BLE, L_BLE)
-CB3(kL__L, l_L_BLE  , &sl L_BLE) // ALL layers
-CB4(k_LL_, bt_clr   , &bt BT_CLR    , L_BLE)
+CB3(X__X, l_L_BLE  , &sl L_BLE) // ALL layers
+CB4(_XX_, bt_clr   , &bt BT_CLR    , L_BLE)
+CB4(TT__, LO_ble   , &lay_off L_BLE, L_BLE)
 
 
 // Combos L_MSE  Mouse layer
-CB4(kTT__, LO_MSE , &lay_off L_MSE , L_MSE)
-CB4(k_TMT, tog_mse, &tog L_MSE     , L_BASE L_MSE)
-// CB4(_T_T, mb3    , M_B3           , L_MSE)
-// CB4(_TT_, mb4    , M_B4           , L_MSE)
-// CB4(__TT, mb5    , M_B5           , L_MSE)
-// CB4(X___, msl    , M_SL           , L_MSE)
-// CB4(___X, msr    , M_SR           , L_MSE)
+CB4(TT__, LO_MSE , &lay_off L_MSE , L_MSE)
+CB4(_TBT, tog_mse, &tog L_MSE     , L_BASE L_MSE)
+CB4(_T_T, mb3    , M_B3           , L_MSE)
+CB4(_TT_, mb4    , M_B4           , L_MSE)
+CB4(__TT, mb5    , M_B5           , L_MSE)
+CB4(X___, msl    , M_SL           , L_MSE)
+CB4(___X, msr    , M_SR           , L_MSE)
 
 // Combos L_FUN layer
-CB4(kTT__, LO_fun, &lay_off L_FUN, L_FUN)
+CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 // Combos L_EDT layer
 // ^C, ^X, ^V for applications that don't recognise ^INS
-// CB4(_TT_, copycut, &mt LC(X) LC(C)    , L_EDT)
-// CB4(TT__, paste12, &mt LC(LS(V)) LC(V), L_EDT)
+CB4(_TT_, copycut, &mt LC(X) LC(C)    , L_EDT)
+CB4(TT__, paste12, &mt LC(LS(V)) LC(V), L_EDT)
 
 
 // Combos L_PAR layer
-// CB4(__TT, eq, &mt TILDE EQUAL, L_PAR)
+CB4(__TT, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
-// CB4(__BB, e_dier, &tap2 D_DRS E, L_ACC)
+CB4(__BB, e_dier, &tap2 D_DRS E, L_ACC)
 
 
 // Combos base letters
-CB4(k__BB, b, &mt AMPS  B, L_BASE)
-CB4(k__MM, c, &kp       C, L_BASE)
-CB4(kBB__, f, &lk L_FUN F, L_BASE)
-CB4(k_BB_, g, &mt GBP   G, L_BASE)
+CB4(TT__, b, &mt AMPS  B, L_BASE)
+CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
+CB4(__TT, d, &mt DLLR  D, L_BASE)
 
-CB4(k_MMM, j, &kp       J, L_BASE)
-CB4(k_BBB, k, &kp       K, L_BASE)
-CB4(k_MM_, m, &mt MINUS M, L_BASE)
-CB4(kMM__, p, &mt PLUS  P, L_BASE)
-CB4(kTT__, q, &kp       Q, L_BASE)
+CB4(__BB, h, &mt HASH  H, L_BASE)
+CB4(_BB_, u, &mt UNDER U, L_BASE)
+CB4(BBB_, g, &mt GBP   G, L_BASE)
 
+CB4(BB__, r, &kp       R, L_BASE)
+CB4(T_T_, j, &kp       J, L_BASE)
+CB4(_T_T, k, &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
+CB4(_B_B, y, &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha
+CB4(B_B_, z, &kp       Z, L_BASE)
 
-CB4(k__TT, u, &mt UNDER U, L_BASE)
-CB4(k_TT_, v, &kp       V, L_BASE)
-CB4(k_TTT, w, &kp       W, L_BASE)
+CB4(T__T, v, &mt D_DRS V, L_BASE)
+CB4(B__B, x, &mt D_CRC X, L_BASE)
 
-CB4(k_T_T, x, &kp X, L_BASE)
-CB4(k_M_M, y, &mt LC(LS(Z)) Y, L_BASE)
-CB4(k_B_B, z, &mt LC(Z)     Z, L_BASE)
+CB4(TT_T, p, &mt PIPE  P, L_BASE)
+CB4(BB_B, q, &mt PRCNT Q, L_BASE)
 
+CB4(_TTT, l, &mt PLUS  L, L_BASE L_NUM)
+CB4(_BBB, m, &mt MINUS M, L_BASE L_NUM)
 
-// CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
-// CB4(__TT, d, &mt DLLR  D, L_BASE)
-// 
-// CB4(__BB, h, &mt HASH  H, L_BASE)
-// CB4(_BB_, u, &mt UNDER U, L_BASE)
-// CB4(BBB_, g, &mt GBP   G, L_BASE)
-// 
-// CB4(BB__, r, &kp       R, L_BASE)
-// CB4(T_T_, j, &kp       J, L_BASE)
-// CB4(_T_T, k, &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
-// CB4(_B_B, y, &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha
-// CB4(B_B_, z, &kp       Z, L_BASE)
-// 
-// CB4(T__T, v, &mt D_DRS V, L_BASE)
-// CB4(B__B, x, &mt D_CRC X, L_BASE)
-// 
-// CB4(TT_T, p, &mt PIPE  P, L_BASE)
-// CB4(BB_B, q, &mt PRCNT Q, L_BASE)
-// 
-// CB4(_TTT, l, &mt PLUS  L, L_BASE L_NUM)
-// CB4(_BBB, m, &mt MINUS M, L_BASE L_NUM)
-// 
-// CB4(TTT_, f, &lk L_FUN F, L_BASE)
-// CB4(TTTT, w, &mt AT    W, L_BASE)
+CB4(TTT_, f, &lk L_FUN F, L_BASE)
+CB4(TTTT, w, &mt AT    W, L_BASE)
 
 // ZMK_COMBO(sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
 
@@ -189,38 +169,34 @@ CB4(k_B_B, z, &mt LC(Z)     Z, L_BASE)
 
 
 // Base punctuation
-// CB4(kM__T, slash, dacute_fslh   , L_BASE L_NUM)
-// CB4(kT__B, backs, dgrave_bslh   , L_BASE L_NUM)
-CB4(kH___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
-CB4(k_H__, quote, dqt_sqt       , L_BASE L_NUM)
-CB4(k__H_, colon, colon_semi    , L_BASE L_NUM)
-CB4(k___H, comma, dot_comma     , L_BASE L_NUM)
+CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
+CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
+CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
+CB4(_X__, quote, dqt_sqt       , L_BASE L_NUM)
+CB4(__X_, colon, colon_semi    , L_BASE L_NUM)
+CB4(___X, comma, dot_comma     , L_BASE L_NUM)
 
 
-// // GLOBAL Combos 
-CB4(k__TM, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
-CB4(k__MT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
-CB4(k_MT_, escape   , &kp          ESC , ALL_LEFT)
-CB4(k_MTT, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
-// 
-// // Hold for sticky RALT (one shot), tap to toggle LALT
-// CB4(k_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
-// // Hold for sticky LGUI (one shot), tap to toggle LCTRL
-// CB4(k_TTB, ctrl     , &sk_tk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
-// // Hold for CAPS, tap to toggle LSHFT
-// // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
-// // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
-// CB4(k_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
-// // Hold for Shift hold, tap for one-shot Shift
-// CB4(k_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
+// GLOBAL Combos 
+CB4(__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
+CB4(__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
+CB4(BT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
+CB4(BTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 
+// Hold for sticky RALT (one shot), tap to toggle LALT
+CB4(_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
+// Hold for sticky LGUI (one shot), tap to toggle LCTRL
+CB4(_TTB, ctrl     , &sk_tk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
+// Hold for CAPS, tap to toggle LSHFT
+// CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
+// Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
+CB4(_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
+// Hold for Shift hold, tap for one-shot Shift
+CB4(_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
-CB4(k___L, enter, &kp ENTER, L_BASE L_NUM)
 
 // System functions
-CB3(kX__X, reset,   &sys_reset)
-CB4(kBBBL, reflash, &bootloader, ALL_LEFT)
-// ZMK_COMBO(reflash, &bootloader, B4 B3 B2 B1 M1, L_BASE)
-
+CB3(XXXX, reset,   &sys_reset)
+CB4(BBBX, reflash, &bootloader, ALL_LEFT)
 
 

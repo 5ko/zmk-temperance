@@ -71,12 +71,3 @@
 #define P_PARENS   &mt RPAR LPAR
 #define P_LT_GT    &mt GT LT 
 #define P_EQ_TLD   &mt TILDE EQUAL
-
-
-#define WIN_NEXT LG(LS(RIGHT))
-#define WIN_PREV LG(LS(LEFT))
-#define WIN_LAST LA(TAB)
-#define DSK_NEXT LC(LA(RIGHT))
-#define DSK_PREV LC(LA(LEFT))
-#define DSK_SHOW LG(D)
-
