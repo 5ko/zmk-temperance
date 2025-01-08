@@ -72,9 +72,8 @@
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_S  &td_I  &td_T   &td_A
-      &td_N  &td_O  &td_SP  &td_E
-//       &kp N4 &kp N3 &kp N2  &kp N1
+      &td_S  &mt HASH H  &td_T   &td_A
+      &td_N  &td_I       &kp R   &td_E
     >;
   };
   numbers {
@@ -82,17 +81,15 @@
     bindings = <
 //       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
 //       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
-      TODO        TODO          TODO        TODO
-      TODO        TODO          TODO          &lt L_EDT N4
-//       NONE4
+      &kp N4         &kp N3   &kp N2   &kp N1
+      &lt L_NAV N8   &kp N7   &kp N6   &lt L_EDT N5
     >;
   };
   parentheses {
     display-name = "L_PAR";
     bindings = <
-      TODO      MAYBE      P_BRACES  P_PARENS
-      P_EQ_TLD  &mo L_PAR  P_LT_GT   P_BRACKETS
-//       NONE4
+      &mo L_PAR  MAYBE      P_BRACES  P_PARENS
+      TODO       P_EQ_TLD   P_LT_GT   P_BRACKETS
     >;
       
   };
@@ -102,21 +99,19 @@
   navmedia {
     display-name = "L_NAV";
     bindings = <
-      MM_PS      MM_VD       MM_VU       &kp UP
-      &mo L_NAV  &left_home  &right_end  &kp DOWN
-//       NONE4
+      MM_PS      TODO           MM_VD       MM_VU   
+      &mo L_NAV  &mt END HOME   &left_home  &right_end
     >;
   };
   accented {
     // French freq: é è à; rarer than Z: ê ç ô â î û ù ï ü ë
     // Also available on tap-dances for A, E, I, O, U (on T)
-    // Also dead `´¨^ available on hold-/\VX if needed for other letters
+    // TODO: replace with simple noshift dead accents 
     display-name = "L_ACC";
     bindings = <
-      A_IC_ID   A_UG_UC   A_AG_AC   &mo L_ACC
-      A_OC_UD   A_EG_ED   A_EA_EC   &none
-//       NONE4
-    >;
+      &mt TILDE D_TLD   &kp D_ACU    &mt GRAVE D_GRV   &mo L_ACC
+      TODO              &kp AMPS     &kp AT            MAYBE
+    >; 
 
   };
   editing {
@@ -124,7 +119,6 @@
     bindings = <
       E_SAVE   E_PASTE   E_COPY   &kp INS
       TODO     TODO      E_UNDO   &mo L_EDT
-//       NONE4
     >;
   };
   functionkeys {
@@ -132,7 +126,6 @@
     bindings = <
       TODO   &mt F2 F1   &mt F4  F3   &mt F6  F5
       TODO   &mt F8 F7   &mt F10 F9   &mt F12 F11
-//       NONE4
     >;
   };
   mouse {
@@ -150,7 +143,6 @@
     bindings = <
       &out OUT_BLE   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
       &out OUT_USB   &bt BT_SEL 5  &bt BT_SEL 4  &bt BT_SEL 3
-//       NONE4
     >;
   };
 

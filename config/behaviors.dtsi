@@ -57,6 +57,7 @@ HTHP(o_circ_u_dier, bindings = <&u_dier>, <&o_circ>;)
 
 
 HTHP(sk_tk, bindings = <&sk>, <&kt>;) // sk LGUI kt LCTRL; sk RALT kt LALT
+HTHP(sk_sk, bindings = <&sk>, <&sk>;) // sk LGUI kt LCTRL; sk RALT kt LALT
 HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
 // unused at the moment

@@ -52,7 +52,7 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 
 
 // Home keys config
-TD_3(td_S, bindings = <&lt L_NAV S>, <&kp STAR>, <&kp S_SRP>;)
+TD_3(td_S, bindings = <&lt L_PAR S>, <&kp STAR>, <&kp S_SRP>;)
 
 TD_3(td_I, bindings = <&lt L_PAR I>, <&tap2 D_CRC I>, <&tap2 D_DRS I>;)
 
@@ -63,35 +63,42 @@ TD_3(td_E, bindings = <&lk L_EDT E>, <&tap2 D_ACU E>, <&tap2 D_GRV E>, <&tap2 D_
 
 TD_3(td_N, bindings = <&lt L_NAV N>, <&kp NTILDE>;)
 
-TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
+// TD_3(td_O, bindings = <&lt L_PAR O>, <&tap2 D_CRC O>;)
 
-TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
+// TD_3(td_SP, bindings = <&mtz ENTER SPACE>, <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;)
 
 TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 //   bindings = <&mtz AT A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 
 
 
+// Toggle off current layer
+CB4(TT__, LO_ble   , &lay_off L_BLE, L_BLE)
+CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
+CB4(TT__, LO_MSE , &lay_off L_MSE , L_MSE)
+CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 
 // Base letter combos
 
 // Combos NUM layer
-CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
+CB4(_T_T, num_9Y, &mt N9  YEN , L_NUM)
+CB4(_B_B, num_0Z, &mt N0  EURO, L_NUM)
+// CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
+// CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
 
-CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
-
-CB4(__BB, num_9, &mt HASH   N9, L_NUM)
-CB4(_BB_, num_0, &mt DEGREE N0, L_NUM)
-CB4(_T_T, num_E, &mt GBP  EURO, L_NUM)
-CB4(_B_B, num_Y, &kp YEN      , L_NUM)
+// CB4(__BB, num_9, &mt HASH   N9, L_NUM)
+// CB4(_BB_, num_0, &mt DEGREE N0, L_NUM)
 // could do combos TTT_, BBB_, _TTT, _BBB
 
 
 // Combos NAV+Media layer
-CB4(__TT, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
-CB4(__BB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
-CB4(_TT_, mute_play, &mt K_PP K_MUTE   , L_NAV)
+CB4(__TT, mute_play, &mt K_PP K_MUTE   , L_NAV)
+
+CB4(_BB_, nav_up  ,  &kp UP            , L_NAV)
+CB4(__BB, nav_dn  ,  &kp DOWN          , L_NAV)
+CB4(_B_B, nav_pgup,  &mt LC(HOME) PG_UP, L_NAV)
+CB4(_BBB, nav_pgdn,  &mt LC(END)  PG_DN, L_NAV)
 
 
 
@@ -99,11 +106,9 @@ CB4(_TT_, mute_play, &mt K_PP K_MUTE   , L_NAV)
 // Combos BLUETOOTH layer
 CB3(X__X, l_L_BLE  , &sl L_BLE) // ALL layers
 CB4(_XX_, bt_clr   , &bt BT_CLR    , L_BLE)
-CB4(TT__, LO_ble   , &lay_off L_BLE, L_BLE)
 
 
 // Combos L_MSE  Mouse layer
-CB4(TT__, LO_MSE , &lay_off L_MSE , L_MSE)
 CB4(_TBT, tog_mse, &tog L_MSE     , L_BASE L_MSE)
 CB4(_T_T, mb3    , M_B3           , L_MSE)
 CB4(_TT_, mb4    , M_B4           , L_MSE)
@@ -112,7 +117,6 @@ CB4(X___, msl    , M_SL           , L_MSE)
 CB4(___X, msr    , M_SR           , L_MSE)
 
 // Combos L_FUN layer
-CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 // Combos L_EDT layer
 // ^C, ^X, ^V for applications that don't recognise ^INS
@@ -125,35 +129,37 @@ CB4(__TT, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
-CB4(__BB, e_dier, &tap2 D_DRS E, L_ACC)
+CB4(_TT_, circ_dier, &mt D_DRS D_CRC, L_ACC)
 
 
 // Combos base letters
-CB4(TT__, b, &mt AMPS  B, L_BASE)
+// CB4(TT__, b, &mt AMPS  B, L_BASE)
+// CB4(__TT, d, &mt DLLR  D, L_BASE)
+CB4(TT__, u, &mt UNDER U, L_BASE)
 CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
-CB4(__TT, d, &mt DLLR  D, L_BASE)
+CB4(__TT, o, &kp O      , L_BASE)
 
-CB4(__BB, h, &mt HASH  H, L_BASE)
-CB4(_BB_, u, &mt UNDER U, L_BASE)
-CB4(BBB_, g, &mt GBP   G, L_BASE)
+CB4(BB__, d , &mt DLLR D, L_BASE L_NUM)
+CB4(_BB_, l , &mt PLUS L, L_BASE L_NUM)
+CB4(__BB, sp, &kp SPACE , L_BASE L_NUM)
 
-CB4(BB__, r, &kp       R, L_BASE)
-CB4(T_T_, j, &kp       J, L_BASE)
-CB4(_T_T, k, &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
-CB4(_B_B, y, &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha
-CB4(B_B_, z, &kp       Z, L_BASE)
+CB4(TTT_, f, &lk L_FUN F, L_BASE L_NUM)
+CB4(BBB_, g, &mt GBP   G, L_BASE L_NUM)
+CB4(_TTT, w, &mt AT    W, L_BASE)
+CB4(_BBB, m, &mt MINUS M, L_BASE L_NUM)
 
-CB4(T__T, v, &mt D_DRS V, L_BASE)
-CB4(B__B, x, &mt D_CRC X, L_BASE)
+CB4(T_T_, j, &mt AELIG J, L_BASE) // AELIG = Cyrillic Sha
+CB4(B_B_, k, &mt OELIG K, L_BASE) // OELIG = Cyrillic Shcha
+CB4(_T_T, y, &kp       Y, L_BASE) // TODO undo/redo?
+CB4(_B_B, z, &kp       Z, L_BASE)
+
+CB4(T__T, v, &kp       V, L_BASE)
+CB4(B__B, x, &kp       X, L_BASE)
 
 CB4(TT_T, p, &mt PIPE  P, L_BASE)
 CB4(BB_B, q, &mt PRCNT Q, L_BASE)
 
-CB4(_TTT, l, &mt PLUS  L, L_BASE L_NUM)
-CB4(_BBB, m, &mt MINUS M, L_BASE L_NUM)
 
-CB4(TTT_, f, &lk L_FUN F, L_BASE)
-CB4(TTTT, w, &mt AT    W, L_BASE)
 
 // ZMK_COMBO(sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
 
@@ -169,12 +175,15 @@ CB4(TTTT, w, &mt AT    W, L_BASE)
 
 
 // Base punctuation
-CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
-CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
-CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
-CB4(_X__, quote, dqt_sqt       , L_BASE L_NUM)
-CB4(__X_, colon, colon_semi    , L_BASE L_NUM)
-CB4(___X, comma, dot_comma     , L_BASE L_NUM)
+// CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
+// CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
+// CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
+CB4(B__T, slash, &mt BSLH FSLH , L_BASE L_NUM)
+CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU
+CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
+CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
+CB4(__X_, comma, dot_comma     , L_BASE L_NUM)
+CB4(___X, enter, &kp ENTER     , L_BASE L_NUM)
 
 
 // GLOBAL Combos 
@@ -184,9 +193,9 @@ CB4(BT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
 CB4(BTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
-CB4(_TBB, alt      , &sk_tk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
+CB4(_TBB, alt      , &sk_sk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
 // Hold for sticky LGUI (one shot), tap to toggle LCTRL
-CB4(_TTB, ctrl     , &sk_tk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
+CB4(_TTB, ctrl     , &sk_sk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
 // Hold for CAPS, tap to toggle LSHFT
 // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
 // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
