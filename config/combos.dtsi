@@ -133,32 +133,32 @@ CB4(_TT_, circ_dier, &mt D_DRS D_CRC, L_ACC)
 
 
 // Combos base letters
-// CB4(TT__, b, &mt AMPS  B, L_BASE)
-// CB4(__TT, d, &mt DLLR  D, L_BASE)
-CB4(TT__, u, &mt UNDER U, L_BASE)
-CB4(_TT_, c, &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
-CB4(__TT, o, &kp O      , L_BASE)
+CB4(TT__, b , &mt AMPS  B, L_BASE)
+CB4(_TT_, c , &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
+CB4(__TT, d , &mt DLLR      D, L_BASE L_NUM)
 
-CB4(BB__, d , &mt DLLR D, L_BASE L_NUM)
-CB4(_BB_, l , &mt PLUS L, L_BASE L_NUM)
-CB4(__BB, sp, &kp SPACE , L_BASE L_NUM)
+CB4(BB__, u , &mt UNDER U, L_BASE)
+CB4(_BB_, o , &kp O      , L_BASE) // DEGREE?
+CB4(__BB, sp, &mt QMARK SPACE, L_BASE L_NUM)
 
-CB4(TTT_, f, &lk L_FUN F, L_BASE L_NUM)
-CB4(BBB_, g, &mt GBP   G, L_BASE L_NUM)
-CB4(_TTT, w, &mt AT    W, L_BASE)
-CB4(_BBB, m, &mt MINUS M, L_BASE L_NUM)
 
-CB4(T_T_, j, &mt AELIG J, L_BASE) // AELIG = Cyrillic Sha
-CB4(B_B_, k, &mt OELIG K, L_BASE) // OELIG = Cyrillic Shcha
-CB4(_T_T, y, &kp       Y, L_BASE) // TODO undo/redo?
-CB4(_B_B, z, &kp       Z, L_BASE)
+CB4(TTT_, f , &lk L_FUN F, L_BASE L_NUM)
+CB4(BBB_, g , &mt GBP   G, L_BASE L_NUM)
+CB4(_TTT, l , &mt PLUS  L, L_BASE L_NUM)
+CB4(_BBB, m , &mt MINUS M, L_BASE L_NUM)
 
-CB4(T__T, v, &kp       V, L_BASE)
-CB4(B__B, x, &kp       X, L_BASE)
+CB4(T_T_, j , &kp       J, L_BASE) //
+CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
+CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
+CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
 
-CB4(TT_T, p, &mt PIPE  P, L_BASE)
-CB4(BB_B, q, &mt PRCNT Q, L_BASE)
+CB4(T__T, v, &kp       V, L_BASE) // 
+CB4(B__B, x, &mt STAR  X, L_BASE)
 
+CB4(TT_T, p, &mt PRCNT P, L_BASE)
+CB4(BB_B, q, &kp       Q, L_BASE)  // AT 
+
+CB4(TTTT, w, &mt AT    W, L_BASE) // 
 
 
 // ZMK_COMBO(sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
@@ -183,7 +183,7 @@ CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU
 CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
 CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
 CB4(__X_, comma, dot_comma     , L_BASE L_NUM)
-CB4(___X, enter, &kp ENTER     , L_BASE L_NUM)
+CB4(___X, enter, &mt EXCL ENTER, L_BASE L_NUM)
 
 
 // GLOBAL Combos 

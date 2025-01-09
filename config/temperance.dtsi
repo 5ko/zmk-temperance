@@ -72,8 +72,8 @@
     // tap-dance doesn't work with layer-hold
     // unless we use non-momentary layers?
     bindings = <
-      &td_S  &mt HASH H  &td_T   &td_A
-      &td_N  &td_I       &kp R   &td_E
+      &td_S  &mt HASH H  &td_T         &td_A
+      &td_N  &mt PIPE I  &mt PRCNT R   &td_E
     >;
   };
   numbers {
