@@ -73,9 +73,9 @@ TD_3(td_A, bindings = <&lt L_ACC A>, <&tap2 D_GRV A>, <&tap2 D_CRC A>;)
 
 
 // Toggle off current layer
-CB4(TT__, LO_ble   , &lay_off L_BLE, L_BLE)
-CB4(TT__, layoff_num, &lay_off L_NUM, L_NUM)
-CB4(TT__, LO_MSE , &lay_off L_MSE , L_MSE)
+CB4(TT__, LO_ble, &lay_off L_BLE, L_BLE)
+CB4(TT__, LO_num, &lay_off L_NUM, L_NUM)
+CB4(TT__, LO_MSE, &lay_off L_MSE, L_MSE)
 CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 
@@ -182,7 +182,7 @@ CB4(TTTT, w, &mt AT    W, L_BASE) //
 // CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
 // CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
 // CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
-CB4(B__T, slash, &mt BSLH FSLH , L_BASE L_NUM)
+CB4(B__T, slash, bslh_fslh     , L_BASE L_NUM)
 CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU
 CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
 CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
@@ -193,19 +193,23 @@ CB4(___X, enter, &mt EXCL ENTER, L_BASE L_NUM)
 // GLOBAL Combos 
 CB4(__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
 CB4(__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
-CB4(BT__, escape   , &hold_esc  0 ESC , ALL_LEFT)
-CB4(BTT_, tab      , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
+CB4(_BT_, escape   , &hold_esc  0 ESC , ALL_LEFT)
+CB4(_BTT, tab_stab , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
+// Could do: _TB_ TTB_ TB__ 
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
-CB4(_TBB, alt      , &sk_sk RALT LALT  , L_BASE L_MSE L_NUM L_FUN)
+CB4(_TBB, lalt      , &tk_sk LALT LALT, L_BASE L_MSE L_NUM L_FUN)
+CB4(TTBB, ralt      , &tk_sk RALT RALT, L_BASE L_MSE L_NUM L_FUN)
+
 // Hold for sticky LGUI (one shot), tap to toggle LCTRL
-CB4(_TTB, ctrl     , &sk_sk LGUI LCTRL , L_BASE L_MSE L_NUM L_FUN)
+CB4(_TTB, ctrl , &tk_sk LCTRL LCTRL, L_BASE L_MSE L_NUM L_FUN)
+CB4(TTTB, gui  , &tk_sk LGUI  LGUI , L_BASE L_MSE L_NUM L_FUN)
 // Hold for CAPS, tap to toggle LSHFT
 // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
 // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
 CB4(_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
 // Hold for Shift hold, tap for one-shot Shift
-CB4(_B_T, shift1, &sk_tk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
+CB4(_B_T, shift1, &tk_sk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
 
 // System functions

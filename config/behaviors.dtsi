@@ -48,16 +48,17 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
 
 HTHP(hold_esc,      bindings = <&unmod>, <&kp>;)
 HTHP(nx_kp,         bindings = <&nxkbly>, <&kp>;) // nxkbly, kp CAPS
-HTHP(a_grave_circ,  bindings = <&a_circ>, <&a_grave>;)
-HTHP(e_acute_circ,  bindings = <&e_circ>, <&e_acute>;)
-HTHP(e_grave_dier,  bindings = <&e_dier>, <&e_grave>;)
-HTHP(u_grave_circ,  bindings = <&u_circ>, <&u_grave>;)
-HTHP(i_circ_dier,   bindings = <&i_dier>, <&i_circ>;)
-HTHP(o_circ_u_dier, bindings = <&u_dier>, <&o_circ>;)
+// HTHP(a_grave_circ,  bindings = <&a_circ>, <&a_grave>;)
+// HTHP(e_acute_circ,  bindings = <&e_circ>, <&e_acute>;)
+// HTHP(e_grave_dier,  bindings = <&e_dier>, <&e_grave>;)
+// HTHP(u_grave_circ,  bindings = <&u_circ>, <&u_grave>;)
+// HTHP(i_circ_dier,   bindings = <&i_dier>, <&i_circ>;)
+// HTHP(o_circ_u_dier, bindings = <&u_dier>, <&o_circ>;)
 
 
-HTHP(sk_tk, bindings = <&sk>, <&kt>;) // sk LGUI kt LCTRL; sk RALT kt LALT
-HTHP(sk_sk, bindings = <&sk>, <&sk>;) // sk LGUI kt LCTRL; sk RALT kt LALT
+HTHP(tk_sk, bindings = <&tk>, <&st>;)
+HTHP(sk_tk, bindings = <&sk>, <&kt>;)
+HTHP(sk_sk, bindings = <&sk>, <&sk>;)
 HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
 // unused at the moment
@@ -67,6 +68,22 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
 
+  
+// Hold-Tap NoShift KeyPress
+#define Unshift(name, keycode)  \
+  / { \
+    behaviors { \
+      name: behavior_unshift_name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode>, <&kp keycode>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
+      }; \
+    }; \
+  };
+  
+  
 // Hold-Tap NoShift NoShift
 #define HTNSNS(name, keycode1, keycode2)  \
   / { \
@@ -94,7 +111,7 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
       }; \
     }; \
   };
-  
+
 
   
 // Hold-Tap NoShift KeyPress
@@ -145,11 +162,14 @@ HTNSNS( dot_comma, DOT, COMMA)
 HTNSNS( dgrave_bslh, D_GRV, BSLH)
 #define dgrave_bslh &mt_dgrave_bslh 0 0
 
-HTNSNS( dacute_fslh, D_ACU, FSLH)
-#define dacute_fslh &mt_dacute_fslh 0 0
+HTNSNS( bslh_fslh, BSLH, FSLH)
+#define bslh_fslh &mt_bslh_fslh 0 0
 
 
-
+// HTNSNS( rl_bkt brackets, RBKT, LBKT)
+// #define rl_bkt &mt_rl_bkt 0 0
+Unshift(ns_rbkt, RBKT)
+Unshift(ns_lbkt, LBKT)
 
 HTKPNS( colon_semi, SEMI)
 #define colon_semi &mt_colon_semi COLON 0
@@ -159,23 +179,7 @@ HTKPNS( dqt_sqt, SQT)
 
 
 
-// creates &mt_dgrave_kp 0 KEYCODE and &mt_kp_dgrave KEYCODE 0
-// Unshift(dgrave, D_GRV) 
-// NS(noshift_acute, D_ACU)
-// NS(noshift_circ, D_CRC)
-
-// HTHP(gr_bs,      bindings = <&noshift_grave>, <&kp>;)
-
-
 / { behaviors {
-//   noshift_grave: behavior_noshift_grave {
-//     compatible = "zmk,behavior-mod-morph";
-//     #binding-cells = <0>;
-//     bindings = <&kp A>, <&kp B>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-//     keep-mods = <(MOD_RALT)>;
-//   };
-  
   mtz: behavior_mod_tap_zero {
     // 
     compatible = "zmk,behavior-hold-tap";
