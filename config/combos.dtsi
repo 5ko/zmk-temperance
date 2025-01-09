@@ -127,8 +127,8 @@ CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) // Ctrl+Shift+V pastes without fo
 
 
 // Combos L_PAR layer
-CB4(__TT, eq, &kp GT, L_PAR)
-CB4(_TT_, eq, &kp LT, L_PAR)
+CB4(__TT, gt, &kp GT, L_PAR)
+CB4(_TT_, lt, &kp LT, L_PAR)
 CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
 
 
