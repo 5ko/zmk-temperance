@@ -20,4 +20,5 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: temperance
+    #shield: temperance
+    shield: temperance nice_view

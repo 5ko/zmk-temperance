@@ -182,14 +182,10 @@ HTNSNS(grave_dgrave, GRAVE, D_GRV)
   
   
   
-// HTNSNS( rl_bkt brackets, RBKT, LBKT)
-// #define rl_bkt &mt_rl_bkt 0 0
 Unshift(ns_rbkt, RBKT)
 Unshift(ns_lbkt, LBKT)
 
-// Unshift(ns_dgrave, D_GRV)
 Unshift(ns_dacute, D_ACU)
-// Unshift(ns_dcaret, D_CRC)
 
 
 / { behaviors {
