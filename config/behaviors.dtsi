@@ -182,6 +182,7 @@ HTKPNS( dqt_sqt, SQT)
 
 
 HTNSNS(grave_dgrave, GRAVE, D_GRV)
+#define grave_dgrave &mt_grave_dgrave 0 0
 
 // Unshift(ns_dgrave, D_GRV)
 Unshift(ns_dacute, D_ACU)
