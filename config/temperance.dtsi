@@ -93,7 +93,7 @@
       MAYBE      &kp RBRC  &ns_rbkt  &kp RPAR
     >;
       
-// #define P_BRACKETS &mt RBKT LBKT
+// #define P_BRACKETS &mt RBKT LBKTss
 // #define P_BRACES   &mt RBRC LBRC
 // #define P_PARENS   &mt RPAR 
   };

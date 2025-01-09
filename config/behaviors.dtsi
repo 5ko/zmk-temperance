@@ -68,22 +68,6 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 // HTHP(nx_sk, bindings = <&nxkbly>, <&sk>;)// nxkbly, sk LSHFT
 
 
-  
-// Hold-Tap NoShift KeyPress
-#define Unshift(name, keycode)  \
-  / { \
-    behaviors { \
-      name: behavior_unshift_name { \
-        compatible = "zmk,behavior-mod-morph"; \
-        #binding-cells = <0>;\
-        bindings = <&kp keycode>, <&kp keycode>;\
-        mods = <(MOD_LSFT|MOD_RSFT)>;\
-        keep-mods = <(MOD_RALT)>; \
-      }; \
-    }; \
-  };
-  
-  
 // Hold-Tap NoShift NoShift
 #define HTNSNS(name, keycode1, keycode2)  \
   / { \
@@ -166,11 +150,6 @@ HTNSNS( bslh_fslh, BSLH, FSLH)
 #define bslh_fslh &mt_bslh_fslh 0 0
 
 
-// HTNSNS( rl_bkt brackets, RBKT, LBKT)
-// #define rl_bkt &mt_rl_bkt 0 0
-Unshift(ns_rbkt, RBKT)
-Unshift(ns_lbkt, LBKT)
-
 HTKPNS( colon_semi, SEMI)
 #define colon_semi &mt_colon_semi COLON 0
 
@@ -183,6 +162,30 @@ HTKPNS( dqt_sqt, SQT)
 
 HTNSNS(grave_dgrave, GRAVE, D_GRV)
 #define grave_dgrave &mt_grave_dgrave 0 0
+
+
+
+  
+// Hold-Tap NoShift KeyPress
+#define Unshift(name, keycode)  \
+  / { \
+    behaviors { \
+      name: behavior_unshift_##name { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>;\
+        bindings = <&kp keycode>, <&kp keycode>;\
+        mods = <(MOD_LSFT|MOD_RSFT)>;\
+        keep-mods = <(MOD_RALT)>; \
+      }; \
+    }; \
+  };
+  
+  
+  
+// HTNSNS( rl_bkt brackets, RBKT, LBKT)
+// #define rl_bkt &mt_rl_bkt 0 0
+Unshift(ns_rbkt, RBKT)
+Unshift(ns_lbkt, LBKT)
 
 // Unshift(ns_dgrave, D_GRV)
 Unshift(ns_dacute, D_ACU)
