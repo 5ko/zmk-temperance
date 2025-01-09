@@ -133,7 +133,7 @@ CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
-CB4(_TT_, circ_dier, &mt D_DRS D_CRC, L_ACC)
+CB4(_TT_, circ_dier, ddier_dcirc, L_ACC)
 
 
 // Combos base letters

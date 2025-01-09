@@ -159,8 +159,8 @@ HTHP(lk, bindings = <&lay_on>, <&kp>;)
 HTNSNS( dot_comma, DOT, COMMA)
 #define dot_comma &mt_dot_comma 0 0
 
-HTNSNS( dgrave_bslh, D_GRV, BSLH)
-#define dgrave_bslh &mt_dgrave_bslh 0 0
+// HTNSNS( dgrave_bslh, D_GRV, BSLH)
+// #define dgrave_bslh &mt_dgrave_bslh 0 0
 
 HTNSNS( bslh_fslh, BSLH, FSLH)
 #define bslh_fslh &mt_bslh_fslh 0 0
@@ -174,9 +174,18 @@ Unshift(ns_lbkt, LBKT)
 HTKPNS( colon_semi, SEMI)
 #define colon_semi &mt_colon_semi COLON 0
 
+HTKPNS( ddier_dcirc, D_CRC)
+#define ddier_dcirc &mt_ddier_dcirc D_DRS 0
+
 HTKPNS( dqt_sqt, SQT)
 #define dqt_sqt &mt_dqt_sqt DQT 0
 
+
+HTNSNS(grave_dgrave, GRAVE D_GRV)
+
+// Unshift(ns_dgrave, D_GRV)
+Unshift(ns_dacute, D_ACU)
+// Unshift(ns_dcaret, D_CRC)
 
 
 / { behaviors {

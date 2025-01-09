@@ -110,8 +110,8 @@
   accents {
     display-name = "L_ACC";
     bindings = <
-      &mt TILDE D_TLD   &kp D_ACU    &mt GRAVE D_GRV   &mo L_ACC
-      TODO              &kp AMPS     &kp AT            MAYBE
+      &mt TILDE D_TLD   &ns_dacute    grave_dgrave   &mo L_ACC
+      TODO              &kp AMPS      &kp AT         MAYBE
     >; 
 
   };
