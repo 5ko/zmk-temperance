@@ -57,7 +57,7 @@
 #include "combos.dtsi"
 
 
-// TODO: keymap for see keys marked TODO and MAYBE
+// TODO: keymap for see keys marked TODO and MAYBE 
 //    HOLD: J, K, Y, Z, YEN
 //    MEH key
 //    Layers: Hold-S, Hold-A (accents can be removed)

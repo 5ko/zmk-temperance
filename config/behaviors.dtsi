@@ -56,7 +56,7 @@ HTHP(nx_kp,         bindings = <&nxkbly>, <&kp>;) // nxkbly, kp CAPS
 // HTHP(o_circ_u_dier, bindings = <&u_dier>, <&o_circ>;)
 
 
-HTHP(tk_sk, bindings = <&tk>, <&st>;)
+HTHP(tk_sk, bindings = <&kt>, <&st>;)
 HTHP(sk_tk, bindings = <&sk>, <&kt>;)
 HTHP(sk_sk, bindings = <&sk>, <&sk>;)
 HTHP(lk, bindings = <&lay_on>, <&kp>;)
