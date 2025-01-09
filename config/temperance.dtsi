@@ -99,15 +99,15 @@
   navmedia {
     display-name = "L_NAV";
     bindings = <
-      NN_PREV    NN_NEXT        MM_VD       MM_VU   
-      &mo L_NAV  &mt END HOME   &left_home  &right_end
+      NN_PREV    NN_NEXT    MM_VD       MM_VU   
+      &mo L_NAV  TODO       &left_home  &right_end
     >;
   };
   accents {
     display-name = "L_ACC";
     bindings = <
       &mt TILDE D_TLD   &ns_dacute    grave_dgrave   &mo L_ACC
-      TODO              &kp AMPS      &kp AT         MAYBE
+      &kp STAR          &kp AMPS      &kp AT         MAYBE
     >; 
 
   };
