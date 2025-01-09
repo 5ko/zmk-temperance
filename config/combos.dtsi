@@ -82,9 +82,10 @@ CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 // Base letter combos
 
 // Combos NUM layer
-CB4(_T_T, num_9Y, &mt N9  YEN , L_NUM)
-CB4(_B_B, num_0Z, &mt N0  EURO, L_NUM)
-// CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
+CB4(__TT, num_9D, &mt UNDER N9, L_NUM)
+CB4(__BB, num_0Y, &mt QMARK N0, L_NUM)
+CB4(_T_T, num_EL, &mt GBP EURO,  L_NUM)
+CB4(_B_B, num_DY, &mt YEN DLLR,  L_NUM)
 // CB4(__TT, num_7, &mt DOLLAR N7,  L_NUM)
 
 // CB4(__BB, num_9, &mt HASH   N9, L_NUM)
@@ -93,7 +94,8 @@ CB4(_B_B, num_0Z, &mt N0  EURO, L_NUM)
 
 
 // Combos NAV+Media layer
-CB4(__TT, mute_play, &mt K_PP K_MUTE   , L_NAV)
+CB4(TT__, last_win , &mt LG(D) N_LASTWIN, L_NAV)
+CB4(__TT, mute_play, &mt K_PP K_MUTE    , L_NAV)
 
 CB4(_BB_, nav_up  ,  &kp UP            , L_NAV)
 CB4(__BB, nav_dn  ,  &kp DOWN          , L_NAV)
@@ -121,11 +123,13 @@ CB4(___X, msr    , M_SR           , L_MSE)
 // Combos L_EDT layer
 // ^C, ^X, ^V for applications that don't recognise ^INS
 CB4(_TT_, copycut, &mt LC(X) LC(C)    , L_EDT)
-CB4(TT__, paste12, &mt LC(LS(V)) LC(V), L_EDT)
+CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) // Ctrl+Shift+V pastes without formatting
 
 
 // Combos L_PAR layer
-CB4(__TT, eq, &mt TILDE EQUAL, L_PAR)
+CB4(__TT, eq, &kp GT, L_PAR)
+CB4(_TT_, eq, &kp LT, L_PAR)
+CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
@@ -135,28 +139,28 @@ CB4(_TT_, circ_dier, &mt D_DRS D_CRC, L_ACC)
 // Combos base letters
 CB4(TT__, b , &mt AMPS  B, L_BASE)
 CB4(_TT_, c , &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
-CB4(__TT, d , &mt DLLR      D, L_BASE L_NUM)
+CB4(__TT, o , &kp O      , L_BASE) // DEGREE?
 
-CB4(BB__, u , &mt UNDER U, L_BASE)
-CB4(_BB_, o , &kp O      , L_BASE) // DEGREE?
-CB4(__BB, sp, &mt QMARK SPACE, L_BASE L_NUM)
+CB4(BB__, d , &mt DLLR      D, L_BASE)
+CB4(_BB_, sp, &mt QMARK SPACE, L_BASE)
+CB4(__BB, u , &mt UNDER U, L_BASE)
 
 
 CB4(TTT_, f , &lk L_FUN F, L_BASE L_NUM)
-CB4(BBB_, g , &mt GBP   G, L_BASE L_NUM)
-CB4(_TTT, l , &mt PLUS  L, L_BASE L_NUM)
-CB4(_BBB, m , &mt MINUS M, L_BASE L_NUM)
+CB4(BBB_, g , &mt GBP   G, L_BASE)
+CB4(_TTT, l , &mt PLUS  L, L_BASE)
+CB4(_BBB, m , &mt MINUS M, L_BASE)
 
-CB4(T_T_, j , &kp       J, L_BASE) //
+CB4(T_T_, j , &kp       J, L_BASE) //?
 CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
 CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
 CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
 
-CB4(T__T, v, &kp       V, L_BASE) // 
+CB4(T__T, v, &kp       V, L_BASE) // ?
 CB4(B__B, x, &mt STAR  X, L_BASE)
 
 CB4(TT_T, p, &mt PRCNT P, L_BASE)
-CB4(BB_B, q, &kp       Q, L_BASE)  // AT 
+CB4(BB_B, q, &kp       Q, L_BASE)  // AT ?
 
 CB4(TTTT, w, &mt AT    W, L_BASE) // 
 

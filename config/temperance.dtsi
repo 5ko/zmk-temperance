@@ -81,32 +81,29 @@
     bindings = <
 //       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
 //       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
-      &kp N4         &kp N3   &kp N2   &kp N1
-      &lt L_NAV N8   &kp N7   &kp N6   &lt L_EDT N5
+      &mt STAR  N4   &mt HASH N3   &mt AT    N2   &mt AMPS  N1
+      &lt L_NAV N8   &mt PIPE N7   &mt PRCNT N6   &lt L_EDT N5
     >;
   };
   parentheses {
     display-name = "L_PAR";
     bindings = <
-      &mo L_PAR  MAYBE      P_BRACES  P_PARENS
-      TODO       P_EQ_TLD   P_LT_GT   P_BRACKETS
+      &mo L_PAR  P_BRACES  P_BRACKETS  P_PARENS
+      MAYBE      TODO      TODO        TODO
     >;
       
   };
 
-//              
   
+// TODO: window and desktop switching
   navmedia {
     display-name = "L_NAV";
     bindings = <
-      MM_PS      TODO           MM_VD       MM_VU   
+      NN_PREV    NN_NEXT        MM_VD       MM_VU   
       &mo L_NAV  &mt END HOME   &left_home  &right_end
     >;
   };
-  accented {
-    // French freq: é è à; rarer than Z: ê ç ô â î û ù ï ü ë
-    // Also available on tap-dances for A, E, I, O, U (on T)
-    // TODO: replace with simple noshift dead accents 
+  accents {
     display-name = "L_ACC";
     bindings = <
       &mt TILDE D_TLD   &kp D_ACU    &mt GRAVE D_GRV   &mo L_ACC
@@ -118,7 +115,7 @@
     display-name = "L_EDT";
     bindings = <
       E_SAVE   E_PASTE   E_COPY   &kp INS
-      TODO     TODO      E_UNDO   &mo L_EDT
+      TODO     E_PRINT   E_UNDO   &mo L_EDT
     >;
   };
   functionkeys {
