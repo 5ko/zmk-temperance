@@ -95,7 +95,6 @@
   };
 
   
-// TODO: window and desktop switching
   navmedia {
     display-name = "L_NAV";
     bindings = <
