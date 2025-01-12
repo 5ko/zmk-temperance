@@ -156,8 +156,8 @@ CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
 CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
 CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
 
-CB4(T__T, v, &kp       V, L_BASE) // ?
-CB4(B__B, x, &mt STAR  X, L_BASE)
+CB4(B__B, v, &kp       V, L_BASE) // ?
+CB4(T__T, x, &mt STAR  X, L_BASE)
 
 CB4(TT_T, p, &mt PRCNT P, L_BASE)
 CB4(BB_B, q, &kp       Q, L_BASE)  // AT ?
