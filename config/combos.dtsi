@@ -75,7 +75,7 @@ TD_NAV(right_end, bindings = <&mt END RIGHT>, <&kp LC(RIGHT)>;)
 // Toggle off current layer
 CB4(TT__, LO_ble, &lay_off L_BLE, L_BLE)
 CB4(TT__, LO_num, &lay_off L_NUM, L_NUM)
-CB4(TT__, LO_MSE, &lay_off L_MSE, L_MSE)
+CB4(TT__, LO_mse, &lay_off L_MSE, L_MSE)
 CB4(TT__, LO_fun, &lay_off L_FUN, L_FUN)
 
 
@@ -133,7 +133,10 @@ CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
-CB4(_TT_, circ_dier, ddier_dcirc, L_ACC)
+CB4(_BB_, circ_dier, ddier_dcirc, L_ACC)
+CB4(TT__, lt, &kp LT, L_ACC)
+CB4(_TT_, gt, &kp GT, L_ACC)
+CB4(TTT_, gt, &ns_eq, L_ACC)
 
 
 // Combos base letters
