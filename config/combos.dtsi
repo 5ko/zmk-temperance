@@ -94,9 +94,10 @@ CB4(_B_B, num_DY, &mt YEN DLLR,  L_NUM)
 
 // Combos DIG layer
 CB4(__TT, dig_7, &kp N7, L_DIG)
-CB4(_TT_, dig_8, &kp N7, L_DIG)
+CB4(_TT_, dig_8, &kp N8, L_DIG)
 CB4(_TTT, dig_9, &mt MINUS N9, L_DIG)
 CB4(_T_T, dig_0, &kp N0, L_DIG)
+CB4(__BB, dig_E, &mt GBP EURO, L_DIG)
 
 // Combos NAV+Media layer
 CB4(TT__, last_win , &mt LG(D) N_LASTWIN, L_NAV)
@@ -128,7 +129,9 @@ CB4(___X, msr    , M_SR           , L_MSE)
 // Combos L_EDT layer
 // ^C, ^X, ^V for applications that don't recognise ^INS
 CB4(_TT_, copycut, &mt LC(X) LC(C)    , L_EDT)
-CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) // Ctrl+Shift+V pastes without formatting
+
+// Ctrl+Shift+V pastes without formatting
+CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) 
 
 
 // Combos L_PAR layer
@@ -139,9 +142,9 @@ CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) // Ctrl+Shift+V pastes without fo
 
 // Combos accented layer
 CB4(_BB_, circ_dier, ddier_dcirc, L_ACC)
-CB4(TT__, lt, &kp LT, L_ACC)
-CB4(_TT_, gt, &kp GT, L_ACC)
-CB4(TTT_, eq, &ns_eq, L_ACC)
+CB4(TT__, lt, &kp LT, L_ACC) // Hold?
+CB4(_TT_, gt, &kp GT, L_ACC) // Hold?
+CB4(TTT_, eq, &ns_eq, L_ACC) // Hold?
 
 
 // Combos base letters
@@ -158,7 +161,7 @@ CB4(BBB_, g , &mt GBP   G, L_BASE)
 CB4(_TTT, l , &mt PLUS  L, L_BASE)
 CB4(_BBB, m , minus_m    , L_BASE)
 
-CB4(T_T_, j , &kp       J, L_BASE) //?
+CB4(T_T_, j , &kp       J, L_BASE)  // Hold?
 CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
 CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
 CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
@@ -190,13 +193,13 @@ CB4(TTTT, w, &mt AT    W, L_BASE) //  AT ?
 // CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
 // CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
 // CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
-CB4(_BB_, space, &kp SPACE     , L_BASE)
+CB4(_BB_, space, &kp SPACE     , L_BASE) // Hold?
 CB4(B__T, slash, bslh_fslh     , L_BASE L_NUM)
-CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU
+CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU  // Hold?
 CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
 CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
 CB4(__X_, comma, dot_comma     , L_BASE L_NUM)
-CB4(___X, enter, &kp ENTER     , L_BASE L_NUM)
+CB4(___X, enter, &kp ENTER     , L_BASE L_NUM) // Hold?
 
 
 // GLOBAL Combos 
@@ -207,8 +210,10 @@ CB4(_BTT, tab_stab , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 // Could do: _TB_ TTB_ TB__ 
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
-CB4(_TBB, lalt      , &kt_sk LALT LALT, L_BASE L_MSE L_NUM L_FUN)
-CB4(TTBB, ralt      , &kt_sk RALT RALT, L_BASE L_MSE L_NUM L_FUN)
+CB4(_TBB, lalt  , &kt_sk LALT LALT, L_BASE L_MSE L_NUM L_FUN)
+CB4(TTBB, ralt  , &kt_sk RALT RALT, L_BASE L_MSE L_NUM L_FUN)
+
+
 
 // Hold for sticky LGUI (one shot), tap to toggle LCTRL
 CB4(_TTB, ctrl , &kt_sk LCTRL LCTRL, L_BASE L_MSE L_NUM L_FUN)
@@ -216,7 +221,7 @@ CB4(TTTB, gui  , &kt_sk LGUI  LGUI , L_BASE L_MSE L_NUM L_FUN)
 // Hold for CAPS, tap to toggle LSHFT
 // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
 // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
-CB4(_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
+CB4(_T_B, caps, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
 // Hold for Shift hold, tap for one-shot Shift
 CB4(_B_T, shift1, &kt_sk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
