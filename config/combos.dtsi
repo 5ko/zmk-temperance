@@ -132,16 +132,16 @@ CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) // Ctrl+Shift+V pastes without fo
 
 
 // Combos L_PAR layer
-CB4(__TT, gt, &kp GT, L_PAR)
-CB4(_TT_, lt, &kp LT, L_PAR)
-CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
+// CB4(__TT, gt, &kp GT, L_PAR)
+// CB4(_TT_, lt, &kp LT, L_PAR)
+// CB4(_T_T, eq, &mt TILDE EQUAL, L_PAR)
 
 
 // Combos accented layer
 CB4(_BB_, circ_dier, ddier_dcirc, L_ACC)
 CB4(TT__, lt, &kp LT, L_ACC)
 CB4(_TT_, gt, &kp GT, L_ACC)
-CB4(TTT_, gt, &ns_eq, L_ACC)
+CB4(TTT_, eq, &ns_eq, L_ACC)
 
 
 // Combos base letters
@@ -150,7 +150,6 @@ CB4(_TT_, c , &mt C_CDL  C, L_BASE) // C_CDL = Cyrillic Cha
 CB4(__TT, o , &mt DEGREE O, L_BASE) 
 
 CB4(BB__, d , &mt DLLR      D, L_BASE)
-CB4(_BB_, sp, &mt QMARK SPACE, L_BASE)
 CB4(__BB, u , &mt UNDER U, L_BASE)
 
 
@@ -164,13 +163,14 @@ CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
 CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
 CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
 
-CB4(B__B, v, &kp       V, L_BASE) // ?
+// CB4(B__B, v, &mt D_CRC V, L_BASE) // ?
+CB4(B__B, v, dcirc_V    , L_BASE) // ?
 CB4(T__T, x, &mt STAR  X, L_BASE)
 
-CB4(TT_T, p, &mt PRCNT P, L_BASE)
-CB4(BB_B, q, &kp       Q, L_BASE)  // AT ?
+CB4(TT_T, p, &mt EXCL  P, L_BASE)
+CB4(BB_B, q, &mt QMARK Q, L_BASE)  // AT ?
 
-CB4(TTTT, w, &mt AT    W, L_BASE) // 
+CB4(TTTT, w, &mt AT    W, L_BASE) //  AT ?
 
 
 // ZMK_COMBO(sp, &mt ENTER SPACE, B4 B3 B2 B1, L_BASE L_NUM)
@@ -190,12 +190,13 @@ CB4(TTTT, w, &mt AT    W, L_BASE) //
 // CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
 // CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
 // CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
+CB4(_BB_, space, &kp SPACE     , L_BASE)
 CB4(B__T, slash, bslh_fslh     , L_BASE L_NUM)
 CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU
 CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
 CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
 CB4(__X_, comma, dot_comma     , L_BASE L_NUM)
-CB4(___X, enter, &mt EXCL ENTER, L_BASE L_NUM)
+CB4(___X, enter, &kp ENTER     , L_BASE L_NUM)
 
 
 // GLOBAL Combos 

@@ -170,6 +170,9 @@ HTNSNS(grave_dgrave, GRAVE, D_GRV)
 HTNSKP(minus_m, MINUS)
 #define minus_m &mt_minus_m 0 M
 
+HTNSKP(dcirc_V, D_CRC)
+#define dcirc_V &mt_dcirc_V 0 V
+
   
 // Hold-Tap NoShift KeyPress
 #define Unshift(name, keycode)  \
@@ -190,6 +193,7 @@ HTNSKP(minus_m, MINUS)
 Unshift(ns_rbkt, RBKT)
 Unshift(ns_lbkt, LBKT)
 Unshift(ns_eq, EQUAL)
+
 
 Unshift(ns_dacute, D_ACU)
 
