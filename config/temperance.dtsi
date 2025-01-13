@@ -80,8 +80,8 @@
     display-name = "L_NUM";
     bindings = <
 //       TODO          &kp N3        &mt SUP2  N2  &mt DOT   N1
-//       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4
-      &mt STAR  N4   &mt HASH N3   &mt AT    N2   &mt AMPS  N1
+//       &lt L_NAV N0  &lt L_PAR N6  &mt SPACE N5  &lt L_EDT N4 
+      &mt STAR  N4   &mt HASH N3   &mt SUP2  N2   &mt AMPS  N1
       &lt L_NAV N8   &mt PIPE N7   &mt PRCNT N6   &lt L_EDT N5
     >;
   };
@@ -105,8 +105,8 @@
   accents {
     display-name = "L_ACC";
     bindings = <
-      &mt TILDE D_TLD   &ns_dacute    grave_dgrave   &mo L_ACC
-      &kp STAR          &kp AMPS      &kp AT         MAYBE
+      &mt RBRC LBRC     rbkt_lbkt     &mt RPAR LPAR   &mo L_ACC
+      &mt TILDE D_TLD   &ns_dacute    grave_dgrave    MAYBE
     >; 
 
   };

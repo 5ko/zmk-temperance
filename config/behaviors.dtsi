@@ -5,24 +5,24 @@
  */
 
 
-// Simple macros
+// Next keyboard layout
 ZMK_MACRO(nxkbly,  bindings = <&kp GLOBE &kp LA(LSHFT)> ;)
-ZMK_MACRO(https,   bindings = <&kp H &kp T &kp T &kp P &kp S 
-                      &kp COLON &kp SLASH &kp SLASH 
-                      &kp W &kp W &kp W &kp DOT > ;)
+// ZMK_MACRO(https,   bindings = <&kp H &kp T &kp T &kp P &kp S 
+//                       &kp COLON &kp SLASH &kp SLASH 
+//                       &kp W &kp W &kp W &kp DOT > ;)
 
-ZMK_MACRO(a_grave, bindings = <&kp D_GRV &kp A> ;)
-ZMK_MACRO(a_circ,  bindings = <&kp D_CRC &kp A> ;)
-ZMK_MACRO(e_acute, bindings = <&kp D_ACU &kp E> ;)
-ZMK_MACRO(e_circ,  bindings = <&kp D_CRC &kp E> ;)
-ZMK_MACRO(e_grave, bindings = <&kp D_GRV &kp E> ;)
-ZMK_MACRO(e_dier,  bindings = <&kp D_DRS &kp E> ;)
-ZMK_MACRO(u_grave, bindings = <&kp D_GRV &kp U> ;)
-ZMK_MACRO(u_circ,  bindings = <&kp D_CRC &kp U> ;)
-ZMK_MACRO(i_circ,  bindings = <&kp D_CRC &kp I >;)
-ZMK_MACRO(i_dier,  bindings = <&kp D_DRS &kp I> ;)
-ZMK_MACRO(o_circ,  bindings = <&kp D_CRC &kp O> ;)
-ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
+// ZMK_MACRO(a_grave, bindings = <&kp D_GRV &kp A> ;)
+// ZMK_MACRO(a_circ,  bindings = <&kp D_CRC &kp A> ;)
+// ZMK_MACRO(e_acute, bindings = <&kp D_ACU &kp E> ;)
+// ZMK_MACRO(e_circ,  bindings = <&kp D_CRC &kp E> ;)
+// ZMK_MACRO(e_grave, bindings = <&kp D_GRV &kp E> ;)
+// ZMK_MACRO(e_dier,  bindings = <&kp D_DRS &kp E> ;)
+// ZMK_MACRO(u_grave, bindings = <&kp D_GRV &kp U> ;)
+// ZMK_MACRO(u_circ,  bindings = <&kp D_CRC &kp U> ;)
+// ZMK_MACRO(i_circ,  bindings = <&kp D_CRC &kp I >;)
+// ZMK_MACRO(i_dier,  bindings = <&kp D_DRS &kp I> ;)
+// ZMK_MACRO(o_circ,  bindings = <&kp D_CRC &kp O> ;)
+// ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
 
 // unused at the moment
 // ZMK_MACRO(th,      bindings = <&kp T &kp H> ;)
@@ -46,7 +46,7 @@ ZMK_MACRO(u_dier,  bindings = <&kp D_DRS &kp U> ;)
   };
 
 
-HTHP(hold_esc,      bindings = <&unmod>, <&kp>;)
+HTHP(hold_esc,      bindings = <&unlayer_unmod>, <&kp>;)
 HTHP(nx_kp,         bindings = <&nxkbly>, <&kp>;) // nxkbly, kp CAPS
 // HTHP(a_grave_circ,  bindings = <&a_circ>, <&a_grave>;)
 // HTHP(e_acute_circ,  bindings = <&e_circ>, <&e_acute>;)
@@ -56,8 +56,8 @@ HTHP(nx_kp,         bindings = <&nxkbly>, <&kp>;) // nxkbly, kp CAPS
 // HTHP(o_circ_u_dier, bindings = <&u_dier>, <&o_circ>;)
 
 
-HTHP(tk_sk, bindings = <&kt>, <&sk>;)
-HTHP(sk_tk, bindings = <&sk>, <&kt>;)
+HTHP(kt_sk, bindings = <&kt>, <&sk>;)
+HTHP(sk_kt, bindings = <&sk>, <&kt>;)
 HTHP(sk_sk, bindings = <&sk>, <&sk>;)
 HTHP(lk, bindings = <&lay_on>, <&kp>;)
 
@@ -149,6 +149,10 @@ HTNSNS( dot_comma, DOT, COMMA)
 HTNSNS( bslh_fslh, BSLH, FSLH)
 #define bslh_fslh &mt_bslh_fslh 0 0
 
+HTNSNS( rbkt_lbkt, RBKT, LBKT)
+#define rbkt_lbkt &mt_rbkt_lbkt 0 0
+
+
 
 HTKPNS( colon_semi, SEMI)
 #define colon_semi &mt_colon_semi COLON 0
@@ -163,7 +167,8 @@ HTKPNS( dqt_sqt, SQT)
 HTNSNS(grave_dgrave, GRAVE, D_GRV)
 #define grave_dgrave &mt_grave_dgrave 0 0
 
-
+HTNSKP(minus_m, MINUS)
+#define minus_m &mt_minus_m 0 M
 
   
 // Hold-Tap NoShift KeyPress
@@ -180,12 +185,15 @@ HTNSNS(grave_dgrave, GRAVE, D_GRV)
     }; \
   };
   
-  
+
   
 Unshift(ns_rbkt, RBKT)
 Unshift(ns_lbkt, LBKT)
 
 Unshift(ns_dacute, D_ACU)
+
+
+
 
 
 / { behaviors {
@@ -241,18 +249,26 @@ Unshift(ns_dacute, D_ACU)
     display-name = "Toggle Layer On";
     toggle-mode = "on";
   };
-    
+  
+  
   unmod: macro_release_mods {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&ku LSHFT &ku LCTRL &ku LALT &ku RALT &ku LGUI> ;
+  };
+  unlayer: macro_layers_off {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings
       = <&lay_off L_MSE &lay_off L_BLE &lay_off L_NUM
-         &lay_off L_ACC &lay_off L_EDT &lay_off L_FUN>
-      , <&ku LSHFT &ku LCTRL &ku LALT &ku RALT &ku LGUI>
-      ;
+         &lay_off L_ACC &lay_off L_EDT &lay_off L_FUN> ;
   };
-  
 
+  unlayer_unmod: macro_unlayer_unmod {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&unlayer>, <&unmod> ;
+  };
   
 
 
@@ -260,14 +276,14 @@ Unshift(ns_dacute, D_ACU)
 
 
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-#define SK_TK(key) &sk_tk key key
+#define SK_KT(key) &sk_kt key key
 
-// Accented letters on L_ACC
-#define A_IC_ID &i_circ_dier   0 0  
-#define A_UG_UC &u_grave_circ  0 0 
-#define A_AG_AC &a_grave_circ  0 0 
-#define A_OC_UD &o_circ_u_dier 0 0
-#define A_EG_ED &e_grave_dier  0 0 
-#define A_EA_EC &e_acute_circ  0 0 
+// // Accented letters on L_ACC
+// #define A_IC_ID &i_circ_dier   0 0  
+// #define A_UG_UC &u_grave_circ  0 0 
+// #define A_AG_AC &a_grave_circ  0 0 
+// #define A_OC_UD &o_circ_u_dier 0 0
+// #define A_EG_ED &e_grave_dier  0 0 
+// #define A_EA_EC &e_acute_circ  0 0 
 
 

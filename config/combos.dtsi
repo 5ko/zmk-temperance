@@ -137,9 +137,9 @@ CB4(_TT_, circ_dier, ddier_dcirc, L_ACC)
 
 
 // Combos base letters
-CB4(TT__, b , &mt AMPS  B, L_BASE)
-CB4(_TT_, c , &mt C_CDL C, L_BASE) // C_CDL = Cyrillic Cha
-CB4(__TT, o , &kp O      , L_BASE) // DEGREE?
+CB4(TT__, b , &mt AMPS   B, L_BASE)
+CB4(_TT_, c , &mt C_CDL  C, L_BASE) // C_CDL = Cyrillic Cha
+CB4(__TT, o , &mt DEGREE O, L_BASE) 
 
 CB4(BB__, d , &mt DLLR      D, L_BASE)
 CB4(_BB_, sp, &mt QMARK SPACE, L_BASE)
@@ -149,7 +149,7 @@ CB4(__BB, u , &mt UNDER U, L_BASE)
 CB4(TTT_, f , &lk L_FUN F, L_BASE L_NUM)
 CB4(BBB_, g , &mt GBP   G, L_BASE)
 CB4(_TTT, l , &mt PLUS  L, L_BASE)
-CB4(_BBB, m , &mt MINUS M, L_BASE)
+CB4(_BBB, m , minus_m    , L_BASE)
 
 CB4(T_T_, j , &kp       J, L_BASE) //?
 CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
@@ -198,18 +198,18 @@ CB4(_BTT, tab_stab , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
 // Could do: _TB_ TTB_ TB__ 
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
-CB4(_TBB, lalt      , &tk_sk LALT LALT, L_BASE L_MSE L_NUM L_FUN)
-CB4(TTBB, ralt      , &tk_sk RALT RALT, L_BASE L_MSE L_NUM L_FUN)
+CB4(_TBB, lalt      , &kt_sk LALT LALT, L_BASE L_MSE L_NUM L_FUN)
+CB4(TTBB, ralt      , &kt_sk RALT RALT, L_BASE L_MSE L_NUM L_FUN)
 
 // Hold for sticky LGUI (one shot), tap to toggle LCTRL
-CB4(_TTB, ctrl , &tk_sk LCTRL LCTRL, L_BASE L_MSE L_NUM L_FUN)
-CB4(TTTB, gui  , &tk_sk LGUI  LGUI , L_BASE L_MSE L_NUM L_FUN)
+CB4(_TTB, ctrl , &kt_sk LCTRL LCTRL, L_BASE L_MSE L_NUM L_FUN)
+CB4(TTTB, gui  , &kt_sk LGUI  LGUI , L_BASE L_MSE L_NUM L_FUN)
 // Hold for CAPS, tap to toggle LSHFT
 // CB4(_T_B, shift, &kp_kt CAPS LSHFT  , L_BASE L_MSE L_NUM L_FUN)
 // Hold for NEXTLAYOUT (Alt+Shift), tap for CAPS toggle
 CB4(_T_B, shift, &nx_kp 0 CAPS      , L_BASE L_MSE L_NUM L_FUN)
 // Hold for Shift hold, tap for one-shot Shift
-CB4(_B_T, shift1, &tk_sk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
+CB4(_B_T, shift1, &kt_sk LSHFT LSHFT, L_BASE L_MSE L_NUM L_FUN)
 
 
 // System functions
