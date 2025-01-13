@@ -96,7 +96,7 @@ CB4(_B_B, num_DY, &mt YEN DLLR,  L_NUM)
 CB4(__TT, dig_7, &kp N7, L_DIG)
 CB4(_TT_, dig_8, &kp N7, L_DIG)
 CB4(_TTT, dig_9, &mt MINUS N9, L_DIG)
-CB4(_T_T, dig_0, &kp D0, L_DIG)
+CB4(_T_T, dig_0, &kp N0, L_DIG)
 
 // Combos NAV+Media layer
 CB4(TT__, last_win , &mt LG(D) N_LASTWIN, L_NAV)
