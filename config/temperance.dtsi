@@ -39,13 +39,14 @@
 // starting from zero.
 #define L_BASE 0
 #define L_NUM  1
-#define L_PAR  2
-#define L_NAV  3
-#define L_ACC  4
-#define L_EDT  5
-#define L_FUN  6
-#define L_MSE  7
-#define L_BLE  8
+#define L_DIG  2
+#define L_PAR  3
+#define L_NAV  4
+#define L_ACC  5
+#define L_EDT  6
+#define L_FUN  7
+#define L_MSE  8
+#define L_BLE  9
 
 #define ALL_LEFT L_BASE L_MSE L_BLE L_NUM L_FUN
 
@@ -85,6 +86,15 @@
       &lt L_NAV N8   &mt PIPE N7   &mt PRCNT N6   &lt L_EDT N5
     >;
   };
+  digits {
+    display-name = "L_DIG";
+    bindings = <
+//       &mo L_PAR  P_BRACES  rl_bkt  P_PARENS
+      &mo L_PAR  &kp N3  &kp N2   &kp N1
+      MAYBE      &kp N6  &kp N5   &kp N4
+    >;
+  };
+
   parentheses {
     display-name = "L_PAR";
     bindings = <
