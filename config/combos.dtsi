@@ -165,10 +165,10 @@ CB4(BBB_, g , &mt GBP   G, L_BASE)
 CB4(_TTT, l , &mt PLUS  L, L_BASE)
 CB4(_BBB, m , minus_m    , L_BASE)
 
-CB4(T_T_, j , &kp       J, L_BASE)  // Hold?
-CB4(B_B_, z , &mt EQUAL Z, L_BASE) // undo/redo?
-CB4(_T_T, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Sha
-CB4(_B_B, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Shcha 
+CB4(T_T_, z , &mt EQUAL Z, L_BASE) // undo/redo?
+CB4(B_B_, j , &kp       J, L_BASE)  // Hold?
+CB4(_T_T, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Sha 
+CB4(_B_B, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Shcha 
 
 // CB4(B__B, v, &mt D_CRC V, L_BASE) // ?
 CB4(B__B, v, dcirc_V    , L_BASE) // ?
