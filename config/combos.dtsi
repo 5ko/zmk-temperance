@@ -156,7 +156,7 @@ CB4(TT__, b , &mt AMPS   B, L_BASE)
 CB4(_TT_, c , &mt C_CDL  C, L_BASE) // C_CDL = Cyrillic Cha
 CB4(__TT, o , &mt DEGREE O, L_BASE) 
 
-CB4(BB__, d , &mt DLLR      D, L_BASE)
+CB4(BB__, d , &mt DLLR  D, L_BASE)
 CB4(__BB, u , &mt UNDER U, L_BASE)
 
 
@@ -166,7 +166,7 @@ CB4(_TTT, l , &mt PLUS  L, L_BASE)
 CB4(_BBB, m , minus_m    , L_BASE)
 
 CB4(T_T_, z , &mt EQUAL Z, L_BASE) // undo/redo?
-CB4(B_B_, j , &kp       J, L_BASE)  // Hold?
+CB4(B_B_, j , &kp       J, L_BASE) // Hold?
 CB4(_T_T, y , &mt OELIG Y, L_BASE) // OELIG = Cyrillic Sha 
 CB4(_B_B, k , &mt AELIG K, L_BASE) // AELIG = Cyrillic Shcha 
 
@@ -197,20 +197,20 @@ CB4(TTTT, w, &mt AT    W, L_BASE) //  AT ?
 // CB4(B__T, slash, dacute_fslh   , L_BASE L_NUM)
 // CB4(T__B, backs, dgrave_bslh   , L_BASE L_NUM)
 // CB4(X___, exclq, &mt QMARK EXCL, L_BASE L_NUM)
-CB4(_BB_, space, &kp SPACE     , L_BASE) // Hold?
+CB4(_BB_, space, &kp SPACE     , L_BASE L_FUN) // Hold?
 CB4(B__T, slash, bslh_fslh     , L_BASE L_NUM)
 CB4(T__B, nubs , &kp NUBS      , L_BASE L_NUM) // Cyrillic YU  // Hold?
 CB4(X___, quote, dqt_sqt       , L_BASE L_NUM)
 CB4(_X__, colon, colon_semi    , L_BASE L_NUM)
 CB4(__X_, comma, dot_comma     , L_BASE L_NUM)
-CB4(___X, enter, &kp ENTER     , L_BASE L_NUM) // Hold?
+CB4(___X, enter, &kp ENTER     , L_BASE L_NUM L_FUN) // Hold?
 
 
 // GLOBAL Combos 
-CB4(__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM)
-CB4(__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM)
+CB4(__TB, backspace, &mt LC(BSPC) BSPC, L_BASE L_MSE L_NUM L_FUN)
+CB4(__BT, delete   , &mt LC(DEL)  DEL , L_BASE L_MSE L_NUM L_FUN)
 CB4(_BT_, escape   , &hold_esc  0 ESC , ALL_LEFT)
-CB4(_BTT, tab_stab , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM)
+CB4(_BTT, tab_stab , &mt LS(TAB)  TAB , L_BASE L_MSE L_NUM L_FUN)
 // Could do: _TB_ TTB_ TB__ 
 
 // Hold for sticky RALT (one shot), tap to toggle LALT
