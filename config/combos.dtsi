@@ -133,7 +133,7 @@ CB4(_TT_, copycut, &mt LC(X) LC(C)    , L_EDT)
 // Ctrl+Shift+V pastes without formatting
 CB4(_BB_, paste12, &mt LC(LS(V)) LC(V), L_EDT) 
 
-// Comment out Ctrl+d
+// Comment out / logout  Ctrl+d
 CB4(BB__, commentout, &mt LC(LS(D)) LC(D), L_EDT) 
 
 
