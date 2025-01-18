@@ -90,8 +90,8 @@
     display-name = "L_DIG";
     bindings = <
 //       &mo L_PAR  P_BRACES  rl_bkt  P_PARENS
-      &mo L_PAR  &kp N3  &kp N2   &kp N1
-      MAYBE      &kp N6  &kp N5   &kp N4
+      &mo L_PAR  &mt HASH N3  &mt EQUAL N2   &mt STAR N1
+      MAYBE      &mt PIPE N6  &mt PRCNT N5   &kp N4
     >;
   };
 
